@@ -1,0 +1,2610 @@
+[
+  {
+    "command": {
+      "id": "run-52f17bc9:command-1",
+      "expectedRevision": 2,
+      "operation": "knowledge.create",
+      "payload": {
+        "id": "run-52f17bc9:assumption",
+        "kind": "assumption",
+        "scope": "run-52f17bc9",
+        "key": "assumption",
+        "title": "assumption",
+        "text": "assumption version 1",
+        "rationale": "Recorded Socrates rationale for assumption",
+        "evidence": "fixture evidence for assumption",
+        "reliesOn": []
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-1",
+      "revision": 3,
+      "eventIds": [
+        "event:run-52f17bc9:command-1"
+      ],
+      "result": {
+        "id": "run-52f17bc9:assumption",
+        "revision": 1
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-2",
+      "expectedRevision": 3,
+      "operation": "knowledge.create",
+      "payload": {
+        "id": "run-52f17bc9:requirement",
+        "kind": "requirement",
+        "scope": "run-52f17bc9",
+        "key": "requirement",
+        "title": "requirement",
+        "text": "requirement version 1",
+        "rationale": "Recorded Socrates rationale for requirement",
+        "evidence": "fixture evidence for requirement",
+        "reliesOn": [
+          {
+            "id": "run-52f17bc9:assumption",
+            "revision": 1
+          }
+        ]
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-2",
+      "revision": 4,
+      "eventIds": [
+        "event:run-52f17bc9:command-2"
+      ],
+      "result": {
+        "id": "run-52f17bc9:requirement",
+        "revision": 1
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-3",
+      "expectedRevision": 4,
+      "operation": "knowledge.create",
+      "payload": {
+        "id": "run-52f17bc9:decision",
+        "kind": "decision",
+        "scope": "run-52f17bc9",
+        "key": "decision",
+        "title": "decision",
+        "text": "decision version 1",
+        "rationale": "Recorded Socrates rationale for decision",
+        "evidence": "fixture evidence for decision",
+        "reliesOn": [
+          {
+            "id": "run-52f17bc9:requirement",
+            "revision": 1
+          }
+        ]
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-3",
+      "revision": 5,
+      "eventIds": [
+        "event:run-52f17bc9:command-3"
+      ],
+      "result": {
+        "id": "run-52f17bc9:decision",
+        "revision": 1
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-4",
+      "expectedRevision": 5,
+      "operation": "work.create",
+      "payload": {
+        "id": "run-52f17bc9:A",
+        "title": "Body of work A",
+        "sourceRevision": "fixture:source-1"
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-4",
+      "revision": 6,
+      "eventIds": [
+        "event:run-52f17bc9:command-4"
+      ],
+      "result": {
+        "id": "run-52f17bc9:A",
+        "title": "Body of work A",
+        "baselineId": null,
+        "sourceRevision": "fixture:source-1"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-5",
+      "expectedRevision": 6,
+      "operation": "session.attach",
+      "payload": {
+        "id": "run-52f17bc9:session-A",
+        "workId": "run-52f17bc9:A"
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-5",
+      "revision": 7,
+      "eventIds": [
+        "event:run-52f17bc9:command-5"
+      ],
+      "result": {
+        "id": "run-52f17bc9:session-A",
+        "workId": "run-52f17bc9:A"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-6",
+      "expectedRevision": 7,
+      "operation": "knowledge.attach",
+      "payload": {
+        "workId": "run-52f17bc9:A",
+        "ref": {
+          "id": "run-52f17bc9:assumption",
+          "revision": 1
+        }
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-6",
+      "revision": 8,
+      "eventIds": [
+        "event:run-52f17bc9:command-6"
+      ],
+      "result": {
+        "id": "[\"run-52f17bc9:A\",\"run-52f17bc9:assumption\",1]",
+        "workId": "run-52f17bc9:A",
+        "ref": {
+          "id": "run-52f17bc9:assumption",
+          "revision": 1
+        },
+        "active": true
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-7",
+      "expectedRevision": 8,
+      "operation": "knowledge.attach",
+      "payload": {
+        "workId": "run-52f17bc9:A",
+        "ref": {
+          "id": "run-52f17bc9:requirement",
+          "revision": 1
+        }
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-7",
+      "revision": 9,
+      "eventIds": [
+        "event:run-52f17bc9:command-7"
+      ],
+      "result": {
+        "id": "[\"run-52f17bc9:A\",\"run-52f17bc9:requirement\",1]",
+        "workId": "run-52f17bc9:A",
+        "ref": {
+          "id": "run-52f17bc9:requirement",
+          "revision": 1
+        },
+        "active": true
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-8",
+      "expectedRevision": 9,
+      "operation": "knowledge.attach",
+      "payload": {
+        "workId": "run-52f17bc9:A",
+        "ref": {
+          "id": "run-52f17bc9:decision",
+          "revision": 1
+        }
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-8",
+      "revision": 10,
+      "eventIds": [
+        "event:run-52f17bc9:command-8"
+      ],
+      "result": {
+        "id": "[\"run-52f17bc9:A\",\"run-52f17bc9:decision\",1]",
+        "workId": "run-52f17bc9:A",
+        "ref": {
+          "id": "run-52f17bc9:decision",
+          "revision": 1
+        },
+        "active": true
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-9",
+      "expectedRevision": 10,
+      "operation": "task.plan",
+      "payload": {
+        "id": "run-52f17bc9:task-A",
+        "workId": "run-52f17bc9:A",
+        "title": "task-A",
+        "refs": [
+          {
+            "id": "run-52f17bc9:decision",
+            "revision": 1
+          }
+        ]
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-9",
+      "revision": 11,
+      "eventIds": [
+        "event:run-52f17bc9:command-9"
+      ],
+      "result": {
+        "id": "run-52f17bc9:task-A",
+        "workId": "run-52f17bc9:A",
+        "title": "task-A",
+        "revision": 1,
+        "refs": [
+          {
+            "id": "run-52f17bc9:decision",
+            "revision": 1
+          }
+        ],
+        "blockedBy": [],
+        "parentId": null
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-10",
+      "expectedRevision": 11,
+      "operation": "baseline.approve",
+      "payload": {
+        "id": "run-52f17bc9:baseline-A-1",
+        "workId": "run-52f17bc9:A",
+        "rationale": "Operator approves the supported specification and task plan",
+        "evidence": "fixture operator review"
+      }
+    },
+    "authority": "operator",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-10",
+      "revision": 12,
+      "eventIds": [
+        "event:run-52f17bc9:command-10"
+      ],
+      "result": {
+        "id": "run-52f17bc9:baseline-A-1",
+        "workId": "run-52f17bc9:A",
+        "refs": [
+          {
+            "id": "run-52f17bc9:requirement",
+            "revision": 1
+          },
+          {
+            "id": "run-52f17bc9:assumption",
+            "revision": 1
+          },
+          {
+            "id": "run-52f17bc9:decision",
+            "revision": 1
+          }
+        ],
+        "tasks": [
+          {
+            "blockedBy": [],
+            "id": "run-52f17bc9:task-A",
+            "parentId": null,
+            "refs": [
+              {
+                "id": "run-52f17bc9:decision",
+                "revision": 1
+              }
+            ],
+            "revision": 1,
+            "title": "task-A",
+            "workId": "run-52f17bc9:A"
+          }
+        ],
+        "approvedBy": "operator",
+        "rationale": "Operator approves the supported specification and task plan",
+        "evidence": "fixture operator review"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-11",
+      "expectedRevision": 12,
+      "operation": "effect.request",
+      "payload": {
+        "id": "run-52f17bc9:allocation-A",
+        "kind": "allocate",
+        "workId": "run-52f17bc9:A"
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-11",
+      "revision": 13,
+      "eventIds": [
+        "event:run-52f17bc9:command-11"
+      ],
+      "result": {
+        "id": "run-52f17bc9:allocation-A",
+        "kind": "allocate",
+        "workId": "run-52f17bc9:A",
+        "taskId": null,
+        "verificationId": null,
+        "baselineId": null,
+        "sourceRevision": "fixture:source-1",
+        "blockedBy": [],
+        "state": "pending",
+        "receiptId": null,
+        "detail": "Intent recorded before dispatch"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-12",
+      "expectedRevision": 13,
+      "operation": "effect.observe",
+      "payload": {
+        "id": "run-52f17bc9:allocation-A",
+        "state": "confirmed",
+        "receiptId": "fixture-receipt:run-52f17bc9:allocation-A",
+        "detail": "Controlled Producer allocation confirmation"
+      }
+    },
+    "authority": "adapter",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-12",
+      "revision": 14,
+      "eventIds": [
+        "event:run-52f17bc9:command-12"
+      ],
+      "result": {
+        "baselineId": null,
+        "blockedBy": [],
+        "detail": "Controlled Producer allocation confirmation",
+        "id": "run-52f17bc9:allocation-A",
+        "kind": "allocate",
+        "receiptId": "fixture-receipt:run-52f17bc9:allocation-A",
+        "sourceRevision": "fixture:source-1",
+        "state": "confirmed",
+        "taskId": null,
+        "verificationId": null,
+        "workId": "run-52f17bc9:A"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-13",
+      "expectedRevision": 14,
+      "operation": "attempt.start",
+      "payload": {
+        "id": "run-52f17bc9:attempt-A",
+        "taskId": "run-52f17bc9:task-A",
+        "sessionId": "run-52f17bc9:session-A",
+        "allocationId": "run-52f17bc9:allocation-A"
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-13",
+      "revision": 15,
+      "eventIds": [
+        "event:run-52f17bc9:command-13"
+      ],
+      "result": {
+        "id": "run-52f17bc9:attempt-A",
+        "workId": "run-52f17bc9:A",
+        "taskId": "run-52f17bc9:task-A",
+        "sessionId": "run-52f17bc9:session-A",
+        "allocationId": "run-52f17bc9:allocation-A",
+        "baselineId": "run-52f17bc9:baseline-A-1",
+        "sourceRevision": "fixture:source-1",
+        "status": "running"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-14",
+      "expectedRevision": 15,
+      "operation": "work.create",
+      "payload": {
+        "id": "run-52f17bc9:B",
+        "title": "Body of work B",
+        "sourceRevision": "fixture:source-1"
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-14",
+      "revision": 16,
+      "eventIds": [
+        "event:run-52f17bc9:command-14"
+      ],
+      "result": {
+        "id": "run-52f17bc9:B",
+        "title": "Body of work B",
+        "baselineId": null,
+        "sourceRevision": "fixture:source-1"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-15",
+      "expectedRevision": 16,
+      "operation": "session.attach",
+      "payload": {
+        "id": "run-52f17bc9:session-B",
+        "workId": "run-52f17bc9:B"
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-15",
+      "revision": 17,
+      "eventIds": [
+        "event:run-52f17bc9:command-15"
+      ],
+      "result": {
+        "id": "run-52f17bc9:session-B",
+        "workId": "run-52f17bc9:B"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-16",
+      "expectedRevision": 17,
+      "operation": "knowledge.attach",
+      "payload": {
+        "workId": "run-52f17bc9:B",
+        "ref": {
+          "id": "run-52f17bc9:assumption",
+          "revision": 1
+        }
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-16",
+      "revision": 18,
+      "eventIds": [
+        "event:run-52f17bc9:command-16"
+      ],
+      "result": {
+        "id": "[\"run-52f17bc9:B\",\"run-52f17bc9:assumption\",1]",
+        "workId": "run-52f17bc9:B",
+        "ref": {
+          "id": "run-52f17bc9:assumption",
+          "revision": 1
+        },
+        "active": true
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-17",
+      "expectedRevision": 18,
+      "operation": "knowledge.attach",
+      "payload": {
+        "workId": "run-52f17bc9:B",
+        "ref": {
+          "id": "run-52f17bc9:requirement",
+          "revision": 1
+        }
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-17",
+      "revision": 19,
+      "eventIds": [
+        "event:run-52f17bc9:command-17"
+      ],
+      "result": {
+        "id": "[\"run-52f17bc9:B\",\"run-52f17bc9:requirement\",1]",
+        "workId": "run-52f17bc9:B",
+        "ref": {
+          "id": "run-52f17bc9:requirement",
+          "revision": 1
+        },
+        "active": true
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-18",
+      "expectedRevision": 19,
+      "operation": "knowledge.attach",
+      "payload": {
+        "workId": "run-52f17bc9:B",
+        "ref": {
+          "id": "run-52f17bc9:decision",
+          "revision": 1
+        }
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-18",
+      "revision": 20,
+      "eventIds": [
+        "event:run-52f17bc9:command-18"
+      ],
+      "result": {
+        "id": "[\"run-52f17bc9:B\",\"run-52f17bc9:decision\",1]",
+        "workId": "run-52f17bc9:B",
+        "ref": {
+          "id": "run-52f17bc9:decision",
+          "revision": 1
+        },
+        "active": true
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-19",
+      "expectedRevision": 20,
+      "operation": "task.plan",
+      "payload": {
+        "id": "run-52f17bc9:task-B",
+        "workId": "run-52f17bc9:B",
+        "title": "task-B",
+        "refs": [
+          {
+            "id": "run-52f17bc9:decision",
+            "revision": 1
+          }
+        ]
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-19",
+      "revision": 21,
+      "eventIds": [
+        "event:run-52f17bc9:command-19"
+      ],
+      "result": {
+        "id": "run-52f17bc9:task-B",
+        "workId": "run-52f17bc9:B",
+        "title": "task-B",
+        "revision": 1,
+        "refs": [
+          {
+            "id": "run-52f17bc9:decision",
+            "revision": 1
+          }
+        ],
+        "blockedBy": [],
+        "parentId": null
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-20",
+      "expectedRevision": 21,
+      "operation": "baseline.approve",
+      "payload": {
+        "id": "run-52f17bc9:baseline-B-1",
+        "workId": "run-52f17bc9:B",
+        "rationale": "Operator approves the supported specification and task plan",
+        "evidence": "fixture operator review"
+      }
+    },
+    "authority": "operator",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-20",
+      "revision": 22,
+      "eventIds": [
+        "event:run-52f17bc9:command-20"
+      ],
+      "result": {
+        "id": "run-52f17bc9:baseline-B-1",
+        "workId": "run-52f17bc9:B",
+        "refs": [
+          {
+            "id": "run-52f17bc9:requirement",
+            "revision": 1
+          },
+          {
+            "id": "run-52f17bc9:assumption",
+            "revision": 1
+          },
+          {
+            "id": "run-52f17bc9:decision",
+            "revision": 1
+          }
+        ],
+        "tasks": [
+          {
+            "blockedBy": [],
+            "id": "run-52f17bc9:task-B",
+            "parentId": null,
+            "refs": [
+              {
+                "id": "run-52f17bc9:decision",
+                "revision": 1
+              }
+            ],
+            "revision": 1,
+            "title": "task-B",
+            "workId": "run-52f17bc9:B"
+          }
+        ],
+        "approvedBy": "operator",
+        "rationale": "Operator approves the supported specification and task plan",
+        "evidence": "fixture operator review"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-21",
+      "expectedRevision": 22,
+      "operation": "effect.request",
+      "payload": {
+        "id": "run-52f17bc9:allocation-B",
+        "kind": "allocate",
+        "workId": "run-52f17bc9:B"
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-21",
+      "revision": 23,
+      "eventIds": [
+        "event:run-52f17bc9:command-21"
+      ],
+      "result": {
+        "id": "run-52f17bc9:allocation-B",
+        "kind": "allocate",
+        "workId": "run-52f17bc9:B",
+        "taskId": null,
+        "verificationId": null,
+        "baselineId": null,
+        "sourceRevision": "fixture:source-1",
+        "blockedBy": [],
+        "state": "pending",
+        "receiptId": null,
+        "detail": "Intent recorded before dispatch"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-22",
+      "expectedRevision": 23,
+      "operation": "effect.observe",
+      "payload": {
+        "id": "run-52f17bc9:allocation-B",
+        "state": "confirmed",
+        "receiptId": "fixture-receipt:run-52f17bc9:allocation-B",
+        "detail": "Controlled Producer allocation confirmation"
+      }
+    },
+    "authority": "adapter",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-22",
+      "revision": 24,
+      "eventIds": [
+        "event:run-52f17bc9:command-22"
+      ],
+      "result": {
+        "baselineId": null,
+        "blockedBy": [],
+        "detail": "Controlled Producer allocation confirmation",
+        "id": "run-52f17bc9:allocation-B",
+        "kind": "allocate",
+        "receiptId": "fixture-receipt:run-52f17bc9:allocation-B",
+        "sourceRevision": "fixture:source-1",
+        "state": "confirmed",
+        "taskId": null,
+        "verificationId": null,
+        "workId": "run-52f17bc9:B"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-23",
+      "expectedRevision": 24,
+      "operation": "attempt.start",
+      "payload": {
+        "id": "run-52f17bc9:attempt-B",
+        "taskId": "run-52f17bc9:task-B",
+        "sessionId": "run-52f17bc9:session-B",
+        "allocationId": "run-52f17bc9:allocation-B"
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-23",
+      "revision": 25,
+      "eventIds": [
+        "event:run-52f17bc9:command-23"
+      ],
+      "result": {
+        "id": "run-52f17bc9:attempt-B",
+        "workId": "run-52f17bc9:B",
+        "taskId": "run-52f17bc9:task-B",
+        "sessionId": "run-52f17bc9:session-B",
+        "allocationId": "run-52f17bc9:allocation-B",
+        "baselineId": "run-52f17bc9:baseline-B-1",
+        "sourceRevision": "fixture:source-1",
+        "status": "running"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-24",
+      "expectedRevision": 25,
+      "operation": "work.create",
+      "payload": {
+        "id": "run-52f17bc9:unrelated",
+        "title": "Body of work unrelated",
+        "sourceRevision": "fixture:source-1"
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-24",
+      "revision": 26,
+      "eventIds": [
+        "event:run-52f17bc9:command-24"
+      ],
+      "result": {
+        "id": "run-52f17bc9:unrelated",
+        "title": "Body of work unrelated",
+        "baselineId": null,
+        "sourceRevision": "fixture:source-1"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-25",
+      "expectedRevision": 26,
+      "operation": "session.attach",
+      "payload": {
+        "id": "run-52f17bc9:session-unrelated",
+        "workId": "run-52f17bc9:unrelated"
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-25",
+      "revision": 27,
+      "eventIds": [
+        "event:run-52f17bc9:command-25"
+      ],
+      "result": {
+        "id": "run-52f17bc9:session-unrelated",
+        "workId": "run-52f17bc9:unrelated"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-26",
+      "expectedRevision": 27,
+      "operation": "task.plan",
+      "payload": {
+        "id": "run-52f17bc9:task-unrelated",
+        "workId": "run-52f17bc9:unrelated",
+        "title": "task-unrelated",
+        "refs": []
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-26",
+      "revision": 28,
+      "eventIds": [
+        "event:run-52f17bc9:command-26"
+      ],
+      "result": {
+        "id": "run-52f17bc9:task-unrelated",
+        "workId": "run-52f17bc9:unrelated",
+        "title": "task-unrelated",
+        "revision": 1,
+        "refs": [],
+        "blockedBy": [],
+        "parentId": null
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-27",
+      "expectedRevision": 28,
+      "operation": "baseline.approve",
+      "payload": {
+        "id": "run-52f17bc9:baseline-unrelated-1",
+        "workId": "run-52f17bc9:unrelated",
+        "rationale": "Operator approves the supported specification and task plan",
+        "evidence": "fixture operator review"
+      }
+    },
+    "authority": "operator",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-27",
+      "revision": 29,
+      "eventIds": [
+        "event:run-52f17bc9:command-27"
+      ],
+      "result": {
+        "id": "run-52f17bc9:baseline-unrelated-1",
+        "workId": "run-52f17bc9:unrelated",
+        "refs": [],
+        "tasks": [
+          {
+            "blockedBy": [],
+            "id": "run-52f17bc9:task-unrelated",
+            "parentId": null,
+            "refs": [],
+            "revision": 1,
+            "title": "task-unrelated",
+            "workId": "run-52f17bc9:unrelated"
+          }
+        ],
+        "approvedBy": "operator",
+        "rationale": "Operator approves the supported specification and task plan",
+        "evidence": "fixture operator review"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-28",
+      "expectedRevision": 29,
+      "operation": "effect.request",
+      "payload": {
+        "id": "run-52f17bc9:allocation-unrelated",
+        "kind": "allocate",
+        "workId": "run-52f17bc9:unrelated"
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-28",
+      "revision": 30,
+      "eventIds": [
+        "event:run-52f17bc9:command-28"
+      ],
+      "result": {
+        "id": "run-52f17bc9:allocation-unrelated",
+        "kind": "allocate",
+        "workId": "run-52f17bc9:unrelated",
+        "taskId": null,
+        "verificationId": null,
+        "baselineId": null,
+        "sourceRevision": "fixture:source-1",
+        "blockedBy": [],
+        "state": "pending",
+        "receiptId": null,
+        "detail": "Intent recorded before dispatch"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-29",
+      "expectedRevision": 30,
+      "operation": "effect.observe",
+      "payload": {
+        "id": "run-52f17bc9:allocation-unrelated",
+        "state": "confirmed",
+        "receiptId": "fixture-receipt:run-52f17bc9:allocation-unrelated",
+        "detail": "Controlled Producer allocation confirmation"
+      }
+    },
+    "authority": "adapter",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-29",
+      "revision": 31,
+      "eventIds": [
+        "event:run-52f17bc9:command-29"
+      ],
+      "result": {
+        "baselineId": null,
+        "blockedBy": [],
+        "detail": "Controlled Producer allocation confirmation",
+        "id": "run-52f17bc9:allocation-unrelated",
+        "kind": "allocate",
+        "receiptId": "fixture-receipt:run-52f17bc9:allocation-unrelated",
+        "sourceRevision": "fixture:source-1",
+        "state": "confirmed",
+        "taskId": null,
+        "verificationId": null,
+        "workId": "run-52f17bc9:unrelated"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-30",
+      "expectedRevision": 31,
+      "operation": "attempt.start",
+      "payload": {
+        "id": "run-52f17bc9:attempt-unrelated",
+        "taskId": "run-52f17bc9:task-unrelated",
+        "sessionId": "run-52f17bc9:session-unrelated",
+        "allocationId": "run-52f17bc9:allocation-unrelated"
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-30",
+      "revision": 32,
+      "eventIds": [
+        "event:run-52f17bc9:command-30"
+      ],
+      "result": {
+        "id": "run-52f17bc9:attempt-unrelated",
+        "workId": "run-52f17bc9:unrelated",
+        "taskId": "run-52f17bc9:task-unrelated",
+        "sessionId": "run-52f17bc9:session-unrelated",
+        "allocationId": "run-52f17bc9:allocation-unrelated",
+        "baselineId": "run-52f17bc9:baseline-unrelated-1",
+        "sourceRevision": "fixture:source-1",
+        "status": "running"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:rejected-31",
+      "expectedRevision": 32,
+      "operation": "knowledge.attach",
+      "payload": {
+        "workId": "run-52f17bc9:A",
+        "ref": {
+          "id": "run-52f17bc9:decision",
+          "revision": 1
+        }
+      }
+    },
+    "authority": "agent",
+    "rejected": "duplicate_attachment"
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:rejected-32",
+      "expectedRevision": 32,
+      "operation": "knowledge.attach",
+      "payload": {
+        "workId": "run-52f17bc9:A",
+        "ref": {
+          "id": "run-52f17bc9:missing",
+          "revision": 1
+        }
+      }
+    },
+    "authority": "agent",
+    "rejected": "not_found"
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:rejected-33",
+      "expectedRevision": 32,
+      "operation": "knowledge.create",
+      "payload": {
+        "id": "run-52f17bc9:copy",
+        "kind": "assumption",
+        "scope": "run-52f17bc9",
+        "key": "assumption",
+        "title": "copy",
+        "text": "copy",
+        "rationale": "copy",
+        "evidence": "copy",
+        "reliesOn": []
+      }
+    },
+    "authority": "agent",
+    "rejected": "existing_record"
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-34",
+      "expectedRevision": 32,
+      "operation": "assumption.invalidate",
+      "payload": {
+        "id": "run-52f17bc9:invalidation-1",
+        "ref": {
+          "id": "run-52f17bc9:assumption",
+          "revision": 1
+        },
+        "rationale": "The earlier assumption was disproven",
+        "evidence": "controlled counterexample"
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-34",
+      "revision": 33,
+      "eventIds": [
+        "event:run-52f17bc9:command-34"
+      ],
+      "result": {
+        "invalidation": {
+          "id": "run-52f17bc9:invalidation-1",
+          "ref": {
+            "id": "run-52f17bc9:assumption",
+            "revision": 1
+          },
+          "rationale": "The earlier assumption was disproven",
+          "evidence": "controlled counterexample"
+        },
+        "holds": [
+          {
+            "id": "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:assumption\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+            "workId": "run-52f17bc9:A",
+            "useId": "[\"run-52f17bc9:A\",\"run-52f17bc9:assumption\",1]",
+            "invalidationId": "run-52f17bc9:invalidation-1",
+            "taskIds": [
+              "run-52f17bc9:task-A"
+            ],
+            "clearedBy": null
+          },
+          {
+            "id": "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:decision\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+            "workId": "run-52f17bc9:A",
+            "useId": "[\"run-52f17bc9:A\",\"run-52f17bc9:decision\",1]",
+            "invalidationId": "run-52f17bc9:invalidation-1",
+            "taskIds": [
+              "run-52f17bc9:task-A"
+            ],
+            "clearedBy": null
+          },
+          {
+            "id": "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:requirement\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+            "workId": "run-52f17bc9:A",
+            "useId": "[\"run-52f17bc9:A\",\"run-52f17bc9:requirement\",1]",
+            "invalidationId": "run-52f17bc9:invalidation-1",
+            "taskIds": [
+              "run-52f17bc9:task-A"
+            ],
+            "clearedBy": null
+          },
+          {
+            "id": "[\"[\\\"run-52f17bc9:B\\\",\\\"run-52f17bc9:assumption\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+            "workId": "run-52f17bc9:B",
+            "useId": "[\"run-52f17bc9:B\",\"run-52f17bc9:assumption\",1]",
+            "invalidationId": "run-52f17bc9:invalidation-1",
+            "taskIds": [
+              "run-52f17bc9:task-B"
+            ],
+            "clearedBy": null
+          },
+          {
+            "id": "[\"[\\\"run-52f17bc9:B\\\",\\\"run-52f17bc9:decision\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+            "workId": "run-52f17bc9:B",
+            "useId": "[\"run-52f17bc9:B\",\"run-52f17bc9:decision\",1]",
+            "invalidationId": "run-52f17bc9:invalidation-1",
+            "taskIds": [
+              "run-52f17bc9:task-B"
+            ],
+            "clearedBy": null
+          },
+          {
+            "id": "[\"[\\\"run-52f17bc9:B\\\",\\\"run-52f17bc9:requirement\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+            "workId": "run-52f17bc9:B",
+            "useId": "[\"run-52f17bc9:B\",\"run-52f17bc9:requirement\",1]",
+            "invalidationId": "run-52f17bc9:invalidation-1",
+            "taskIds": [
+              "run-52f17bc9:task-B"
+            ],
+            "clearedBy": null
+          }
+        ]
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:rejected-35",
+      "expectedRevision": 33,
+      "operation": "attempt.resume",
+      "payload": {
+        "id": "run-52f17bc9:attempt-A"
+      }
+    },
+    "authority": "agent",
+    "rejected": "invalid_transition"
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:rejected-36",
+      "expectedRevision": 33,
+      "operation": "attempt.start",
+      "payload": {
+        "id": "run-52f17bc9:bypass",
+        "taskId": "run-52f17bc9:task-A",
+        "sessionId": "run-52f17bc9:session-A",
+        "allocationId": "run-52f17bc9:allocation-A"
+      }
+    },
+    "authority": "agent",
+    "rejected": "held"
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:rejected-37",
+      "expectedRevision": 33,
+      "operation": "verification.record",
+      "payload": {
+        "id": "run-52f17bc9:held-verification",
+        "attemptId": "run-52f17bc9:attempt-A",
+        "baselineId": "run-52f17bc9:baseline-A-1",
+        "sourceRevision": "fixture:source-1",
+        "command": "fixture-check",
+        "exitCode": 0,
+        "output": "fixture"
+      }
+    },
+    "authority": "agent",
+    "rejected": "invalid_transition"
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-38",
+      "expectedRevision": 33,
+      "operation": "session.attach",
+      "payload": {
+        "id": "run-52f17bc9:session-A-returned",
+        "workId": "run-52f17bc9:A"
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-38",
+      "revision": 34,
+      "eventIds": [
+        "event:run-52f17bc9:command-38"
+      ],
+      "result": {
+        "id": "run-52f17bc9:session-A-returned",
+        "workId": "run-52f17bc9:A"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:rejected-39",
+      "expectedRevision": 34,
+      "operation": "hold.reassess",
+      "payload": {
+        "id": "run-52f17bc9:agent-clear",
+        "workId": "run-52f17bc9:A",
+        "holdIds": [
+          "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:assumption\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+          "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:decision\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+          "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:requirement\\\",1]\",\"run-52f17bc9:invalidation-1\",33]"
+        ],
+        "rationale": "agent proposes evidence",
+        "evidence": "fixture"
+      }
+    },
+    "authority": "agent",
+    "rejected": "operator_required"
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:rejected-40",
+      "expectedRevision": 33,
+      "operation": "hold.reassess",
+      "payload": {
+        "id": "run-52f17bc9:stale-clear",
+        "workId": "run-52f17bc9:A",
+        "holdIds": [
+          "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:assumption\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+          "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:decision\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+          "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:requirement\\\",1]\",\"run-52f17bc9:invalidation-1\",33]"
+        ],
+        "rationale": "stale",
+        "evidence": "fixture"
+      }
+    },
+    "authority": "operator",
+    "rejected": "stale_revision"
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:rejected-41",
+      "expectedRevision": 34,
+      "operation": "hold.reassess",
+      "payload": {
+        "id": "run-52f17bc9:bad-basis-clear",
+        "workId": "run-52f17bc9:A",
+        "holdIds": [
+          "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:assumption\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+          "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:decision\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+          "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:requirement\\\",1]\",\"run-52f17bc9:invalidation-1\",33]"
+        ],
+        "rationale": "No revised basis",
+        "evidence": "fixture"
+      }
+    },
+    "authority": "operator",
+    "rejected": "invalid_basis"
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-42",
+      "expectedRevision": 34,
+      "operation": "work.create",
+      "payload": {
+        "id": "run-52f17bc9:late",
+        "title": "Later body of work",
+        "sourceRevision": "fixture:source-1"
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-42",
+      "revision": 35,
+      "eventIds": [
+        "event:run-52f17bc9:command-42"
+      ],
+      "result": {
+        "id": "run-52f17bc9:late",
+        "title": "Later body of work",
+        "baselineId": null,
+        "sourceRevision": "fixture:source-1"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-43",
+      "expectedRevision": 35,
+      "operation": "session.attach",
+      "payload": {
+        "id": "run-52f17bc9:session-late",
+        "workId": "run-52f17bc9:late"
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-43",
+      "revision": 36,
+      "eventIds": [
+        "event:run-52f17bc9:command-43"
+      ],
+      "result": {
+        "id": "run-52f17bc9:session-late",
+        "workId": "run-52f17bc9:late"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-44",
+      "expectedRevision": 36,
+      "operation": "knowledge.attach",
+      "payload": {
+        "workId": "run-52f17bc9:late",
+        "ref": {
+          "id": "run-52f17bc9:decision",
+          "revision": 1
+        }
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-44",
+      "revision": 37,
+      "eventIds": [
+        "event:run-52f17bc9:command-44"
+      ],
+      "result": {
+        "id": "[\"run-52f17bc9:late\",\"run-52f17bc9:decision\",1]",
+        "workId": "run-52f17bc9:late",
+        "ref": {
+          "id": "run-52f17bc9:decision",
+          "revision": 1
+        },
+        "active": true
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-45",
+      "expectedRevision": 37,
+      "operation": "task.plan",
+      "payload": {
+        "id": "run-52f17bc9:task-late",
+        "workId": "run-52f17bc9:late",
+        "title": "task-late",
+        "refs": [
+          {
+            "id": "run-52f17bc9:decision",
+            "revision": 1
+          }
+        ]
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-45",
+      "revision": 38,
+      "eventIds": [
+        "event:run-52f17bc9:command-45"
+      ],
+      "result": {
+        "id": "run-52f17bc9:task-late",
+        "workId": "run-52f17bc9:late",
+        "title": "task-late",
+        "revision": 1,
+        "refs": [
+          {
+            "id": "run-52f17bc9:decision",
+            "revision": 1
+          }
+        ],
+        "blockedBy": [],
+        "parentId": null
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-46",
+      "expectedRevision": 38,
+      "operation": "baseline.approve",
+      "payload": {
+        "id": "run-52f17bc9:baseline-late-1",
+        "workId": "run-52f17bc9:late",
+        "rationale": "Operator approves the supported specification and task plan",
+        "evidence": "fixture operator review"
+      }
+    },
+    "authority": "operator",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-46",
+      "revision": 39,
+      "eventIds": [
+        "event:run-52f17bc9:command-46"
+      ],
+      "result": {
+        "id": "run-52f17bc9:baseline-late-1",
+        "workId": "run-52f17bc9:late",
+        "refs": [
+          {
+            "id": "run-52f17bc9:decision",
+            "revision": 1
+          },
+          {
+            "id": "run-52f17bc9:requirement",
+            "revision": 1
+          },
+          {
+            "id": "run-52f17bc9:assumption",
+            "revision": 1
+          }
+        ],
+        "tasks": [
+          {
+            "blockedBy": [],
+            "id": "run-52f17bc9:task-late",
+            "parentId": null,
+            "refs": [
+              {
+                "id": "run-52f17bc9:decision",
+                "revision": 1
+              }
+            ],
+            "revision": 1,
+            "title": "task-late",
+            "workId": "run-52f17bc9:late"
+          }
+        ],
+        "approvedBy": "operator",
+        "rationale": "Operator approves the supported specification and task plan",
+        "evidence": "fixture operator review"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-47",
+      "expectedRevision": 39,
+      "operation": "effect.request",
+      "payload": {
+        "id": "run-52f17bc9:allocation-late",
+        "kind": "allocate",
+        "workId": "run-52f17bc9:late"
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-47",
+      "revision": 40,
+      "eventIds": [
+        "event:run-52f17bc9:command-47"
+      ],
+      "result": {
+        "id": "run-52f17bc9:allocation-late",
+        "kind": "allocate",
+        "workId": "run-52f17bc9:late",
+        "taskId": null,
+        "verificationId": null,
+        "baselineId": null,
+        "sourceRevision": "fixture:source-1",
+        "blockedBy": [],
+        "state": "pending",
+        "receiptId": null,
+        "detail": "Intent recorded before dispatch"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-48",
+      "expectedRevision": 40,
+      "operation": "effect.observe",
+      "payload": {
+        "id": "run-52f17bc9:allocation-late",
+        "state": "confirmed",
+        "receiptId": "fixture-receipt:run-52f17bc9:allocation-late",
+        "detail": "Controlled Producer allocation confirmation"
+      }
+    },
+    "authority": "adapter",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-48",
+      "revision": 41,
+      "eventIds": [
+        "event:run-52f17bc9:command-48"
+      ],
+      "result": {
+        "baselineId": null,
+        "blockedBy": [],
+        "detail": "Controlled Producer allocation confirmation",
+        "id": "run-52f17bc9:allocation-late",
+        "kind": "allocate",
+        "receiptId": "fixture-receipt:run-52f17bc9:allocation-late",
+        "sourceRevision": "fixture:source-1",
+        "state": "confirmed",
+        "taskId": null,
+        "verificationId": null,
+        "workId": "run-52f17bc9:late"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:rejected-49",
+      "expectedRevision": 41,
+      "operation": "attempt.start",
+      "payload": {
+        "id": "run-52f17bc9:attempt-late",
+        "taskId": "run-52f17bc9:task-late",
+        "sessionId": "run-52f17bc9:session-late",
+        "allocationId": "run-52f17bc9:allocation-late"
+      }
+    },
+    "authority": "agent",
+    "rejected": "held"
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:rejected-50",
+      "expectedRevision": 41,
+      "operation": "verification.record",
+      "payload": {
+        "id": "run-52f17bc9:late-verification",
+        "attemptId": "run-52f17bc9:attempt-late",
+        "baselineId": "run-52f17bc9:baseline-late-1",
+        "sourceRevision": "fixture:source-1",
+        "command": "fixture-check",
+        "exitCode": 0,
+        "output": "No authorized attempt exists"
+      }
+    },
+    "authority": "agent",
+    "rejected": "not_found"
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-51",
+      "expectedRevision": 41,
+      "operation": "attempt.pause-ack",
+      "payload": {
+        "id": "run-52f17bc9:attempt-A"
+      }
+    },
+    "authority": "adapter",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-51",
+      "revision": 42,
+      "eventIds": [
+        "event:run-52f17bc9:command-51"
+      ],
+      "result": {
+        "allocationId": "run-52f17bc9:allocation-A",
+        "baselineId": "run-52f17bc9:baseline-A-1",
+        "id": "run-52f17bc9:attempt-A",
+        "sessionId": "run-52f17bc9:session-A",
+        "sourceRevision": "fixture:source-1",
+        "status": "paused",
+        "taskId": "run-52f17bc9:task-A",
+        "workId": "run-52f17bc9:A"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-52",
+      "expectedRevision": 42,
+      "operation": "attempt.pause-ack",
+      "payload": {
+        "id": "run-52f17bc9:attempt-B"
+      }
+    },
+    "authority": "adapter",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-52",
+      "revision": 43,
+      "eventIds": [
+        "event:run-52f17bc9:command-52"
+      ],
+      "result": {
+        "allocationId": "run-52f17bc9:allocation-B",
+        "baselineId": "run-52f17bc9:baseline-B-1",
+        "id": "run-52f17bc9:attempt-B",
+        "sessionId": "run-52f17bc9:session-B",
+        "sourceRevision": "fixture:source-1",
+        "status": "paused",
+        "taskId": "run-52f17bc9:task-B",
+        "workId": "run-52f17bc9:B"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:rejected-53",
+      "expectedRevision": 43,
+      "operation": "attempt.resume",
+      "payload": {
+        "id": "run-52f17bc9:attempt-A"
+      }
+    },
+    "authority": "agent",
+    "rejected": "held"
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:rejected-54",
+      "expectedRevision": 43,
+      "operation": "attempt.pause-ack",
+      "payload": {
+        "id": "run-52f17bc9:attempt-B"
+      }
+    },
+    "authority": "agent",
+    "rejected": "adapter_required"
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-55",
+      "expectedRevision": 43,
+      "operation": "baseline.reopen",
+      "payload": {
+        "workId": "run-52f17bc9:A"
+      }
+    },
+    "authority": "operator",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-55",
+      "revision": 44,
+      "eventIds": [
+        "event:run-52f17bc9:command-55"
+      ],
+      "result": {
+        "baselineId": null,
+        "id": "run-52f17bc9:A",
+        "sourceRevision": "fixture:source-1",
+        "title": "Body of work A"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-56",
+      "expectedRevision": 44,
+      "operation": "knowledge.revise",
+      "payload": {
+        "id": "run-52f17bc9:assumption",
+        "text": "assumption revised with a supported replacement basis",
+        "rationale": "Address the invalidated basis",
+        "evidence": "new controlled evidence",
+        "reliesOn": []
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-56",
+      "revision": 45,
+      "eventIds": [
+        "event:run-52f17bc9:command-56"
+      ],
+      "result": {
+        "id": "run-52f17bc9:assumption",
+        "revision": 2
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-57",
+      "expectedRevision": 45,
+      "operation": "knowledge.revise",
+      "payload": {
+        "id": "run-52f17bc9:requirement",
+        "text": "requirement revised with a supported replacement basis",
+        "rationale": "Address the invalidated basis",
+        "evidence": "new controlled evidence",
+        "reliesOn": [
+          {
+            "id": "run-52f17bc9:assumption",
+            "revision": 2
+          }
+        ]
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-57",
+      "revision": 46,
+      "eventIds": [
+        "event:run-52f17bc9:command-57"
+      ],
+      "result": {
+        "id": "run-52f17bc9:requirement",
+        "revision": 2
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-58",
+      "expectedRevision": 46,
+      "operation": "knowledge.revise",
+      "payload": {
+        "id": "run-52f17bc9:decision",
+        "text": "decision revised with a supported replacement basis",
+        "rationale": "Address the invalidated basis",
+        "evidence": "new controlled evidence",
+        "reliesOn": [
+          {
+            "id": "run-52f17bc9:requirement",
+            "revision": 2
+          }
+        ]
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-58",
+      "revision": 47,
+      "eventIds": [
+        "event:run-52f17bc9:command-58"
+      ],
+      "result": {
+        "id": "run-52f17bc9:decision",
+        "revision": 2
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-59",
+      "expectedRevision": 47,
+      "operation": "knowledge.attach",
+      "payload": {
+        "workId": "run-52f17bc9:A",
+        "ref": {
+          "id": "run-52f17bc9:assumption",
+          "revision": 2
+        }
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-59",
+      "revision": 48,
+      "eventIds": [
+        "event:run-52f17bc9:command-59"
+      ],
+      "result": {
+        "id": "[\"run-52f17bc9:A\",\"run-52f17bc9:assumption\",2]",
+        "workId": "run-52f17bc9:A",
+        "ref": {
+          "id": "run-52f17bc9:assumption",
+          "revision": 2
+        },
+        "active": true
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-60",
+      "expectedRevision": 48,
+      "operation": "knowledge.attach",
+      "payload": {
+        "workId": "run-52f17bc9:A",
+        "ref": {
+          "id": "run-52f17bc9:requirement",
+          "revision": 2
+        }
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-60",
+      "revision": 49,
+      "eventIds": [
+        "event:run-52f17bc9:command-60"
+      ],
+      "result": {
+        "id": "[\"run-52f17bc9:A\",\"run-52f17bc9:requirement\",2]",
+        "workId": "run-52f17bc9:A",
+        "ref": {
+          "id": "run-52f17bc9:requirement",
+          "revision": 2
+        },
+        "active": true
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-61",
+      "expectedRevision": 49,
+      "operation": "knowledge.attach",
+      "payload": {
+        "workId": "run-52f17bc9:A",
+        "ref": {
+          "id": "run-52f17bc9:decision",
+          "revision": 2
+        }
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-61",
+      "revision": 50,
+      "eventIds": [
+        "event:run-52f17bc9:command-61"
+      ],
+      "result": {
+        "id": "[\"run-52f17bc9:A\",\"run-52f17bc9:decision\",2]",
+        "workId": "run-52f17bc9:A",
+        "ref": {
+          "id": "run-52f17bc9:decision",
+          "revision": 2
+        },
+        "active": true
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-62",
+      "expectedRevision": 50,
+      "operation": "task.plan",
+      "payload": {
+        "id": "run-52f17bc9:task-A",
+        "workId": "run-52f17bc9:A",
+        "title": "task-A",
+        "refs": [
+          {
+            "id": "run-52f17bc9:decision",
+            "revision": 2
+          }
+        ]
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-62",
+      "revision": 51,
+      "eventIds": [
+        "event:run-52f17bc9:command-62"
+      ],
+      "result": {
+        "id": "run-52f17bc9:task-A",
+        "workId": "run-52f17bc9:A",
+        "title": "task-A",
+        "revision": 2,
+        "refs": [
+          {
+            "id": "run-52f17bc9:decision",
+            "revision": 2
+          }
+        ],
+        "blockedBy": [],
+        "parentId": null
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-63",
+      "expectedRevision": 51,
+      "operation": "baseline.approve",
+      "payload": {
+        "id": "run-52f17bc9:baseline-A-2",
+        "workId": "run-52f17bc9:A",
+        "rationale": "Operator approves the supported specification and task plan",
+        "evidence": "fixture operator review"
+      }
+    },
+    "authority": "operator",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-63",
+      "revision": 52,
+      "eventIds": [
+        "event:run-52f17bc9:command-63"
+      ],
+      "result": {
+        "id": "run-52f17bc9:baseline-A-2",
+        "workId": "run-52f17bc9:A",
+        "refs": [
+          {
+            "id": "run-52f17bc9:requirement",
+            "revision": 2
+          },
+          {
+            "id": "run-52f17bc9:assumption",
+            "revision": 2
+          },
+          {
+            "id": "run-52f17bc9:decision",
+            "revision": 2
+          }
+        ],
+        "tasks": [
+          {
+            "blockedBy": [],
+            "id": "run-52f17bc9:task-A",
+            "parentId": null,
+            "refs": [
+              {
+                "id": "run-52f17bc9:decision",
+                "revision": 2
+              }
+            ],
+            "revision": 2,
+            "title": "task-A",
+            "workId": "run-52f17bc9:A"
+          }
+        ],
+        "approvedBy": "operator",
+        "rationale": "Operator approves the supported specification and task plan",
+        "evidence": "fixture operator review"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-64",
+      "expectedRevision": 52,
+      "operation": "hold.reassess",
+      "payload": {
+        "id": "run-52f17bc9:operator-reassessment",
+        "workId": "run-52f17bc9:A",
+        "holdIds": [
+          "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:assumption\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+          "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:decision\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+          "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:requirement\\\",1]\",\"run-52f17bc9:invalidation-1\",33]"
+        ],
+        "rationale": "Operator accepts revised baseline and replacement evidence",
+        "evidence": "explicit controlled operator decision"
+      }
+    },
+    "authority": "operator",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-64",
+      "revision": 53,
+      "eventIds": [
+        "event:run-52f17bc9:command-64"
+      ],
+      "result": {
+        "id": "run-52f17bc9:operator-reassessment",
+        "workId": "run-52f17bc9:A",
+        "holdIds": [
+          "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:assumption\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+          "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:decision\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+          "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:requirement\\\",1]\",\"run-52f17bc9:invalidation-1\",33]"
+        ],
+        "baselineId": "run-52f17bc9:baseline-A-2",
+        "rationale": "Operator accepts revised baseline and replacement evidence",
+        "evidence": "explicit controlled operator decision",
+        "actor": "operator"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-65",
+      "expectedRevision": 53,
+      "operation": "attempt.resume",
+      "payload": {
+        "id": "run-52f17bc9:attempt-A"
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-65",
+      "revision": 54,
+      "eventIds": [
+        "event:run-52f17bc9:command-65"
+      ],
+      "result": {
+        "allocationId": "run-52f17bc9:allocation-A",
+        "baselineId": "run-52f17bc9:baseline-A-2",
+        "id": "run-52f17bc9:attempt-A",
+        "sessionId": "run-52f17bc9:session-A",
+        "sourceRevision": "fixture:source-1",
+        "status": "running",
+        "taskId": "run-52f17bc9:task-A",
+        "workId": "run-52f17bc9:A"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-66",
+      "expectedRevision": 54,
+      "operation": "verification.record",
+      "payload": {
+        "id": "run-52f17bc9:failed-verification",
+        "attemptId": "run-52f17bc9:attempt-A",
+        "baselineId": "run-52f17bc9:baseline-A-2",
+        "sourceRevision": "fixture:source-1",
+        "command": "fixture-check --all",
+        "exitCode": 1,
+        "output": "controlled verifier failed"
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-66",
+      "revision": 55,
+      "eventIds": [
+        "event:run-52f17bc9:command-66"
+      ],
+      "result": {
+        "id": "run-52f17bc9:failed-verification",
+        "attemptId": "run-52f17bc9:attempt-A",
+        "baselineId": "run-52f17bc9:baseline-A-2",
+        "sourceRevision": "fixture:source-1",
+        "command": "fixture-check --all",
+        "exitCode": 1,
+        "output": "controlled verifier failed"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:rejected-67",
+      "expectedRevision": 55,
+      "operation": "effect.request",
+      "payload": {
+        "id": "run-52f17bc9:failed-publish",
+        "kind": "publish",
+        "workId": "run-52f17bc9:A",
+        "verificationId": "run-52f17bc9:failed-verification"
+      }
+    },
+    "authority": "agent",
+    "rejected": "stale_verification"
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-68",
+      "expectedRevision": 55,
+      "operation": "verification.record",
+      "payload": {
+        "id": "run-52f17bc9:verification-A",
+        "attemptId": "run-52f17bc9:attempt-A",
+        "baselineId": "run-52f17bc9:baseline-A-2",
+        "sourceRevision": "fixture:source-1",
+        "command": "fixture-check --all",
+        "exitCode": 0,
+        "output": "controlled verifier passed"
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-68",
+      "revision": 56,
+      "eventIds": [
+        "event:run-52f17bc9:command-68"
+      ],
+      "result": {
+        "id": "run-52f17bc9:verification-A",
+        "attemptId": "run-52f17bc9:attempt-A",
+        "baselineId": "run-52f17bc9:baseline-A-2",
+        "sourceRevision": "fixture:source-1",
+        "command": "fixture-check --all",
+        "exitCode": 0,
+        "output": "controlled verifier passed"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:rejected-69",
+      "expectedRevision": 56,
+      "operation": "effect.request",
+      "payload": {
+        "id": "run-52f17bc9:late-publish-bypass",
+        "kind": "publish",
+        "workId": "run-52f17bc9:late",
+        "verificationId": "run-52f17bc9:verification-A"
+      }
+    },
+    "authority": "agent",
+    "rejected": "stale_verification"
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-70",
+      "expectedRevision": 56,
+      "operation": "effect.request",
+      "payload": {
+        "id": "run-52f17bc9:publication-A",
+        "kind": "publish",
+        "workId": "run-52f17bc9:A",
+        "verificationId": "run-52f17bc9:verification-A"
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-70",
+      "revision": 57,
+      "eventIds": [
+        "event:run-52f17bc9:command-70"
+      ],
+      "result": {
+        "id": "run-52f17bc9:publication-A",
+        "kind": "publish",
+        "workId": "run-52f17bc9:A",
+        "taskId": "run-52f17bc9:task-A",
+        "verificationId": "run-52f17bc9:verification-A",
+        "baselineId": "run-52f17bc9:baseline-A-2",
+        "sourceRevision": "fixture:source-1",
+        "blockedBy": [],
+        "state": "pending",
+        "receiptId": null,
+        "detail": "Intent recorded before dispatch"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-71",
+      "expectedRevision": 57,
+      "operation": "effect.observe",
+      "payload": {
+        "id": "run-52f17bc9:publication-A",
+        "state": "uncertain",
+        "detail": "Controlled external effect occurred but its response was lost"
+      }
+    },
+    "authority": "adapter",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-71",
+      "revision": 58,
+      "eventIds": [
+        "event:run-52f17bc9:command-71"
+      ],
+      "result": {
+        "baselineId": "run-52f17bc9:baseline-A-2",
+        "blockedBy": [],
+        "detail": "Controlled external effect occurred but its response was lost",
+        "id": "run-52f17bc9:publication-A",
+        "kind": "publish",
+        "receiptId": null,
+        "sourceRevision": "fixture:source-1",
+        "state": "uncertain",
+        "taskId": "run-52f17bc9:task-A",
+        "verificationId": "run-52f17bc9:verification-A",
+        "workId": "run-52f17bc9:A"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-72",
+      "expectedRevision": 58,
+      "operation": "effect.observe",
+      "payload": {
+        "id": "run-52f17bc9:publication-A",
+        "state": "confirmed",
+        "receiptId": "fixture-receipt:run-52f17bc9:publication-A",
+        "detail": "Controlled Publisher receipt reconciled by stable effect ID"
+      }
+    },
+    "authority": "adapter",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-72",
+      "revision": 59,
+      "eventIds": [
+        "event:run-52f17bc9:command-72"
+      ],
+      "result": {
+        "baselineId": "run-52f17bc9:baseline-A-2",
+        "blockedBy": [],
+        "detail": "Controlled Publisher receipt reconciled by stable effect ID",
+        "id": "run-52f17bc9:publication-A",
+        "kind": "publish",
+        "receiptId": "fixture-receipt:run-52f17bc9:publication-A",
+        "sourceRevision": "fixture:source-1",
+        "state": "confirmed",
+        "taskId": "run-52f17bc9:task-A",
+        "verificationId": "run-52f17bc9:verification-A",
+        "workId": "run-52f17bc9:A"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-73",
+      "expectedRevision": 59,
+      "operation": "effect.request",
+      "payload": {
+        "id": "run-52f17bc9:failed-allocation",
+        "kind": "allocate",
+        "workId": "run-52f17bc9:A"
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-73",
+      "revision": 60,
+      "eventIds": [
+        "event:run-52f17bc9:command-73"
+      ],
+      "result": {
+        "id": "run-52f17bc9:failed-allocation",
+        "kind": "allocate",
+        "workId": "run-52f17bc9:A",
+        "taskId": null,
+        "verificationId": null,
+        "baselineId": null,
+        "sourceRevision": "fixture:source-1",
+        "blockedBy": [],
+        "state": "pending",
+        "receiptId": null,
+        "detail": "Intent recorded before dispatch"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-74",
+      "expectedRevision": 60,
+      "operation": "effect.observe",
+      "payload": {
+        "id": "run-52f17bc9:failed-allocation",
+        "state": "failed",
+        "detail": "Controlled allocation rejected"
+      }
+    },
+    "authority": "adapter",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-74",
+      "revision": 61,
+      "eventIds": [
+        "event:run-52f17bc9:command-74"
+      ],
+      "result": {
+        "baselineId": null,
+        "blockedBy": [],
+        "detail": "Controlled allocation rejected",
+        "id": "run-52f17bc9:failed-allocation",
+        "kind": "allocate",
+        "receiptId": null,
+        "sourceRevision": "fixture:source-1",
+        "state": "failed",
+        "taskId": null,
+        "verificationId": null,
+        "workId": "run-52f17bc9:A"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:rejected-75",
+      "expectedRevision": 61,
+      "operation": "effect.observe",
+      "payload": {
+        "id": "run-52f17bc9:failed-allocation",
+        "state": "confirmed",
+        "receiptId": "cannot-rewrite",
+        "detail": "invalid"
+      }
+    },
+    "authority": "adapter",
+    "rejected": "terminal_effect"
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-76",
+      "expectedRevision": 61,
+      "operation": "effect.request",
+      "payload": {
+        "id": "run-52f17bc9:pending-publication",
+        "kind": "publish",
+        "workId": "run-52f17bc9:A",
+        "verificationId": "run-52f17bc9:verification-A",
+        "blockedBy": [
+          "run-52f17bc9:publication-A"
+        ]
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-76",
+      "revision": 62,
+      "eventIds": [
+        "event:run-52f17bc9:command-76"
+      ],
+      "result": {
+        "id": "run-52f17bc9:pending-publication",
+        "kind": "publish",
+        "workId": "run-52f17bc9:A",
+        "taskId": "run-52f17bc9:task-A",
+        "verificationId": "run-52f17bc9:verification-A",
+        "baselineId": "run-52f17bc9:baseline-A-2",
+        "sourceRevision": "fixture:source-1",
+        "blockedBy": [
+          "run-52f17bc9:publication-A"
+        ],
+        "state": "pending",
+        "receiptId": null,
+        "detail": "Intent recorded before dispatch"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-77",
+      "expectedRevision": 62,
+      "operation": "source.update",
+      "payload": {
+        "workId": "run-52f17bc9:A",
+        "sourceRevision": "fixture:source-2"
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-77",
+      "revision": 63,
+      "eventIds": [
+        "event:run-52f17bc9:command-77"
+      ],
+      "result": {
+        "baselineId": "run-52f17bc9:baseline-A-2",
+        "id": "run-52f17bc9:A",
+        "sourceRevision": "fixture:source-2",
+        "title": "Body of work A"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:rejected-78",
+      "expectedRevision": 63,
+      "operation": "effect.request",
+      "payload": {
+        "id": "run-52f17bc9:stale-publication",
+        "kind": "publish",
+        "workId": "run-52f17bc9:A",
+        "verificationId": "run-52f17bc9:verification-A"
+      }
+    },
+    "authority": "agent",
+    "rejected": "stale_verification"
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-79",
+      "expectedRevision": 63,
+      "operation": "source.update",
+      "payload": {
+        "workId": "run-52f17bc9:A",
+        "sourceRevision": "fixture:source-1"
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-79",
+      "revision": 64,
+      "eventIds": [
+        "event:run-52f17bc9:command-79"
+      ],
+      "result": {
+        "baselineId": "run-52f17bc9:baseline-A-2",
+        "id": "run-52f17bc9:A",
+        "sourceRevision": "fixture:source-1",
+        "title": "Body of work A"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-80",
+      "expectedRevision": 64,
+      "operation": "baseline.approve",
+      "payload": {
+        "id": "run-52f17bc9:baseline-A-3",
+        "workId": "run-52f17bc9:A",
+        "rationale": "Operator approves the supported specification and task plan",
+        "evidence": "fixture operator review"
+      }
+    },
+    "authority": "operator",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-80",
+      "revision": 65,
+      "eventIds": [
+        "event:run-52f17bc9:command-80"
+      ],
+      "result": {
+        "id": "run-52f17bc9:baseline-A-3",
+        "workId": "run-52f17bc9:A",
+        "refs": [
+          {
+            "id": "run-52f17bc9:requirement",
+            "revision": 2
+          },
+          {
+            "id": "run-52f17bc9:assumption",
+            "revision": 2
+          },
+          {
+            "id": "run-52f17bc9:decision",
+            "revision": 2
+          }
+        ],
+        "tasks": [
+          {
+            "blockedBy": [],
+            "id": "run-52f17bc9:task-A",
+            "parentId": null,
+            "refs": [
+              {
+                "id": "run-52f17bc9:decision",
+                "revision": 2
+              }
+            ],
+            "revision": 2,
+            "title": "task-A",
+            "workId": "run-52f17bc9:A"
+          }
+        ],
+        "approvedBy": "operator",
+        "rationale": "Operator approves the supported specification and task plan",
+        "evidence": "fixture operator review"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-81",
+      "expectedRevision": 65,
+      "operation": "attempt.start",
+      "payload": {
+        "id": "run-52f17bc9:attempt-A-new",
+        "taskId": "run-52f17bc9:task-A",
+        "sessionId": "run-52f17bc9:session-A",
+        "allocationId": "run-52f17bc9:allocation-A"
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-81",
+      "revision": 66,
+      "eventIds": [
+        "event:run-52f17bc9:command-81"
+      ],
+      "result": {
+        "id": "run-52f17bc9:attempt-A-new",
+        "workId": "run-52f17bc9:A",
+        "taskId": "run-52f17bc9:task-A",
+        "sessionId": "run-52f17bc9:session-A",
+        "allocationId": "run-52f17bc9:allocation-A",
+        "baselineId": "run-52f17bc9:baseline-A-3",
+        "sourceRevision": "fixture:source-1",
+        "status": "running"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:rejected-82",
+      "expectedRevision": 66,
+      "operation": "verification.record",
+      "payload": {
+        "id": "run-52f17bc9:stale-result",
+        "attemptId": "run-52f17bc9:attempt-A-new",
+        "baselineId": "run-52f17bc9:baseline-A-2",
+        "sourceRevision": "fixture:source-1",
+        "command": "fixture-check --all",
+        "exitCode": 0,
+        "output": "controlled verifier passed"
+      }
+    },
+    "authority": "agent",
+    "rejected": "stale_verification"
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-83",
+      "expectedRevision": 66,
+      "operation": "verification.record",
+      "payload": {
+        "id": "run-52f17bc9:verification-A-new",
+        "attemptId": "run-52f17bc9:attempt-A-new",
+        "baselineId": "run-52f17bc9:baseline-A-3",
+        "sourceRevision": "fixture:source-1",
+        "command": "fixture-check --all",
+        "exitCode": 0,
+        "output": "controlled verifier passed"
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-83",
+      "revision": 67,
+      "eventIds": [
+        "event:run-52f17bc9:command-83"
+      ],
+      "result": {
+        "id": "run-52f17bc9:verification-A-new",
+        "attemptId": "run-52f17bc9:attempt-A-new",
+        "baselineId": "run-52f17bc9:baseline-A-3",
+        "sourceRevision": "fixture:source-1",
+        "command": "fixture-check --all",
+        "exitCode": 0,
+        "output": "controlled verifier passed"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-84",
+      "expectedRevision": 67,
+      "operation": "effect.request",
+      "payload": {
+        "id": "run-52f17bc9:publication-A-new",
+        "kind": "publish",
+        "workId": "run-52f17bc9:A",
+        "verificationId": "run-52f17bc9:verification-A-new",
+        "blockedBy": [
+          "run-52f17bc9:publication-A"
+        ]
+      }
+    },
+    "authority": "agent",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-84",
+      "revision": 68,
+      "eventIds": [
+        "event:run-52f17bc9:command-84"
+      ],
+      "result": {
+        "id": "run-52f17bc9:publication-A-new",
+        "kind": "publish",
+        "workId": "run-52f17bc9:A",
+        "taskId": "run-52f17bc9:task-A",
+        "verificationId": "run-52f17bc9:verification-A-new",
+        "baselineId": "run-52f17bc9:baseline-A-3",
+        "sourceRevision": "fixture:source-1",
+        "blockedBy": [
+          "run-52f17bc9:publication-A"
+        ],
+        "state": "pending",
+        "receiptId": null,
+        "detail": "Intent recorded before dispatch"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:command-85",
+      "expectedRevision": 68,
+      "operation": "effect.observe",
+      "payload": {
+        "id": "run-52f17bc9:publication-A-new",
+        "state": "confirmed",
+        "receiptId": "fixture-receipt:run-52f17bc9:publication-A-new",
+        "detail": "Confirmed controlled delivery against replacement baseline"
+      }
+    },
+    "authority": "adapter",
+    "outcome": {
+      "commandId": "run-52f17bc9:command-85",
+      "revision": 69,
+      "eventIds": [
+        "event:run-52f17bc9:command-85"
+      ],
+      "result": {
+        "baselineId": "run-52f17bc9:baseline-A-3",
+        "blockedBy": [
+          "run-52f17bc9:publication-A"
+        ],
+        "detail": "Confirmed controlled delivery against replacement baseline",
+        "id": "run-52f17bc9:publication-A-new",
+        "kind": "publish",
+        "receiptId": "fixture-receipt:run-52f17bc9:publication-A-new",
+        "sourceRevision": "fixture:source-1",
+        "state": "confirmed",
+        "taskId": "run-52f17bc9:task-A",
+        "verificationId": "run-52f17bc9:verification-A-new",
+        "workId": "run-52f17bc9:A"
+      }
+    }
+  },
+  {
+    "command": {
+      "id": "run-52f17bc9:rejected-86",
+      "expectedRevision": 69,
+      "operation": "session.attach",
+      "payload": {
+        "id": "run-52f17bc9:stale-session",
+        "workId": "run-52f17bc9:A"
+      }
+    },
+    "authority": "agent",
+    "rejected": "stale_revision"
+  }
+]

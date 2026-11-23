@@ -1,0 +1,16 @@
+PASS Socrates records, baselines, plans and distinct allocation/attempt identities
+PASS Canonical lookup and reuse create references rather than copies
+PASS Shared transitive invalidation requests pauses and isolates unrelated work
+PASS Process restart recovers work and holds; agent/stale/baseless clearance fails
+PASS Later transitive attachment inherits a hold atomically
+PASS Requested pause and confirmed pause are distinct
+PASS Operator clearance is scoped; revised records retain canonical identity and history
+PASS Verification remains applicable after recording and publication intent
+PASS Uncertain publication reconciles without duplicate dispatch
+PASS Pending, failed, uncertain, and confirmed effects remain distinct
+PASS Source/baseline changes stale evidence and block new dispatch
+PASS Current evidence permits delivery while unrelated holds remain
+PASS Command replay, payload conflicts, stale revisions, and authority spoofing
+PASS Generated views preserve canonical IDs, pinned revisions and historical invalidation
+PASS All accepted proof commands have attributable Dolt history
+PASSED: 15 checks; /Users/joshlane/Documents/Codex/2026-11-23/it-s-becoming-obvious-to-me/proof/evidence/acceptance.json

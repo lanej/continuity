@@ -1,0 +1,179 @@
+{
+  "runId": "run-52f17bc9",
+  "passed": true,
+  "failure": null,
+  "checks": [
+    {
+      "name": "Socrates records, baselines, plans and distinct allocation/attempt identities",
+      "requirements": [
+        "R1",
+        "R2",
+        "R7"
+      ],
+      "outcome": "passed",
+      "evidence": true
+    },
+    {
+      "name": "Canonical lookup and reuse create references rather than copies",
+      "requirements": [
+        "R4",
+        "R10"
+      ],
+      "outcome": "passed",
+      "evidence": {
+        "logicalRecordCount": 3,
+        "references": [
+          "[\"run-52f17bc9:assumption\",1]",
+          "[\"run-52f17bc9:decision\",1]",
+          "[\"run-52f17bc9:requirement\",1]"
+        ]
+      }
+    },
+    {
+      "name": "Shared transitive invalidation requests pauses and isolates unrelated work",
+      "requirements": [
+        "R5",
+        "R10"
+      ],
+      "outcome": "passed",
+      "evidence": {
+        "heldUses": 6,
+        "states": [
+          "pause-requested",
+          "pause-requested"
+        ]
+      }
+    },
+    {
+      "name": "Process restart recovers work and holds; agent/stale/baseless clearance fails",
+      "requirements": [
+        "R4",
+        "R5",
+        "R8"
+      ],
+      "outcome": "passed",
+      "evidence": true
+    },
+    {
+      "name": "Later transitive attachment inherits a hold atomically",
+      "requirements": [
+        "R5",
+        "R10"
+      ],
+      "outcome": "passed",
+      "evidence": true
+    },
+    {
+      "name": "Requested pause and confirmed pause are distinct",
+      "requirements": [
+        "R5",
+        "R7"
+      ],
+      "outcome": "passed",
+      "evidence": true
+    },
+    {
+      "name": "Operator clearance is scoped; revised records retain canonical identity and history",
+      "requirements": [
+        "R1",
+        "R5",
+        "R8",
+        "R10"
+      ],
+      "outcome": "passed",
+      "evidence": true
+    },
+    {
+      "name": "Verification remains applicable after recording and publication intent",
+      "requirements": [
+        "R7",
+        "R8"
+      ],
+      "outcome": "passed",
+      "evidence": true
+    },
+    {
+      "name": "Uncertain publication reconciles without duplicate dispatch",
+      "requirements": [
+        "R2",
+        "R7",
+        "R8"
+      ],
+      "outcome": "passed",
+      "evidence": {
+        "effectId": "run-52f17bc9:publication-A",
+        "kind": "publish",
+        "state": "confirmed",
+        "receiptId": "fixture-receipt:run-52f17bc9:publication-A",
+        "target": "fixture://publish/run-52f17bc9:publication-A",
+        "fixture": true
+      }
+    },
+    {
+      "name": "Pending, failed, uncertain, and confirmed effects remain distinct",
+      "requirements": [
+        "R2",
+        "R7"
+      ],
+      "outcome": "passed",
+      "evidence": true
+    },
+    {
+      "name": "Source/baseline changes stale evidence and block new dispatch",
+      "requirements": [
+        "R7",
+        "R8"
+      ],
+      "outcome": "passed",
+      "evidence": true
+    },
+    {
+      "name": "Current evidence permits delivery while unrelated holds remain",
+      "requirements": [
+        "R2",
+        "R5",
+        "R7",
+        "R10"
+      ],
+      "outcome": "passed",
+      "evidence": true
+    },
+    {
+      "name": "Command replay, payload conflicts, stale revisions, and authority spoofing",
+      "requirements": [
+        "R5",
+        "R8"
+      ],
+      "outcome": "passed",
+      "evidence": true
+    },
+    {
+      "name": "Generated views preserve canonical IDs, pinned revisions and historical invalidation",
+      "requirements": [
+        "R1",
+        "R6",
+        "R10"
+      ],
+      "outcome": "passed",
+      "evidence": true
+    },
+    {
+      "name": "All accepted proof commands have attributable Dolt history",
+      "requirements": [
+        "R8",
+        "R9"
+      ],
+      "outcome": "passed",
+      "evidence": {
+        "commands": 68
+      }
+    }
+  ],
+  "scope": "real Dolt; controlled adapters only",
+  "unproven": [
+    "live Studio/Producer/Publisher integration",
+    "production authentication",
+    "multi-writer/distributed operation",
+    "power-loss or remote-backup recovery"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "failure": null,
+  "stages": [
+    {
+      "name": "storage",
+      "exitCode": 0,
+      "log": "stage-storage.log"
+    },
+    {
+      "name": "domain",
+      "exitCode": 0,
+      "log": "stage-domain.log"
+    },
+    {
+      "name": "typecheck",
+      "exitCode": 0,
+      "log": "stage-typecheck.log"
+    },
+    {
+      "name": "lifecycle",
+      "exitCode": 0,
+      "log": "stage-lifecycle.log"
+    }
+  ],
+  "ownsServer": true,
+  "stopped": true,
+  "recordedAt": "2026-11-23T18:19:39.338Z"
+}

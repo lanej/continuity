@@ -1,0 +1,58 @@
+[
+  {
+    "effectId": "run-52f17bc9:allocation-A",
+    "kind": "allocate",
+    "state": "confirmed",
+    "receiptId": "fixture-receipt:run-52f17bc9:allocation-A",
+    "target": "fixture://allocate/run-52f17bc9:allocation-A",
+    "fixture": true
+  },
+  {
+    "effectId": "run-52f17bc9:allocation-B",
+    "kind": "allocate",
+    "state": "confirmed",
+    "receiptId": "fixture-receipt:run-52f17bc9:allocation-B",
+    "target": "fixture://allocate/run-52f17bc9:allocation-B",
+    "fixture": true
+  },
+  {
+    "effectId": "run-52f17bc9:allocation-unrelated",
+    "kind": "allocate",
+    "state": "confirmed",
+    "receiptId": "fixture-receipt:run-52f17bc9:allocation-unrelated",
+    "target": "fixture://allocate/run-52f17bc9:allocation-unrelated",
+    "fixture": true
+  },
+  {
+    "effectId": "run-52f17bc9:allocation-late",
+    "kind": "allocate",
+    "state": "confirmed",
+    "receiptId": "fixture-receipt:run-52f17bc9:allocation-late",
+    "target": "fixture://allocate/run-52f17bc9:allocation-late",
+    "fixture": true
+  },
+  {
+    "effectId": "run-52f17bc9:publication-A",
+    "kind": "publish",
+    "state": "confirmed",
+    "receiptId": "fixture-receipt:run-52f17bc9:publication-A",
+    "target": "fixture://publish/run-52f17bc9:publication-A",
+    "fixture": true
+  },
+  {
+    "effectId": "run-52f17bc9:failed-allocation",
+    "kind": "allocate",
+    "state": "failed",
+    "receiptId": "fixture-receipt:run-52f17bc9:failed-allocation",
+    "target": "fixture://allocate/run-52f17bc9:failed-allocation",
+    "fixture": true
+  },
+  {
+    "effectId": "run-52f17bc9:publication-A-new",
+    "kind": "publish",
+    "state": "confirmed",
+    "receiptId": "fixture-receipt:run-52f17bc9:publication-A-new",
+    "target": "fixture://publish/run-52f17bc9:publication-A-new",
+    "fixture": true
+  }
+]

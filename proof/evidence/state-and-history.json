@@ -1,0 +1,4778 @@
+{
+  "storeRevision": 70,
+  "tables": {
+    "works": [
+      {
+        "baselineId": null,
+        "id": "gate-Work",
+        "sourceRevision": "fixture:0",
+        "title": "Case-distinct identity"
+      },
+      {
+        "baselineId": null,
+        "id": "gate-work",
+        "sourceRevision": "fixture:0",
+        "title": "Storage gate"
+      },
+      {
+        "baselineId": "run-52f17bc9:baseline-A-3",
+        "id": "run-52f17bc9:A",
+        "sourceRevision": "fixture:source-1",
+        "title": "Body of work A"
+      },
+      {
+        "baselineId": "run-52f17bc9:baseline-B-1",
+        "id": "run-52f17bc9:B",
+        "sourceRevision": "fixture:source-1",
+        "title": "Body of work B"
+      },
+      {
+        "baselineId": "run-52f17bc9:baseline-late-1",
+        "id": "run-52f17bc9:late",
+        "sourceRevision": "fixture:source-1",
+        "title": "Later body of work"
+      },
+      {
+        "baselineId": "run-52f17bc9:baseline-unrelated-1",
+        "id": "run-52f17bc9:unrelated",
+        "sourceRevision": "fixture:source-1",
+        "title": "Body of work unrelated"
+      }
+    ],
+    "knowledge": [
+      {
+        "current": 2,
+        "id": "run-52f17bc9:assumption",
+        "key": "assumption",
+        "kind": "assumption",
+        "scope": "run-52f17bc9",
+        "title": "assumption"
+      },
+      {
+        "current": 2,
+        "id": "run-52f17bc9:decision",
+        "key": "decision",
+        "kind": "decision",
+        "scope": "run-52f17bc9",
+        "title": "decision"
+      },
+      {
+        "current": 2,
+        "id": "run-52f17bc9:requirement",
+        "key": "requirement",
+        "kind": "requirement",
+        "scope": "run-52f17bc9",
+        "title": "requirement"
+      }
+    ],
+    "revisions": [
+      {
+        "derivedFrom": null,
+        "evidence": "fixture evidence for assumption",
+        "id": "[\"run-52f17bc9:assumption\",1]",
+        "rationale": "Recorded Socrates rationale for assumption",
+        "recordId": "run-52f17bc9:assumption",
+        "reliesOn": [],
+        "revision": 1,
+        "text": "assumption version 1"
+      },
+      {
+        "derivedFrom": {
+          "id": "run-52f17bc9:assumption",
+          "revision": 1
+        },
+        "evidence": "new controlled evidence",
+        "id": "[\"run-52f17bc9:assumption\",2]",
+        "rationale": "Address the invalidated basis",
+        "recordId": "run-52f17bc9:assumption",
+        "reliesOn": [],
+        "revision": 2,
+        "text": "assumption revised with a supported replacement basis"
+      },
+      {
+        "derivedFrom": null,
+        "evidence": "fixture evidence for decision",
+        "id": "[\"run-52f17bc9:decision\",1]",
+        "rationale": "Recorded Socrates rationale for decision",
+        "recordId": "run-52f17bc9:decision",
+        "reliesOn": [
+          {
+            "id": "run-52f17bc9:requirement",
+            "revision": 1
+          }
+        ],
+        "revision": 1,
+        "text": "decision version 1"
+      },
+      {
+        "derivedFrom": {
+          "id": "run-52f17bc9:decision",
+          "revision": 1
+        },
+        "evidence": "new controlled evidence",
+        "id": "[\"run-52f17bc9:decision\",2]",
+        "rationale": "Address the invalidated basis",
+        "recordId": "run-52f17bc9:decision",
+        "reliesOn": [
+          {
+            "id": "run-52f17bc9:requirement",
+            "revision": 2
+          }
+        ],
+        "revision": 2,
+        "text": "decision revised with a supported replacement basis"
+      },
+      {
+        "derivedFrom": null,
+        "evidence": "fixture evidence for requirement",
+        "id": "[\"run-52f17bc9:requirement\",1]",
+        "rationale": "Recorded Socrates rationale for requirement",
+        "recordId": "run-52f17bc9:requirement",
+        "reliesOn": [
+          {
+            "id": "run-52f17bc9:assumption",
+            "revision": 1
+          }
+        ],
+        "revision": 1,
+        "text": "requirement version 1"
+      },
+      {
+        "derivedFrom": {
+          "id": "run-52f17bc9:requirement",
+          "revision": 1
+        },
+        "evidence": "new controlled evidence",
+        "id": "[\"run-52f17bc9:requirement\",2]",
+        "rationale": "Address the invalidated basis",
+        "recordId": "run-52f17bc9:requirement",
+        "reliesOn": [
+          {
+            "id": "run-52f17bc9:assumption",
+            "revision": 2
+          }
+        ],
+        "revision": 2,
+        "text": "requirement revised with a supported replacement basis"
+      }
+    ],
+    "uses": [
+      {
+        "active": false,
+        "id": "[\"run-52f17bc9:A\",\"run-52f17bc9:assumption\",1]",
+        "ref": {
+          "id": "run-52f17bc9:assumption",
+          "revision": 1
+        },
+        "workId": "run-52f17bc9:A"
+      },
+      {
+        "active": true,
+        "id": "[\"run-52f17bc9:A\",\"run-52f17bc9:assumption\",2]",
+        "ref": {
+          "id": "run-52f17bc9:assumption",
+          "revision": 2
+        },
+        "workId": "run-52f17bc9:A"
+      },
+      {
+        "active": false,
+        "id": "[\"run-52f17bc9:A\",\"run-52f17bc9:decision\",1]",
+        "ref": {
+          "id": "run-52f17bc9:decision",
+          "revision": 1
+        },
+        "workId": "run-52f17bc9:A"
+      },
+      {
+        "active": true,
+        "id": "[\"run-52f17bc9:A\",\"run-52f17bc9:decision\",2]",
+        "ref": {
+          "id": "run-52f17bc9:decision",
+          "revision": 2
+        },
+        "workId": "run-52f17bc9:A"
+      },
+      {
+        "active": false,
+        "id": "[\"run-52f17bc9:A\",\"run-52f17bc9:requirement\",1]",
+        "ref": {
+          "id": "run-52f17bc9:requirement",
+          "revision": 1
+        },
+        "workId": "run-52f17bc9:A"
+      },
+      {
+        "active": true,
+        "id": "[\"run-52f17bc9:A\",\"run-52f17bc9:requirement\",2]",
+        "ref": {
+          "id": "run-52f17bc9:requirement",
+          "revision": 2
+        },
+        "workId": "run-52f17bc9:A"
+      },
+      {
+        "active": true,
+        "id": "[\"run-52f17bc9:B\",\"run-52f17bc9:assumption\",1]",
+        "ref": {
+          "id": "run-52f17bc9:assumption",
+          "revision": 1
+        },
+        "workId": "run-52f17bc9:B"
+      },
+      {
+        "active": true,
+        "id": "[\"run-52f17bc9:B\",\"run-52f17bc9:decision\",1]",
+        "ref": {
+          "id": "run-52f17bc9:decision",
+          "revision": 1
+        },
+        "workId": "run-52f17bc9:B"
+      },
+      {
+        "active": true,
+        "id": "[\"run-52f17bc9:B\",\"run-52f17bc9:requirement\",1]",
+        "ref": {
+          "id": "run-52f17bc9:requirement",
+          "revision": 1
+        },
+        "workId": "run-52f17bc9:B"
+      },
+      {
+        "active": true,
+        "id": "[\"run-52f17bc9:late\",\"run-52f17bc9:decision\",1]",
+        "ref": {
+          "id": "run-52f17bc9:decision",
+          "revision": 1
+        },
+        "workId": "run-52f17bc9:late"
+      }
+    ],
+    "sessions": [
+      {
+        "id": "run-52f17bc9:repeat-session",
+        "workId": "run-52f17bc9:A"
+      },
+      {
+        "id": "run-52f17bc9:session-A",
+        "workId": "run-52f17bc9:A"
+      },
+      {
+        "id": "run-52f17bc9:session-A-returned",
+        "workId": "run-52f17bc9:A"
+      },
+      {
+        "id": "run-52f17bc9:session-B",
+        "workId": "run-52f17bc9:B"
+      },
+      {
+        "id": "run-52f17bc9:session-late",
+        "workId": "run-52f17bc9:late"
+      },
+      {
+        "id": "run-52f17bc9:session-unrelated",
+        "workId": "run-52f17bc9:unrelated"
+      }
+    ],
+    "tasks": [
+      {
+        "blockedBy": [],
+        "id": "run-52f17bc9:task-A",
+        "parentId": null,
+        "refs": [
+          {
+            "id": "run-52f17bc9:decision",
+            "revision": 2
+          }
+        ],
+        "revision": 2,
+        "title": "task-A",
+        "workId": "run-52f17bc9:A"
+      },
+      {
+        "blockedBy": [],
+        "id": "run-52f17bc9:task-B",
+        "parentId": null,
+        "refs": [
+          {
+            "id": "run-52f17bc9:decision",
+            "revision": 1
+          }
+        ],
+        "revision": 1,
+        "title": "task-B",
+        "workId": "run-52f17bc9:B"
+      },
+      {
+        "blockedBy": [],
+        "id": "run-52f17bc9:task-late",
+        "parentId": null,
+        "refs": [
+          {
+            "id": "run-52f17bc9:decision",
+            "revision": 1
+          }
+        ],
+        "revision": 1,
+        "title": "task-late",
+        "workId": "run-52f17bc9:late"
+      },
+      {
+        "blockedBy": [],
+        "id": "run-52f17bc9:task-unrelated",
+        "parentId": null,
+        "refs": [],
+        "revision": 1,
+        "title": "task-unrelated",
+        "workId": "run-52f17bc9:unrelated"
+      }
+    ],
+    "baselines": [
+      {
+        "approvedBy": "operator",
+        "evidence": "fixture operator review",
+        "id": "run-52f17bc9:baseline-A-1",
+        "rationale": "Operator approves the supported specification and task plan",
+        "refs": [
+          {
+            "id": "run-52f17bc9:requirement",
+            "revision": 1
+          },
+          {
+            "id": "run-52f17bc9:assumption",
+            "revision": 1
+          },
+          {
+            "id": "run-52f17bc9:decision",
+            "revision": 1
+          }
+        ],
+        "tasks": [
+          {
+            "blockedBy": [],
+            "id": "run-52f17bc9:task-A",
+            "parentId": null,
+            "refs": [
+              {
+                "id": "run-52f17bc9:decision",
+                "revision": 1
+              }
+            ],
+            "revision": 1,
+            "title": "task-A",
+            "workId": "run-52f17bc9:A"
+          }
+        ],
+        "workId": "run-52f17bc9:A"
+      },
+      {
+        "approvedBy": "operator",
+        "evidence": "fixture operator review",
+        "id": "run-52f17bc9:baseline-A-2",
+        "rationale": "Operator approves the supported specification and task plan",
+        "refs": [
+          {
+            "id": "run-52f17bc9:requirement",
+            "revision": 2
+          },
+          {
+            "id": "run-52f17bc9:assumption",
+            "revision": 2
+          },
+          {
+            "id": "run-52f17bc9:decision",
+            "revision": 2
+          }
+        ],
+        "tasks": [
+          {
+            "blockedBy": [],
+            "id": "run-52f17bc9:task-A",
+            "parentId": null,
+            "refs": [
+              {
+                "id": "run-52f17bc9:decision",
+                "revision": 2
+              }
+            ],
+            "revision": 2,
+            "title": "task-A",
+            "workId": "run-52f17bc9:A"
+          }
+        ],
+        "workId": "run-52f17bc9:A"
+      },
+      {
+        "approvedBy": "operator",
+        "evidence": "fixture operator review",
+        "id": "run-52f17bc9:baseline-A-3",
+        "rationale": "Operator approves the supported specification and task plan",
+        "refs": [
+          {
+            "id": "run-52f17bc9:requirement",
+            "revision": 2
+          },
+          {
+            "id": "run-52f17bc9:assumption",
+            "revision": 2
+          },
+          {
+            "id": "run-52f17bc9:decision",
+            "revision": 2
+          }
+        ],
+        "tasks": [
+          {
+            "blockedBy": [],
+            "id": "run-52f17bc9:task-A",
+            "parentId": null,
+            "refs": [
+              {
+                "id": "run-52f17bc9:decision",
+                "revision": 2
+              }
+            ],
+            "revision": 2,
+            "title": "task-A",
+            "workId": "run-52f17bc9:A"
+          }
+        ],
+        "workId": "run-52f17bc9:A"
+      },
+      {
+        "approvedBy": "operator",
+        "evidence": "fixture operator review",
+        "id": "run-52f17bc9:baseline-B-1",
+        "rationale": "Operator approves the supported specification and task plan",
+        "refs": [
+          {
+            "id": "run-52f17bc9:requirement",
+            "revision": 1
+          },
+          {
+            "id": "run-52f17bc9:assumption",
+            "revision": 1
+          },
+          {
+            "id": "run-52f17bc9:decision",
+            "revision": 1
+          }
+        ],
+        "tasks": [
+          {
+            "blockedBy": [],
+            "id": "run-52f17bc9:task-B",
+            "parentId": null,
+            "refs": [
+              {
+                "id": "run-52f17bc9:decision",
+                "revision": 1
+              }
+            ],
+            "revision": 1,
+            "title": "task-B",
+            "workId": "run-52f17bc9:B"
+          }
+        ],
+        "workId": "run-52f17bc9:B"
+      },
+      {
+        "approvedBy": "operator",
+        "evidence": "fixture operator review",
+        "id": "run-52f17bc9:baseline-late-1",
+        "rationale": "Operator approves the supported specification and task plan",
+        "refs": [
+          {
+            "id": "run-52f17bc9:decision",
+            "revision": 1
+          },
+          {
+            "id": "run-52f17bc9:requirement",
+            "revision": 1
+          },
+          {
+            "id": "run-52f17bc9:assumption",
+            "revision": 1
+          }
+        ],
+        "tasks": [
+          {
+            "blockedBy": [],
+            "id": "run-52f17bc9:task-late",
+            "parentId": null,
+            "refs": [
+              {
+                "id": "run-52f17bc9:decision",
+                "revision": 1
+              }
+            ],
+            "revision": 1,
+            "title": "task-late",
+            "workId": "run-52f17bc9:late"
+          }
+        ],
+        "workId": "run-52f17bc9:late"
+      },
+      {
+        "approvedBy": "operator",
+        "evidence": "fixture operator review",
+        "id": "run-52f17bc9:baseline-unrelated-1",
+        "rationale": "Operator approves the supported specification and task plan",
+        "refs": [],
+        "tasks": [
+          {
+            "blockedBy": [],
+            "id": "run-52f17bc9:task-unrelated",
+            "parentId": null,
+            "refs": [],
+            "revision": 1,
+            "title": "task-unrelated",
+            "workId": "run-52f17bc9:unrelated"
+          }
+        ],
+        "workId": "run-52f17bc9:unrelated"
+      }
+    ],
+    "attempts": [
+      {
+        "allocationId": "run-52f17bc9:allocation-A",
+        "baselineId": "run-52f17bc9:baseline-A-2",
+        "id": "run-52f17bc9:attempt-A",
+        "sessionId": "run-52f17bc9:session-A",
+        "sourceRevision": "fixture:source-1",
+        "status": "verified",
+        "taskId": "run-52f17bc9:task-A",
+        "workId": "run-52f17bc9:A"
+      },
+      {
+        "allocationId": "run-52f17bc9:allocation-A",
+        "baselineId": "run-52f17bc9:baseline-A-3",
+        "id": "run-52f17bc9:attempt-A-new",
+        "sessionId": "run-52f17bc9:session-A",
+        "sourceRevision": "fixture:source-1",
+        "status": "verified",
+        "taskId": "run-52f17bc9:task-A",
+        "workId": "run-52f17bc9:A"
+      },
+      {
+        "allocationId": "run-52f17bc9:allocation-B",
+        "baselineId": "run-52f17bc9:baseline-B-1",
+        "id": "run-52f17bc9:attempt-B",
+        "sessionId": "run-52f17bc9:session-B",
+        "sourceRevision": "fixture:source-1",
+        "status": "paused",
+        "taskId": "run-52f17bc9:task-B",
+        "workId": "run-52f17bc9:B"
+      },
+      {
+        "allocationId": "run-52f17bc9:allocation-unrelated",
+        "baselineId": "run-52f17bc9:baseline-unrelated-1",
+        "id": "run-52f17bc9:attempt-unrelated",
+        "sessionId": "run-52f17bc9:session-unrelated",
+        "sourceRevision": "fixture:source-1",
+        "status": "running",
+        "taskId": "run-52f17bc9:task-unrelated",
+        "workId": "run-52f17bc9:unrelated"
+      }
+    ],
+    "invalidations": [
+      {
+        "evidence": "controlled counterexample",
+        "id": "run-52f17bc9:invalidation-1",
+        "rationale": "The earlier assumption was disproven",
+        "ref": {
+          "id": "run-52f17bc9:assumption",
+          "revision": 1
+        }
+      }
+    ],
+    "holds": [
+      {
+        "clearedBy": "run-52f17bc9:operator-reassessment",
+        "id": "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:assumption\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+        "invalidationId": "run-52f17bc9:invalidation-1",
+        "taskIds": [
+          "run-52f17bc9:task-A"
+        ],
+        "useId": "[\"run-52f17bc9:A\",\"run-52f17bc9:assumption\",1]",
+        "workId": "run-52f17bc9:A"
+      },
+      {
+        "clearedBy": "run-52f17bc9:operator-reassessment",
+        "id": "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:decision\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+        "invalidationId": "run-52f17bc9:invalidation-1",
+        "taskIds": [
+          "run-52f17bc9:task-A"
+        ],
+        "useId": "[\"run-52f17bc9:A\",\"run-52f17bc9:decision\",1]",
+        "workId": "run-52f17bc9:A"
+      },
+      {
+        "clearedBy": "run-52f17bc9:operator-reassessment",
+        "id": "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:requirement\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+        "invalidationId": "run-52f17bc9:invalidation-1",
+        "taskIds": [
+          "run-52f17bc9:task-A"
+        ],
+        "useId": "[\"run-52f17bc9:A\",\"run-52f17bc9:requirement\",1]",
+        "workId": "run-52f17bc9:A"
+      },
+      {
+        "clearedBy": null,
+        "id": "[\"[\\\"run-52f17bc9:B\\\",\\\"run-52f17bc9:assumption\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+        "invalidationId": "run-52f17bc9:invalidation-1",
+        "taskIds": [
+          "run-52f17bc9:task-B"
+        ],
+        "useId": "[\"run-52f17bc9:B\",\"run-52f17bc9:assumption\",1]",
+        "workId": "run-52f17bc9:B"
+      },
+      {
+        "clearedBy": null,
+        "id": "[\"[\\\"run-52f17bc9:B\\\",\\\"run-52f17bc9:decision\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+        "invalidationId": "run-52f17bc9:invalidation-1",
+        "taskIds": [
+          "run-52f17bc9:task-B"
+        ],
+        "useId": "[\"run-52f17bc9:B\",\"run-52f17bc9:decision\",1]",
+        "workId": "run-52f17bc9:B"
+      },
+      {
+        "clearedBy": null,
+        "id": "[\"[\\\"run-52f17bc9:B\\\",\\\"run-52f17bc9:requirement\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+        "invalidationId": "run-52f17bc9:invalidation-1",
+        "taskIds": [
+          "run-52f17bc9:task-B"
+        ],
+        "useId": "[\"run-52f17bc9:B\",\"run-52f17bc9:requirement\",1]",
+        "workId": "run-52f17bc9:B"
+      },
+      {
+        "clearedBy": null,
+        "id": "[\"[\\\"run-52f17bc9:late\\\",\\\"run-52f17bc9:decision\\\",1]\",\"run-52f17bc9:invalidation-1\",37]",
+        "invalidationId": "run-52f17bc9:invalidation-1",
+        "taskIds": [
+          "run-52f17bc9:task-late"
+        ],
+        "useId": "[\"run-52f17bc9:late\",\"run-52f17bc9:decision\",1]",
+        "workId": "run-52f17bc9:late"
+      }
+    ],
+    "reassessments": [
+      {
+        "actor": "operator",
+        "baselineId": "run-52f17bc9:baseline-A-2",
+        "evidence": "explicit controlled operator decision",
+        "holdIds": [
+          "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:assumption\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+          "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:decision\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+          "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:requirement\\\",1]\",\"run-52f17bc9:invalidation-1\",33]"
+        ],
+        "id": "run-52f17bc9:operator-reassessment",
+        "rationale": "Operator accepts revised baseline and replacement evidence",
+        "workId": "run-52f17bc9:A"
+      }
+    ],
+    "verifications": [
+      {
+        "attemptId": "run-52f17bc9:attempt-A",
+        "baselineId": "run-52f17bc9:baseline-A-2",
+        "command": "fixture-check --all",
+        "exitCode": 1,
+        "id": "run-52f17bc9:failed-verification",
+        "output": "controlled verifier failed",
+        "sourceRevision": "fixture:source-1"
+      },
+      {
+        "attemptId": "run-52f17bc9:attempt-A",
+        "baselineId": "run-52f17bc9:baseline-A-2",
+        "command": "fixture-check --all",
+        "exitCode": 0,
+        "id": "run-52f17bc9:verification-A",
+        "output": "controlled verifier passed",
+        "sourceRevision": "fixture:source-1"
+      },
+      {
+        "attemptId": "run-52f17bc9:attempt-A-new",
+        "baselineId": "run-52f17bc9:baseline-A-3",
+        "command": "fixture-check --all",
+        "exitCode": 0,
+        "id": "run-52f17bc9:verification-A-new",
+        "output": "controlled verifier passed",
+        "sourceRevision": "fixture:source-1"
+      }
+    ],
+    "effects": [
+      {
+        "baselineId": null,
+        "blockedBy": [],
+        "detail": "Controlled Producer allocation confirmation",
+        "id": "run-52f17bc9:allocation-A",
+        "kind": "allocate",
+        "receiptId": "fixture-receipt:run-52f17bc9:allocation-A",
+        "sourceRevision": "fixture:source-1",
+        "state": "confirmed",
+        "taskId": null,
+        "verificationId": null,
+        "workId": "run-52f17bc9:A"
+      },
+      {
+        "baselineId": null,
+        "blockedBy": [],
+        "detail": "Controlled Producer allocation confirmation",
+        "id": "run-52f17bc9:allocation-B",
+        "kind": "allocate",
+        "receiptId": "fixture-receipt:run-52f17bc9:allocation-B",
+        "sourceRevision": "fixture:source-1",
+        "state": "confirmed",
+        "taskId": null,
+        "verificationId": null,
+        "workId": "run-52f17bc9:B"
+      },
+      {
+        "baselineId": null,
+        "blockedBy": [],
+        "detail": "Controlled Producer allocation confirmation",
+        "id": "run-52f17bc9:allocation-late",
+        "kind": "allocate",
+        "receiptId": "fixture-receipt:run-52f17bc9:allocation-late",
+        "sourceRevision": "fixture:source-1",
+        "state": "confirmed",
+        "taskId": null,
+        "verificationId": null,
+        "workId": "run-52f17bc9:late"
+      },
+      {
+        "baselineId": null,
+        "blockedBy": [],
+        "detail": "Controlled Producer allocation confirmation",
+        "id": "run-52f17bc9:allocation-unrelated",
+        "kind": "allocate",
+        "receiptId": "fixture-receipt:run-52f17bc9:allocation-unrelated",
+        "sourceRevision": "fixture:source-1",
+        "state": "confirmed",
+        "taskId": null,
+        "verificationId": null,
+        "workId": "run-52f17bc9:unrelated"
+      },
+      {
+        "baselineId": null,
+        "blockedBy": [],
+        "detail": "Controlled allocation rejected",
+        "id": "run-52f17bc9:failed-allocation",
+        "kind": "allocate",
+        "receiptId": null,
+        "sourceRevision": "fixture:source-1",
+        "state": "failed",
+        "taskId": null,
+        "verificationId": null,
+        "workId": "run-52f17bc9:A"
+      },
+      {
+        "baselineId": "run-52f17bc9:baseline-A-2",
+        "blockedBy": [
+          "run-52f17bc9:publication-A"
+        ],
+        "detail": "Intent recorded before dispatch",
+        "id": "run-52f17bc9:pending-publication",
+        "kind": "publish",
+        "receiptId": null,
+        "sourceRevision": "fixture:source-1",
+        "state": "pending",
+        "taskId": "run-52f17bc9:task-A",
+        "verificationId": "run-52f17bc9:verification-A",
+        "workId": "run-52f17bc9:A"
+      },
+      {
+        "baselineId": "run-52f17bc9:baseline-A-2",
+        "blockedBy": [],
+        "detail": "Controlled Publisher receipt reconciled by stable effect ID",
+        "id": "run-52f17bc9:publication-A",
+        "kind": "publish",
+        "receiptId": "fixture-receipt:run-52f17bc9:publication-A",
+        "sourceRevision": "fixture:source-1",
+        "state": "confirmed",
+        "taskId": "run-52f17bc9:task-A",
+        "verificationId": "run-52f17bc9:verification-A",
+        "workId": "run-52f17bc9:A"
+      },
+      {
+        "baselineId": "run-52f17bc9:baseline-A-3",
+        "blockedBy": [
+          "run-52f17bc9:publication-A"
+        ],
+        "detail": "Confirmed controlled delivery against replacement baseline",
+        "id": "run-52f17bc9:publication-A-new",
+        "kind": "publish",
+        "receiptId": "fixture-receipt:run-52f17bc9:publication-A-new",
+        "sourceRevision": "fixture:source-1",
+        "state": "confirmed",
+        "taskId": "run-52f17bc9:task-A",
+        "verificationId": "run-52f17bc9:verification-A-new",
+        "workId": "run-52f17bc9:A"
+      }
+    ],
+    "events": [
+      {
+        "authority": "agent",
+        "id": "event:gate:Write",
+        "operation": "work.create",
+        "payload": {
+          "id": "gate-Work",
+          "sourceRevision": "fixture:0",
+          "title": "Case-distinct identity"
+        },
+        "recordedAt": "2026-11-23T18:19:38.184Z",
+        "result": {
+          "baselineId": null,
+          "id": "gate-Work",
+          "sourceRevision": "fixture:0",
+          "title": "Case-distinct identity"
+        },
+        "revision": 2
+      },
+      {
+        "authority": "agent",
+        "id": "event:gate:write",
+        "operation": "work.create",
+        "payload": {
+          "id": "gate-work",
+          "sourceRevision": "fixture:0",
+          "title": "Storage gate"
+        },
+        "recordedAt": "2026-11-23T18:19:38.171Z",
+        "result": {
+          "baselineId": null,
+          "id": "gate-work",
+          "sourceRevision": "fixture:0",
+          "title": "Storage gate"
+        },
+        "revision": 1
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-1",
+        "operation": "knowledge.create",
+        "payload": {
+          "evidence": "fixture evidence for assumption",
+          "id": "run-52f17bc9:assumption",
+          "key": "assumption",
+          "kind": "assumption",
+          "rationale": "Recorded Socrates rationale for assumption",
+          "reliesOn": [],
+          "scope": "run-52f17bc9",
+          "text": "assumption version 1",
+          "title": "assumption"
+        },
+        "recordedAt": "2026-11-23T18:19:38.566Z",
+        "result": {
+          "id": "run-52f17bc9:assumption",
+          "revision": 1
+        },
+        "revision": 3
+      },
+      {
+        "authority": "operator",
+        "id": "event:run-52f17bc9:command-10",
+        "operation": "baseline.approve",
+        "payload": {
+          "evidence": "fixture operator review",
+          "id": "run-52f17bc9:baseline-A-1",
+          "rationale": "Operator approves the supported specification and task plan",
+          "workId": "run-52f17bc9:A"
+        },
+        "recordedAt": "2026-11-23T18:19:38.635Z",
+        "result": {
+          "approvedBy": "operator",
+          "evidence": "fixture operator review",
+          "id": "run-52f17bc9:baseline-A-1",
+          "rationale": "Operator approves the supported specification and task plan",
+          "refs": [
+            {
+              "id": "run-52f17bc9:requirement",
+              "revision": 1
+            },
+            {
+              "id": "run-52f17bc9:assumption",
+              "revision": 1
+            },
+            {
+              "id": "run-52f17bc9:decision",
+              "revision": 1
+            }
+          ],
+          "tasks": [
+            {
+              "blockedBy": [],
+              "id": "run-52f17bc9:task-A",
+              "parentId": null,
+              "refs": [
+                {
+                  "id": "run-52f17bc9:decision",
+                  "revision": 1
+                }
+              ],
+              "revision": 1,
+              "title": "task-A",
+              "workId": "run-52f17bc9:A"
+            }
+          ],
+          "workId": "run-52f17bc9:A"
+        },
+        "revision": 12
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-11",
+        "operation": "effect.request",
+        "payload": {
+          "id": "run-52f17bc9:allocation-A",
+          "kind": "allocate",
+          "workId": "run-52f17bc9:A"
+        },
+        "recordedAt": "2026-11-23T18:19:38.641Z",
+        "result": {
+          "baselineId": null,
+          "blockedBy": [],
+          "detail": "Intent recorded before dispatch",
+          "id": "run-52f17bc9:allocation-A",
+          "kind": "allocate",
+          "receiptId": null,
+          "sourceRevision": "fixture:source-1",
+          "state": "pending",
+          "taskId": null,
+          "verificationId": null,
+          "workId": "run-52f17bc9:A"
+        },
+        "revision": 13
+      },
+      {
+        "authority": "adapter",
+        "id": "event:run-52f17bc9:command-12",
+        "operation": "effect.observe",
+        "payload": {
+          "detail": "Controlled Producer allocation confirmation",
+          "id": "run-52f17bc9:allocation-A",
+          "receiptId": "fixture-receipt:run-52f17bc9:allocation-A",
+          "state": "confirmed"
+        },
+        "recordedAt": "2026-11-23T18:19:38.649Z",
+        "result": {
+          "baselineId": null,
+          "blockedBy": [],
+          "detail": "Controlled Producer allocation confirmation",
+          "id": "run-52f17bc9:allocation-A",
+          "kind": "allocate",
+          "receiptId": "fixture-receipt:run-52f17bc9:allocation-A",
+          "sourceRevision": "fixture:source-1",
+          "state": "confirmed",
+          "taskId": null,
+          "verificationId": null,
+          "workId": "run-52f17bc9:A"
+        },
+        "revision": 14
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-13",
+        "operation": "attempt.start",
+        "payload": {
+          "allocationId": "run-52f17bc9:allocation-A",
+          "id": "run-52f17bc9:attempt-A",
+          "sessionId": "run-52f17bc9:session-A",
+          "taskId": "run-52f17bc9:task-A"
+        },
+        "recordedAt": "2026-11-23T18:19:38.657Z",
+        "result": {
+          "allocationId": "run-52f17bc9:allocation-A",
+          "baselineId": "run-52f17bc9:baseline-A-1",
+          "id": "run-52f17bc9:attempt-A",
+          "sessionId": "run-52f17bc9:session-A",
+          "sourceRevision": "fixture:source-1",
+          "status": "running",
+          "taskId": "run-52f17bc9:task-A",
+          "workId": "run-52f17bc9:A"
+        },
+        "revision": 15
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-14",
+        "operation": "work.create",
+        "payload": {
+          "id": "run-52f17bc9:B",
+          "sourceRevision": "fixture:source-1",
+          "title": "Body of work B"
+        },
+        "recordedAt": "2026-11-23T18:19:38.665Z",
+        "result": {
+          "baselineId": null,
+          "id": "run-52f17bc9:B",
+          "sourceRevision": "fixture:source-1",
+          "title": "Body of work B"
+        },
+        "revision": 16
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-15",
+        "operation": "session.attach",
+        "payload": {
+          "id": "run-52f17bc9:session-B",
+          "workId": "run-52f17bc9:B"
+        },
+        "recordedAt": "2026-11-23T18:19:38.672Z",
+        "result": {
+          "id": "run-52f17bc9:session-B",
+          "workId": "run-52f17bc9:B"
+        },
+        "revision": 17
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-16",
+        "operation": "knowledge.attach",
+        "payload": {
+          "ref": {
+            "id": "run-52f17bc9:assumption",
+            "revision": 1
+          },
+          "workId": "run-52f17bc9:B"
+        },
+        "recordedAt": "2026-11-23T18:19:38.680Z",
+        "result": {
+          "active": true,
+          "id": "[\"run-52f17bc9:B\",\"run-52f17bc9:assumption\",1]",
+          "ref": {
+            "id": "run-52f17bc9:assumption",
+            "revision": 1
+          },
+          "workId": "run-52f17bc9:B"
+        },
+        "revision": 18
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-17",
+        "operation": "knowledge.attach",
+        "payload": {
+          "ref": {
+            "id": "run-52f17bc9:requirement",
+            "revision": 1
+          },
+          "workId": "run-52f17bc9:B"
+        },
+        "recordedAt": "2026-11-23T18:19:38.688Z",
+        "result": {
+          "active": true,
+          "id": "[\"run-52f17bc9:B\",\"run-52f17bc9:requirement\",1]",
+          "ref": {
+            "id": "run-52f17bc9:requirement",
+            "revision": 1
+          },
+          "workId": "run-52f17bc9:B"
+        },
+        "revision": 19
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-18",
+        "operation": "knowledge.attach",
+        "payload": {
+          "ref": {
+            "id": "run-52f17bc9:decision",
+            "revision": 1
+          },
+          "workId": "run-52f17bc9:B"
+        },
+        "recordedAt": "2026-11-23T18:19:38.695Z",
+        "result": {
+          "active": true,
+          "id": "[\"run-52f17bc9:B\",\"run-52f17bc9:decision\",1]",
+          "ref": {
+            "id": "run-52f17bc9:decision",
+            "revision": 1
+          },
+          "workId": "run-52f17bc9:B"
+        },
+        "revision": 20
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-19",
+        "operation": "task.plan",
+        "payload": {
+          "id": "run-52f17bc9:task-B",
+          "refs": [
+            {
+              "id": "run-52f17bc9:decision",
+              "revision": 1
+            }
+          ],
+          "title": "task-B",
+          "workId": "run-52f17bc9:B"
+        },
+        "recordedAt": "2026-11-23T18:19:38.703Z",
+        "result": {
+          "blockedBy": [],
+          "id": "run-52f17bc9:task-B",
+          "parentId": null,
+          "refs": [
+            {
+              "id": "run-52f17bc9:decision",
+              "revision": 1
+            }
+          ],
+          "revision": 1,
+          "title": "task-B",
+          "workId": "run-52f17bc9:B"
+        },
+        "revision": 21
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-2",
+        "operation": "knowledge.create",
+        "payload": {
+          "evidence": "fixture evidence for requirement",
+          "id": "run-52f17bc9:requirement",
+          "key": "requirement",
+          "kind": "requirement",
+          "rationale": "Recorded Socrates rationale for requirement",
+          "reliesOn": [
+            {
+              "id": "run-52f17bc9:assumption",
+              "revision": 1
+            }
+          ],
+          "scope": "run-52f17bc9",
+          "text": "requirement version 1",
+          "title": "requirement"
+        },
+        "recordedAt": "2026-11-23T18:19:38.577Z",
+        "result": {
+          "id": "run-52f17bc9:requirement",
+          "revision": 1
+        },
+        "revision": 4
+      },
+      {
+        "authority": "operator",
+        "id": "event:run-52f17bc9:command-20",
+        "operation": "baseline.approve",
+        "payload": {
+          "evidence": "fixture operator review",
+          "id": "run-52f17bc9:baseline-B-1",
+          "rationale": "Operator approves the supported specification and task plan",
+          "workId": "run-52f17bc9:B"
+        },
+        "recordedAt": "2026-11-23T18:19:38.711Z",
+        "result": {
+          "approvedBy": "operator",
+          "evidence": "fixture operator review",
+          "id": "run-52f17bc9:baseline-B-1",
+          "rationale": "Operator approves the supported specification and task plan",
+          "refs": [
+            {
+              "id": "run-52f17bc9:requirement",
+              "revision": 1
+            },
+            {
+              "id": "run-52f17bc9:assumption",
+              "revision": 1
+            },
+            {
+              "id": "run-52f17bc9:decision",
+              "revision": 1
+            }
+          ],
+          "tasks": [
+            {
+              "blockedBy": [],
+              "id": "run-52f17bc9:task-B",
+              "parentId": null,
+              "refs": [
+                {
+                  "id": "run-52f17bc9:decision",
+                  "revision": 1
+                }
+              ],
+              "revision": 1,
+              "title": "task-B",
+              "workId": "run-52f17bc9:B"
+            }
+          ],
+          "workId": "run-52f17bc9:B"
+        },
+        "revision": 22
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-21",
+        "operation": "effect.request",
+        "payload": {
+          "id": "run-52f17bc9:allocation-B",
+          "kind": "allocate",
+          "workId": "run-52f17bc9:B"
+        },
+        "recordedAt": "2026-11-23T18:19:38.719Z",
+        "result": {
+          "baselineId": null,
+          "blockedBy": [],
+          "detail": "Intent recorded before dispatch",
+          "id": "run-52f17bc9:allocation-B",
+          "kind": "allocate",
+          "receiptId": null,
+          "sourceRevision": "fixture:source-1",
+          "state": "pending",
+          "taskId": null,
+          "verificationId": null,
+          "workId": "run-52f17bc9:B"
+        },
+        "revision": 23
+      },
+      {
+        "authority": "adapter",
+        "id": "event:run-52f17bc9:command-22",
+        "operation": "effect.observe",
+        "payload": {
+          "detail": "Controlled Producer allocation confirmation",
+          "id": "run-52f17bc9:allocation-B",
+          "receiptId": "fixture-receipt:run-52f17bc9:allocation-B",
+          "state": "confirmed"
+        },
+        "recordedAt": "2026-11-23T18:19:38.728Z",
+        "result": {
+          "baselineId": null,
+          "blockedBy": [],
+          "detail": "Controlled Producer allocation confirmation",
+          "id": "run-52f17bc9:allocation-B",
+          "kind": "allocate",
+          "receiptId": "fixture-receipt:run-52f17bc9:allocation-B",
+          "sourceRevision": "fixture:source-1",
+          "state": "confirmed",
+          "taskId": null,
+          "verificationId": null,
+          "workId": "run-52f17bc9:B"
+        },
+        "revision": 24
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-23",
+        "operation": "attempt.start",
+        "payload": {
+          "allocationId": "run-52f17bc9:allocation-B",
+          "id": "run-52f17bc9:attempt-B",
+          "sessionId": "run-52f17bc9:session-B",
+          "taskId": "run-52f17bc9:task-B"
+        },
+        "recordedAt": "2026-11-23T18:19:38.736Z",
+        "result": {
+          "allocationId": "run-52f17bc9:allocation-B",
+          "baselineId": "run-52f17bc9:baseline-B-1",
+          "id": "run-52f17bc9:attempt-B",
+          "sessionId": "run-52f17bc9:session-B",
+          "sourceRevision": "fixture:source-1",
+          "status": "running",
+          "taskId": "run-52f17bc9:task-B",
+          "workId": "run-52f17bc9:B"
+        },
+        "revision": 25
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-24",
+        "operation": "work.create",
+        "payload": {
+          "id": "run-52f17bc9:unrelated",
+          "sourceRevision": "fixture:source-1",
+          "title": "Body of work unrelated"
+        },
+        "recordedAt": "2026-11-23T18:19:38.743Z",
+        "result": {
+          "baselineId": null,
+          "id": "run-52f17bc9:unrelated",
+          "sourceRevision": "fixture:source-1",
+          "title": "Body of work unrelated"
+        },
+        "revision": 26
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-25",
+        "operation": "session.attach",
+        "payload": {
+          "id": "run-52f17bc9:session-unrelated",
+          "workId": "run-52f17bc9:unrelated"
+        },
+        "recordedAt": "2026-11-23T18:19:38.749Z",
+        "result": {
+          "id": "run-52f17bc9:session-unrelated",
+          "workId": "run-52f17bc9:unrelated"
+        },
+        "revision": 27
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-26",
+        "operation": "task.plan",
+        "payload": {
+          "id": "run-52f17bc9:task-unrelated",
+          "refs": [],
+          "title": "task-unrelated",
+          "workId": "run-52f17bc9:unrelated"
+        },
+        "recordedAt": "2026-11-23T18:19:38.755Z",
+        "result": {
+          "blockedBy": [],
+          "id": "run-52f17bc9:task-unrelated",
+          "parentId": null,
+          "refs": [],
+          "revision": 1,
+          "title": "task-unrelated",
+          "workId": "run-52f17bc9:unrelated"
+        },
+        "revision": 28
+      },
+      {
+        "authority": "operator",
+        "id": "event:run-52f17bc9:command-27",
+        "operation": "baseline.approve",
+        "payload": {
+          "evidence": "fixture operator review",
+          "id": "run-52f17bc9:baseline-unrelated-1",
+          "rationale": "Operator approves the supported specification and task plan",
+          "workId": "run-52f17bc9:unrelated"
+        },
+        "recordedAt": "2026-11-23T18:19:38.763Z",
+        "result": {
+          "approvedBy": "operator",
+          "evidence": "fixture operator review",
+          "id": "run-52f17bc9:baseline-unrelated-1",
+          "rationale": "Operator approves the supported specification and task plan",
+          "refs": [],
+          "tasks": [
+            {
+              "blockedBy": [],
+              "id": "run-52f17bc9:task-unrelated",
+              "parentId": null,
+              "refs": [],
+              "revision": 1,
+              "title": "task-unrelated",
+              "workId": "run-52f17bc9:unrelated"
+            }
+          ],
+          "workId": "run-52f17bc9:unrelated"
+        },
+        "revision": 29
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-28",
+        "operation": "effect.request",
+        "payload": {
+          "id": "run-52f17bc9:allocation-unrelated",
+          "kind": "allocate",
+          "workId": "run-52f17bc9:unrelated"
+        },
+        "recordedAt": "2026-11-23T18:19:38.771Z",
+        "result": {
+          "baselineId": null,
+          "blockedBy": [],
+          "detail": "Intent recorded before dispatch",
+          "id": "run-52f17bc9:allocation-unrelated",
+          "kind": "allocate",
+          "receiptId": null,
+          "sourceRevision": "fixture:source-1",
+          "state": "pending",
+          "taskId": null,
+          "verificationId": null,
+          "workId": "run-52f17bc9:unrelated"
+        },
+        "revision": 30
+      },
+      {
+        "authority": "adapter",
+        "id": "event:run-52f17bc9:command-29",
+        "operation": "effect.observe",
+        "payload": {
+          "detail": "Controlled Producer allocation confirmation",
+          "id": "run-52f17bc9:allocation-unrelated",
+          "receiptId": "fixture-receipt:run-52f17bc9:allocation-unrelated",
+          "state": "confirmed"
+        },
+        "recordedAt": "2026-11-23T18:19:38.779Z",
+        "result": {
+          "baselineId": null,
+          "blockedBy": [],
+          "detail": "Controlled Producer allocation confirmation",
+          "id": "run-52f17bc9:allocation-unrelated",
+          "kind": "allocate",
+          "receiptId": "fixture-receipt:run-52f17bc9:allocation-unrelated",
+          "sourceRevision": "fixture:source-1",
+          "state": "confirmed",
+          "taskId": null,
+          "verificationId": null,
+          "workId": "run-52f17bc9:unrelated"
+        },
+        "revision": 31
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-3",
+        "operation": "knowledge.create",
+        "payload": {
+          "evidence": "fixture evidence for decision",
+          "id": "run-52f17bc9:decision",
+          "key": "decision",
+          "kind": "decision",
+          "rationale": "Recorded Socrates rationale for decision",
+          "reliesOn": [
+            {
+              "id": "run-52f17bc9:requirement",
+              "revision": 1
+            }
+          ],
+          "scope": "run-52f17bc9",
+          "text": "decision version 1",
+          "title": "decision"
+        },
+        "recordedAt": "2026-11-23T18:19:38.587Z",
+        "result": {
+          "id": "run-52f17bc9:decision",
+          "revision": 1
+        },
+        "revision": 5
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-30",
+        "operation": "attempt.start",
+        "payload": {
+          "allocationId": "run-52f17bc9:allocation-unrelated",
+          "id": "run-52f17bc9:attempt-unrelated",
+          "sessionId": "run-52f17bc9:session-unrelated",
+          "taskId": "run-52f17bc9:task-unrelated"
+        },
+        "recordedAt": "2026-11-23T18:19:38.785Z",
+        "result": {
+          "allocationId": "run-52f17bc9:allocation-unrelated",
+          "baselineId": "run-52f17bc9:baseline-unrelated-1",
+          "id": "run-52f17bc9:attempt-unrelated",
+          "sessionId": "run-52f17bc9:session-unrelated",
+          "sourceRevision": "fixture:source-1",
+          "status": "running",
+          "taskId": "run-52f17bc9:task-unrelated",
+          "workId": "run-52f17bc9:unrelated"
+        },
+        "revision": 32
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-34",
+        "operation": "assumption.invalidate",
+        "payload": {
+          "evidence": "controlled counterexample",
+          "id": "run-52f17bc9:invalidation-1",
+          "rationale": "The earlier assumption was disproven",
+          "ref": {
+            "id": "run-52f17bc9:assumption",
+            "revision": 1
+          }
+        },
+        "recordedAt": "2026-11-23T18:19:38.808Z",
+        "result": {
+          "holds": [
+            {
+              "clearedBy": null,
+              "id": "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:assumption\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+              "invalidationId": "run-52f17bc9:invalidation-1",
+              "taskIds": [
+                "run-52f17bc9:task-A"
+              ],
+              "useId": "[\"run-52f17bc9:A\",\"run-52f17bc9:assumption\",1]",
+              "workId": "run-52f17bc9:A"
+            },
+            {
+              "clearedBy": null,
+              "id": "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:decision\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+              "invalidationId": "run-52f17bc9:invalidation-1",
+              "taskIds": [
+                "run-52f17bc9:task-A"
+              ],
+              "useId": "[\"run-52f17bc9:A\",\"run-52f17bc9:decision\",1]",
+              "workId": "run-52f17bc9:A"
+            },
+            {
+              "clearedBy": null,
+              "id": "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:requirement\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+              "invalidationId": "run-52f17bc9:invalidation-1",
+              "taskIds": [
+                "run-52f17bc9:task-A"
+              ],
+              "useId": "[\"run-52f17bc9:A\",\"run-52f17bc9:requirement\",1]",
+              "workId": "run-52f17bc9:A"
+            },
+            {
+              "clearedBy": null,
+              "id": "[\"[\\\"run-52f17bc9:B\\\",\\\"run-52f17bc9:assumption\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+              "invalidationId": "run-52f17bc9:invalidation-1",
+              "taskIds": [
+                "run-52f17bc9:task-B"
+              ],
+              "useId": "[\"run-52f17bc9:B\",\"run-52f17bc9:assumption\",1]",
+              "workId": "run-52f17bc9:B"
+            },
+            {
+              "clearedBy": null,
+              "id": "[\"[\\\"run-52f17bc9:B\\\",\\\"run-52f17bc9:decision\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+              "invalidationId": "run-52f17bc9:invalidation-1",
+              "taskIds": [
+                "run-52f17bc9:task-B"
+              ],
+              "useId": "[\"run-52f17bc9:B\",\"run-52f17bc9:decision\",1]",
+              "workId": "run-52f17bc9:B"
+            },
+            {
+              "clearedBy": null,
+              "id": "[\"[\\\"run-52f17bc9:B\\\",\\\"run-52f17bc9:requirement\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+              "invalidationId": "run-52f17bc9:invalidation-1",
+              "taskIds": [
+                "run-52f17bc9:task-B"
+              ],
+              "useId": "[\"run-52f17bc9:B\",\"run-52f17bc9:requirement\",1]",
+              "workId": "run-52f17bc9:B"
+            }
+          ],
+          "invalidation": {
+            "evidence": "controlled counterexample",
+            "id": "run-52f17bc9:invalidation-1",
+            "rationale": "The earlier assumption was disproven",
+            "ref": {
+              "id": "run-52f17bc9:assumption",
+              "revision": 1
+            }
+          }
+        },
+        "revision": 33
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-38",
+        "operation": "session.attach",
+        "payload": {
+          "id": "run-52f17bc9:session-A-returned",
+          "workId": "run-52f17bc9:A"
+        },
+        "recordedAt": "2026-11-23T18:19:38.847Z",
+        "result": {
+          "id": "run-52f17bc9:session-A-returned",
+          "workId": "run-52f17bc9:A"
+        },
+        "revision": 34
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-4",
+        "operation": "work.create",
+        "payload": {
+          "id": "run-52f17bc9:A",
+          "sourceRevision": "fixture:source-1",
+          "title": "Body of work A"
+        },
+        "recordedAt": "2026-11-23T18:19:38.593Z",
+        "result": {
+          "baselineId": null,
+          "id": "run-52f17bc9:A",
+          "sourceRevision": "fixture:source-1",
+          "title": "Body of work A"
+        },
+        "revision": 6
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-42",
+        "operation": "work.create",
+        "payload": {
+          "id": "run-52f17bc9:late",
+          "sourceRevision": "fixture:source-1",
+          "title": "Later body of work"
+        },
+        "recordedAt": "2026-11-23T18:19:38.867Z",
+        "result": {
+          "baselineId": null,
+          "id": "run-52f17bc9:late",
+          "sourceRevision": "fixture:source-1",
+          "title": "Later body of work"
+        },
+        "revision": 35
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-43",
+        "operation": "session.attach",
+        "payload": {
+          "id": "run-52f17bc9:session-late",
+          "workId": "run-52f17bc9:late"
+        },
+        "recordedAt": "2026-11-23T18:19:38.873Z",
+        "result": {
+          "id": "run-52f17bc9:session-late",
+          "workId": "run-52f17bc9:late"
+        },
+        "revision": 36
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-44",
+        "operation": "knowledge.attach",
+        "payload": {
+          "ref": {
+            "id": "run-52f17bc9:decision",
+            "revision": 1
+          },
+          "workId": "run-52f17bc9:late"
+        },
+        "recordedAt": "2026-11-23T18:19:38.881Z",
+        "result": {
+          "active": true,
+          "id": "[\"run-52f17bc9:late\",\"run-52f17bc9:decision\",1]",
+          "ref": {
+            "id": "run-52f17bc9:decision",
+            "revision": 1
+          },
+          "workId": "run-52f17bc9:late"
+        },
+        "revision": 37
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-45",
+        "operation": "task.plan",
+        "payload": {
+          "id": "run-52f17bc9:task-late",
+          "refs": [
+            {
+              "id": "run-52f17bc9:decision",
+              "revision": 1
+            }
+          ],
+          "title": "task-late",
+          "workId": "run-52f17bc9:late"
+        },
+        "recordedAt": "2026-11-23T18:19:38.890Z",
+        "result": {
+          "blockedBy": [],
+          "id": "run-52f17bc9:task-late",
+          "parentId": null,
+          "refs": [
+            {
+              "id": "run-52f17bc9:decision",
+              "revision": 1
+            }
+          ],
+          "revision": 1,
+          "title": "task-late",
+          "workId": "run-52f17bc9:late"
+        },
+        "revision": 38
+      },
+      {
+        "authority": "operator",
+        "id": "event:run-52f17bc9:command-46",
+        "operation": "baseline.approve",
+        "payload": {
+          "evidence": "fixture operator review",
+          "id": "run-52f17bc9:baseline-late-1",
+          "rationale": "Operator approves the supported specification and task plan",
+          "workId": "run-52f17bc9:late"
+        },
+        "recordedAt": "2026-11-23T18:19:38.897Z",
+        "result": {
+          "approvedBy": "operator",
+          "evidence": "fixture operator review",
+          "id": "run-52f17bc9:baseline-late-1",
+          "rationale": "Operator approves the supported specification and task plan",
+          "refs": [
+            {
+              "id": "run-52f17bc9:decision",
+              "revision": 1
+            },
+            {
+              "id": "run-52f17bc9:requirement",
+              "revision": 1
+            },
+            {
+              "id": "run-52f17bc9:assumption",
+              "revision": 1
+            }
+          ],
+          "tasks": [
+            {
+              "blockedBy": [],
+              "id": "run-52f17bc9:task-late",
+              "parentId": null,
+              "refs": [
+                {
+                  "id": "run-52f17bc9:decision",
+                  "revision": 1
+                }
+              ],
+              "revision": 1,
+              "title": "task-late",
+              "workId": "run-52f17bc9:late"
+            }
+          ],
+          "workId": "run-52f17bc9:late"
+        },
+        "revision": 39
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-47",
+        "operation": "effect.request",
+        "payload": {
+          "id": "run-52f17bc9:allocation-late",
+          "kind": "allocate",
+          "workId": "run-52f17bc9:late"
+        },
+        "recordedAt": "2026-11-23T18:19:38.904Z",
+        "result": {
+          "baselineId": null,
+          "blockedBy": [],
+          "detail": "Intent recorded before dispatch",
+          "id": "run-52f17bc9:allocation-late",
+          "kind": "allocate",
+          "receiptId": null,
+          "sourceRevision": "fixture:source-1",
+          "state": "pending",
+          "taskId": null,
+          "verificationId": null,
+          "workId": "run-52f17bc9:late"
+        },
+        "revision": 40
+      },
+      {
+        "authority": "adapter",
+        "id": "event:run-52f17bc9:command-48",
+        "operation": "effect.observe",
+        "payload": {
+          "detail": "Controlled Producer allocation confirmation",
+          "id": "run-52f17bc9:allocation-late",
+          "receiptId": "fixture-receipt:run-52f17bc9:allocation-late",
+          "state": "confirmed"
+        },
+        "recordedAt": "2026-11-23T18:19:38.913Z",
+        "result": {
+          "baselineId": null,
+          "blockedBy": [],
+          "detail": "Controlled Producer allocation confirmation",
+          "id": "run-52f17bc9:allocation-late",
+          "kind": "allocate",
+          "receiptId": "fixture-receipt:run-52f17bc9:allocation-late",
+          "sourceRevision": "fixture:source-1",
+          "state": "confirmed",
+          "taskId": null,
+          "verificationId": null,
+          "workId": "run-52f17bc9:late"
+        },
+        "revision": 41
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-5",
+        "operation": "session.attach",
+        "payload": {
+          "id": "run-52f17bc9:session-A",
+          "workId": "run-52f17bc9:A"
+        },
+        "recordedAt": "2026-11-23T18:19:38.601Z",
+        "result": {
+          "id": "run-52f17bc9:session-A",
+          "workId": "run-52f17bc9:A"
+        },
+        "revision": 7
+      },
+      {
+        "authority": "adapter",
+        "id": "event:run-52f17bc9:command-51",
+        "operation": "attempt.pause-ack",
+        "payload": {
+          "id": "run-52f17bc9:attempt-A"
+        },
+        "recordedAt": "2026-11-23T18:19:38.930Z",
+        "result": {
+          "allocationId": "run-52f17bc9:allocation-A",
+          "baselineId": "run-52f17bc9:baseline-A-1",
+          "id": "run-52f17bc9:attempt-A",
+          "sessionId": "run-52f17bc9:session-A",
+          "sourceRevision": "fixture:source-1",
+          "status": "paused",
+          "taskId": "run-52f17bc9:task-A",
+          "workId": "run-52f17bc9:A"
+        },
+        "revision": 42
+      },
+      {
+        "authority": "adapter",
+        "id": "event:run-52f17bc9:command-52",
+        "operation": "attempt.pause-ack",
+        "payload": {
+          "id": "run-52f17bc9:attempt-B"
+        },
+        "recordedAt": "2026-11-23T18:19:38.937Z",
+        "result": {
+          "allocationId": "run-52f17bc9:allocation-B",
+          "baselineId": "run-52f17bc9:baseline-B-1",
+          "id": "run-52f17bc9:attempt-B",
+          "sessionId": "run-52f17bc9:session-B",
+          "sourceRevision": "fixture:source-1",
+          "status": "paused",
+          "taskId": "run-52f17bc9:task-B",
+          "workId": "run-52f17bc9:B"
+        },
+        "revision": 43
+      },
+      {
+        "authority": "operator",
+        "id": "event:run-52f17bc9:command-55",
+        "operation": "baseline.reopen",
+        "payload": {
+          "workId": "run-52f17bc9:A"
+        },
+        "recordedAt": "2026-11-23T18:19:38.953Z",
+        "result": {
+          "baselineId": null,
+          "id": "run-52f17bc9:A",
+          "sourceRevision": "fixture:source-1",
+          "title": "Body of work A"
+        },
+        "revision": 44
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-56",
+        "operation": "knowledge.revise",
+        "payload": {
+          "evidence": "new controlled evidence",
+          "id": "run-52f17bc9:assumption",
+          "rationale": "Address the invalidated basis",
+          "reliesOn": [],
+          "text": "assumption revised with a supported replacement basis"
+        },
+        "recordedAt": "2026-11-23T18:19:38.961Z",
+        "result": {
+          "id": "run-52f17bc9:assumption",
+          "revision": 2
+        },
+        "revision": 45
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-57",
+        "operation": "knowledge.revise",
+        "payload": {
+          "evidence": "new controlled evidence",
+          "id": "run-52f17bc9:requirement",
+          "rationale": "Address the invalidated basis",
+          "reliesOn": [
+            {
+              "id": "run-52f17bc9:assumption",
+              "revision": 2
+            }
+          ],
+          "text": "requirement revised with a supported replacement basis"
+        },
+        "recordedAt": "2026-11-23T18:19:38.968Z",
+        "result": {
+          "id": "run-52f17bc9:requirement",
+          "revision": 2
+        },
+        "revision": 46
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-58",
+        "operation": "knowledge.revise",
+        "payload": {
+          "evidence": "new controlled evidence",
+          "id": "run-52f17bc9:decision",
+          "rationale": "Address the invalidated basis",
+          "reliesOn": [
+            {
+              "id": "run-52f17bc9:requirement",
+              "revision": 2
+            }
+          ],
+          "text": "decision revised with a supported replacement basis"
+        },
+        "recordedAt": "2026-11-23T18:19:38.975Z",
+        "result": {
+          "id": "run-52f17bc9:decision",
+          "revision": 2
+        },
+        "revision": 47
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-59",
+        "operation": "knowledge.attach",
+        "payload": {
+          "ref": {
+            "id": "run-52f17bc9:assumption",
+            "revision": 2
+          },
+          "workId": "run-52f17bc9:A"
+        },
+        "recordedAt": "2026-11-23T18:19:38.984Z",
+        "result": {
+          "active": true,
+          "id": "[\"run-52f17bc9:A\",\"run-52f17bc9:assumption\",2]",
+          "ref": {
+            "id": "run-52f17bc9:assumption",
+            "revision": 2
+          },
+          "workId": "run-52f17bc9:A"
+        },
+        "revision": 48
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-6",
+        "operation": "knowledge.attach",
+        "payload": {
+          "ref": {
+            "id": "run-52f17bc9:assumption",
+            "revision": 1
+          },
+          "workId": "run-52f17bc9:A"
+        },
+        "recordedAt": "2026-11-23T18:19:38.609Z",
+        "result": {
+          "active": true,
+          "id": "[\"run-52f17bc9:A\",\"run-52f17bc9:assumption\",1]",
+          "ref": {
+            "id": "run-52f17bc9:assumption",
+            "revision": 1
+          },
+          "workId": "run-52f17bc9:A"
+        },
+        "revision": 8
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-60",
+        "operation": "knowledge.attach",
+        "payload": {
+          "ref": {
+            "id": "run-52f17bc9:requirement",
+            "revision": 2
+          },
+          "workId": "run-52f17bc9:A"
+        },
+        "recordedAt": "2026-11-23T18:19:38.991Z",
+        "result": {
+          "active": true,
+          "id": "[\"run-52f17bc9:A\",\"run-52f17bc9:requirement\",2]",
+          "ref": {
+            "id": "run-52f17bc9:requirement",
+            "revision": 2
+          },
+          "workId": "run-52f17bc9:A"
+        },
+        "revision": 49
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-61",
+        "operation": "knowledge.attach",
+        "payload": {
+          "ref": {
+            "id": "run-52f17bc9:decision",
+            "revision": 2
+          },
+          "workId": "run-52f17bc9:A"
+        },
+        "recordedAt": "2026-11-23T18:19:38.998Z",
+        "result": {
+          "active": true,
+          "id": "[\"run-52f17bc9:A\",\"run-52f17bc9:decision\",2]",
+          "ref": {
+            "id": "run-52f17bc9:decision",
+            "revision": 2
+          },
+          "workId": "run-52f17bc9:A"
+        },
+        "revision": 50
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-62",
+        "operation": "task.plan",
+        "payload": {
+          "id": "run-52f17bc9:task-A",
+          "refs": [
+            {
+              "id": "run-52f17bc9:decision",
+              "revision": 2
+            }
+          ],
+          "title": "task-A",
+          "workId": "run-52f17bc9:A"
+        },
+        "recordedAt": "2026-11-23T18:19:39.006Z",
+        "result": {
+          "blockedBy": [],
+          "id": "run-52f17bc9:task-A",
+          "parentId": null,
+          "refs": [
+            {
+              "id": "run-52f17bc9:decision",
+              "revision": 2
+            }
+          ],
+          "revision": 2,
+          "title": "task-A",
+          "workId": "run-52f17bc9:A"
+        },
+        "revision": 51
+      },
+      {
+        "authority": "operator",
+        "id": "event:run-52f17bc9:command-63",
+        "operation": "baseline.approve",
+        "payload": {
+          "evidence": "fixture operator review",
+          "id": "run-52f17bc9:baseline-A-2",
+          "rationale": "Operator approves the supported specification and task plan",
+          "workId": "run-52f17bc9:A"
+        },
+        "recordedAt": "2026-11-23T18:19:39.014Z",
+        "result": {
+          "approvedBy": "operator",
+          "evidence": "fixture operator review",
+          "id": "run-52f17bc9:baseline-A-2",
+          "rationale": "Operator approves the supported specification and task plan",
+          "refs": [
+            {
+              "id": "run-52f17bc9:requirement",
+              "revision": 2
+            },
+            {
+              "id": "run-52f17bc9:assumption",
+              "revision": 2
+            },
+            {
+              "id": "run-52f17bc9:decision",
+              "revision": 2
+            }
+          ],
+          "tasks": [
+            {
+              "blockedBy": [],
+              "id": "run-52f17bc9:task-A",
+              "parentId": null,
+              "refs": [
+                {
+                  "id": "run-52f17bc9:decision",
+                  "revision": 2
+                }
+              ],
+              "revision": 2,
+              "title": "task-A",
+              "workId": "run-52f17bc9:A"
+            }
+          ],
+          "workId": "run-52f17bc9:A"
+        },
+        "revision": 52
+      },
+      {
+        "authority": "operator",
+        "id": "event:run-52f17bc9:command-64",
+        "operation": "hold.reassess",
+        "payload": {
+          "evidence": "explicit controlled operator decision",
+          "holdIds": [
+            "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:assumption\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+            "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:decision\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+            "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:requirement\\\",1]\",\"run-52f17bc9:invalidation-1\",33]"
+          ],
+          "id": "run-52f17bc9:operator-reassessment",
+          "rationale": "Operator accepts revised baseline and replacement evidence",
+          "workId": "run-52f17bc9:A"
+        },
+        "recordedAt": "2026-11-23T18:19:39.023Z",
+        "result": {
+          "actor": "operator",
+          "baselineId": "run-52f17bc9:baseline-A-2",
+          "evidence": "explicit controlled operator decision",
+          "holdIds": [
+            "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:assumption\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+            "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:decision\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+            "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:requirement\\\",1]\",\"run-52f17bc9:invalidation-1\",33]"
+          ],
+          "id": "run-52f17bc9:operator-reassessment",
+          "rationale": "Operator accepts revised baseline and replacement evidence",
+          "workId": "run-52f17bc9:A"
+        },
+        "revision": 53
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-65",
+        "operation": "attempt.resume",
+        "payload": {
+          "id": "run-52f17bc9:attempt-A"
+        },
+        "recordedAt": "2026-11-23T18:19:39.032Z",
+        "result": {
+          "allocationId": "run-52f17bc9:allocation-A",
+          "baselineId": "run-52f17bc9:baseline-A-2",
+          "id": "run-52f17bc9:attempt-A",
+          "sessionId": "run-52f17bc9:session-A",
+          "sourceRevision": "fixture:source-1",
+          "status": "running",
+          "taskId": "run-52f17bc9:task-A",
+          "workId": "run-52f17bc9:A"
+        },
+        "revision": 54
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-66",
+        "operation": "verification.record",
+        "payload": {
+          "attemptId": "run-52f17bc9:attempt-A",
+          "baselineId": "run-52f17bc9:baseline-A-2",
+          "command": "fixture-check --all",
+          "exitCode": 1,
+          "id": "run-52f17bc9:failed-verification",
+          "output": "controlled verifier failed",
+          "sourceRevision": "fixture:source-1"
+        },
+        "recordedAt": "2026-11-23T18:19:39.042Z",
+        "result": {
+          "attemptId": "run-52f17bc9:attempt-A",
+          "baselineId": "run-52f17bc9:baseline-A-2",
+          "command": "fixture-check --all",
+          "exitCode": 1,
+          "id": "run-52f17bc9:failed-verification",
+          "output": "controlled verifier failed",
+          "sourceRevision": "fixture:source-1"
+        },
+        "revision": 55
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-68",
+        "operation": "verification.record",
+        "payload": {
+          "attemptId": "run-52f17bc9:attempt-A",
+          "baselineId": "run-52f17bc9:baseline-A-2",
+          "command": "fixture-check --all",
+          "exitCode": 0,
+          "id": "run-52f17bc9:verification-A",
+          "output": "controlled verifier passed",
+          "sourceRevision": "fixture:source-1"
+        },
+        "recordedAt": "2026-11-23T18:19:39.055Z",
+        "result": {
+          "attemptId": "run-52f17bc9:attempt-A",
+          "baselineId": "run-52f17bc9:baseline-A-2",
+          "command": "fixture-check --all",
+          "exitCode": 0,
+          "id": "run-52f17bc9:verification-A",
+          "output": "controlled verifier passed",
+          "sourceRevision": "fixture:source-1"
+        },
+        "revision": 56
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-7",
+        "operation": "knowledge.attach",
+        "payload": {
+          "ref": {
+            "id": "run-52f17bc9:requirement",
+            "revision": 1
+          },
+          "workId": "run-52f17bc9:A"
+        },
+        "recordedAt": "2026-11-23T18:19:38.616Z",
+        "result": {
+          "active": true,
+          "id": "[\"run-52f17bc9:A\",\"run-52f17bc9:requirement\",1]",
+          "ref": {
+            "id": "run-52f17bc9:requirement",
+            "revision": 1
+          },
+          "workId": "run-52f17bc9:A"
+        },
+        "revision": 9
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-70",
+        "operation": "effect.request",
+        "payload": {
+          "id": "run-52f17bc9:publication-A",
+          "kind": "publish",
+          "verificationId": "run-52f17bc9:verification-A",
+          "workId": "run-52f17bc9:A"
+        },
+        "recordedAt": "2026-11-23T18:19:39.071Z",
+        "result": {
+          "baselineId": "run-52f17bc9:baseline-A-2",
+          "blockedBy": [],
+          "detail": "Intent recorded before dispatch",
+          "id": "run-52f17bc9:publication-A",
+          "kind": "publish",
+          "receiptId": null,
+          "sourceRevision": "fixture:source-1",
+          "state": "pending",
+          "taskId": "run-52f17bc9:task-A",
+          "verificationId": "run-52f17bc9:verification-A",
+          "workId": "run-52f17bc9:A"
+        },
+        "revision": 57
+      },
+      {
+        "authority": "adapter",
+        "id": "event:run-52f17bc9:command-71",
+        "operation": "effect.observe",
+        "payload": {
+          "detail": "Controlled external effect occurred but its response was lost",
+          "id": "run-52f17bc9:publication-A",
+          "state": "uncertain"
+        },
+        "recordedAt": "2026-11-23T18:19:39.083Z",
+        "result": {
+          "baselineId": "run-52f17bc9:baseline-A-2",
+          "blockedBy": [],
+          "detail": "Controlled external effect occurred but its response was lost",
+          "id": "run-52f17bc9:publication-A",
+          "kind": "publish",
+          "receiptId": null,
+          "sourceRevision": "fixture:source-1",
+          "state": "uncertain",
+          "taskId": "run-52f17bc9:task-A",
+          "verificationId": "run-52f17bc9:verification-A",
+          "workId": "run-52f17bc9:A"
+        },
+        "revision": 58
+      },
+      {
+        "authority": "adapter",
+        "id": "event:run-52f17bc9:command-72",
+        "operation": "effect.observe",
+        "payload": {
+          "detail": "Controlled Publisher receipt reconciled by stable effect ID",
+          "id": "run-52f17bc9:publication-A",
+          "receiptId": "fixture-receipt:run-52f17bc9:publication-A",
+          "state": "confirmed"
+        },
+        "recordedAt": "2026-11-23T18:19:39.094Z",
+        "result": {
+          "baselineId": "run-52f17bc9:baseline-A-2",
+          "blockedBy": [],
+          "detail": "Controlled Publisher receipt reconciled by stable effect ID",
+          "id": "run-52f17bc9:publication-A",
+          "kind": "publish",
+          "receiptId": "fixture-receipt:run-52f17bc9:publication-A",
+          "sourceRevision": "fixture:source-1",
+          "state": "confirmed",
+          "taskId": "run-52f17bc9:task-A",
+          "verificationId": "run-52f17bc9:verification-A",
+          "workId": "run-52f17bc9:A"
+        },
+        "revision": 59
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-73",
+        "operation": "effect.request",
+        "payload": {
+          "id": "run-52f17bc9:failed-allocation",
+          "kind": "allocate",
+          "workId": "run-52f17bc9:A"
+        },
+        "recordedAt": "2026-11-23T18:19:39.103Z",
+        "result": {
+          "baselineId": null,
+          "blockedBy": [],
+          "detail": "Intent recorded before dispatch",
+          "id": "run-52f17bc9:failed-allocation",
+          "kind": "allocate",
+          "receiptId": null,
+          "sourceRevision": "fixture:source-1",
+          "state": "pending",
+          "taskId": null,
+          "verificationId": null,
+          "workId": "run-52f17bc9:A"
+        },
+        "revision": 60
+      },
+      {
+        "authority": "adapter",
+        "id": "event:run-52f17bc9:command-74",
+        "operation": "effect.observe",
+        "payload": {
+          "detail": "Controlled allocation rejected",
+          "id": "run-52f17bc9:failed-allocation",
+          "state": "failed"
+        },
+        "recordedAt": "2026-11-23T18:19:39.112Z",
+        "result": {
+          "baselineId": null,
+          "blockedBy": [],
+          "detail": "Controlled allocation rejected",
+          "id": "run-52f17bc9:failed-allocation",
+          "kind": "allocate",
+          "receiptId": null,
+          "sourceRevision": "fixture:source-1",
+          "state": "failed",
+          "taskId": null,
+          "verificationId": null,
+          "workId": "run-52f17bc9:A"
+        },
+        "revision": 61
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-76",
+        "operation": "effect.request",
+        "payload": {
+          "blockedBy": [
+            "run-52f17bc9:publication-A"
+          ],
+          "id": "run-52f17bc9:pending-publication",
+          "kind": "publish",
+          "verificationId": "run-52f17bc9:verification-A",
+          "workId": "run-52f17bc9:A"
+        },
+        "recordedAt": "2026-11-23T18:19:39.125Z",
+        "result": {
+          "baselineId": "run-52f17bc9:baseline-A-2",
+          "blockedBy": [
+            "run-52f17bc9:publication-A"
+          ],
+          "detail": "Intent recorded before dispatch",
+          "id": "run-52f17bc9:pending-publication",
+          "kind": "publish",
+          "receiptId": null,
+          "sourceRevision": "fixture:source-1",
+          "state": "pending",
+          "taskId": "run-52f17bc9:task-A",
+          "verificationId": "run-52f17bc9:verification-A",
+          "workId": "run-52f17bc9:A"
+        },
+        "revision": 62
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-77",
+        "operation": "source.update",
+        "payload": {
+          "sourceRevision": "fixture:source-2",
+          "workId": "run-52f17bc9:A"
+        },
+        "recordedAt": "2026-11-23T18:19:39.134Z",
+        "result": {
+          "baselineId": "run-52f17bc9:baseline-A-2",
+          "id": "run-52f17bc9:A",
+          "sourceRevision": "fixture:source-2",
+          "title": "Body of work A"
+        },
+        "revision": 63
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-79",
+        "operation": "source.update",
+        "payload": {
+          "sourceRevision": "fixture:source-1",
+          "workId": "run-52f17bc9:A"
+        },
+        "recordedAt": "2026-11-23T18:19:39.152Z",
+        "result": {
+          "baselineId": "run-52f17bc9:baseline-A-2",
+          "id": "run-52f17bc9:A",
+          "sourceRevision": "fixture:source-1",
+          "title": "Body of work A"
+        },
+        "revision": 64
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-8",
+        "operation": "knowledge.attach",
+        "payload": {
+          "ref": {
+            "id": "run-52f17bc9:decision",
+            "revision": 1
+          },
+          "workId": "run-52f17bc9:A"
+        },
+        "recordedAt": "2026-11-23T18:19:38.622Z",
+        "result": {
+          "active": true,
+          "id": "[\"run-52f17bc9:A\",\"run-52f17bc9:decision\",1]",
+          "ref": {
+            "id": "run-52f17bc9:decision",
+            "revision": 1
+          },
+          "workId": "run-52f17bc9:A"
+        },
+        "revision": 10
+      },
+      {
+        "authority": "operator",
+        "id": "event:run-52f17bc9:command-80",
+        "operation": "baseline.approve",
+        "payload": {
+          "evidence": "fixture operator review",
+          "id": "run-52f17bc9:baseline-A-3",
+          "rationale": "Operator approves the supported specification and task plan",
+          "workId": "run-52f17bc9:A"
+        },
+        "recordedAt": "2026-11-23T18:19:39.162Z",
+        "result": {
+          "approvedBy": "operator",
+          "evidence": "fixture operator review",
+          "id": "run-52f17bc9:baseline-A-3",
+          "rationale": "Operator approves the supported specification and task plan",
+          "refs": [
+            {
+              "id": "run-52f17bc9:requirement",
+              "revision": 2
+            },
+            {
+              "id": "run-52f17bc9:assumption",
+              "revision": 2
+            },
+            {
+              "id": "run-52f17bc9:decision",
+              "revision": 2
+            }
+          ],
+          "tasks": [
+            {
+              "blockedBy": [],
+              "id": "run-52f17bc9:task-A",
+              "parentId": null,
+              "refs": [
+                {
+                  "id": "run-52f17bc9:decision",
+                  "revision": 2
+                }
+              ],
+              "revision": 2,
+              "title": "task-A",
+              "workId": "run-52f17bc9:A"
+            }
+          ],
+          "workId": "run-52f17bc9:A"
+        },
+        "revision": 65
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-81",
+        "operation": "attempt.start",
+        "payload": {
+          "allocationId": "run-52f17bc9:allocation-A",
+          "id": "run-52f17bc9:attempt-A-new",
+          "sessionId": "run-52f17bc9:session-A",
+          "taskId": "run-52f17bc9:task-A"
+        },
+        "recordedAt": "2026-11-23T18:19:39.172Z",
+        "result": {
+          "allocationId": "run-52f17bc9:allocation-A",
+          "baselineId": "run-52f17bc9:baseline-A-3",
+          "id": "run-52f17bc9:attempt-A-new",
+          "sessionId": "run-52f17bc9:session-A",
+          "sourceRevision": "fixture:source-1",
+          "status": "running",
+          "taskId": "run-52f17bc9:task-A",
+          "workId": "run-52f17bc9:A"
+        },
+        "revision": 66
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-83",
+        "operation": "verification.record",
+        "payload": {
+          "attemptId": "run-52f17bc9:attempt-A-new",
+          "baselineId": "run-52f17bc9:baseline-A-3",
+          "command": "fixture-check --all",
+          "exitCode": 0,
+          "id": "run-52f17bc9:verification-A-new",
+          "output": "controlled verifier passed",
+          "sourceRevision": "fixture:source-1"
+        },
+        "recordedAt": "2026-11-23T18:19:39.185Z",
+        "result": {
+          "attemptId": "run-52f17bc9:attempt-A-new",
+          "baselineId": "run-52f17bc9:baseline-A-3",
+          "command": "fixture-check --all",
+          "exitCode": 0,
+          "id": "run-52f17bc9:verification-A-new",
+          "output": "controlled verifier passed",
+          "sourceRevision": "fixture:source-1"
+        },
+        "revision": 67
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-84",
+        "operation": "effect.request",
+        "payload": {
+          "blockedBy": [
+            "run-52f17bc9:publication-A"
+          ],
+          "id": "run-52f17bc9:publication-A-new",
+          "kind": "publish",
+          "verificationId": "run-52f17bc9:verification-A-new",
+          "workId": "run-52f17bc9:A"
+        },
+        "recordedAt": "2026-11-23T18:19:39.195Z",
+        "result": {
+          "baselineId": "run-52f17bc9:baseline-A-3",
+          "blockedBy": [
+            "run-52f17bc9:publication-A"
+          ],
+          "detail": "Intent recorded before dispatch",
+          "id": "run-52f17bc9:publication-A-new",
+          "kind": "publish",
+          "receiptId": null,
+          "sourceRevision": "fixture:source-1",
+          "state": "pending",
+          "taskId": "run-52f17bc9:task-A",
+          "verificationId": "run-52f17bc9:verification-A-new",
+          "workId": "run-52f17bc9:A"
+        },
+        "revision": 68
+      },
+      {
+        "authority": "adapter",
+        "id": "event:run-52f17bc9:command-85",
+        "operation": "effect.observe",
+        "payload": {
+          "detail": "Confirmed controlled delivery against replacement baseline",
+          "id": "run-52f17bc9:publication-A-new",
+          "receiptId": "fixture-receipt:run-52f17bc9:publication-A-new",
+          "state": "confirmed"
+        },
+        "recordedAt": "2026-11-23T18:19:39.204Z",
+        "result": {
+          "baselineId": "run-52f17bc9:baseline-A-3",
+          "blockedBy": [
+            "run-52f17bc9:publication-A"
+          ],
+          "detail": "Confirmed controlled delivery against replacement baseline",
+          "id": "run-52f17bc9:publication-A-new",
+          "kind": "publish",
+          "receiptId": "fixture-receipt:run-52f17bc9:publication-A-new",
+          "sourceRevision": "fixture:source-1",
+          "state": "confirmed",
+          "taskId": "run-52f17bc9:task-A",
+          "verificationId": "run-52f17bc9:verification-A-new",
+          "workId": "run-52f17bc9:A"
+        },
+        "revision": 69
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:command-9",
+        "operation": "task.plan",
+        "payload": {
+          "id": "run-52f17bc9:task-A",
+          "refs": [
+            {
+              "id": "run-52f17bc9:decision",
+              "revision": 1
+            }
+          ],
+          "title": "task-A",
+          "workId": "run-52f17bc9:A"
+        },
+        "recordedAt": "2026-11-23T18:19:38.628Z",
+        "result": {
+          "blockedBy": [],
+          "id": "run-52f17bc9:task-A",
+          "parentId": null,
+          "refs": [
+            {
+              "id": "run-52f17bc9:decision",
+              "revision": 1
+            }
+          ],
+          "revision": 1,
+          "title": "task-A",
+          "workId": "run-52f17bc9:A"
+        },
+        "revision": 11
+      },
+      {
+        "authority": "agent",
+        "id": "event:run-52f17bc9:idempotent",
+        "operation": "session.attach",
+        "payload": {
+          "id": "run-52f17bc9:repeat-session",
+          "workId": "run-52f17bc9:A"
+        },
+        "recordedAt": "2026-11-23T18:19:39.212Z",
+        "result": {
+          "id": "run-52f17bc9:repeat-session",
+          "workId": "run-52f17bc9:A"
+        },
+        "revision": 70
+      }
+    ],
+    "commands": [
+      {
+        "authority": "agent",
+        "hash": "ff582d79eb3b1b21fe115ae390184d6487d285ec566fcb966245de0bc2000a44",
+        "id": "gate:Write",
+        "outcome": {
+          "commandId": "gate:Write",
+          "eventIds": [
+            "event:gate:Write"
+          ],
+          "result": {
+            "baselineId": null,
+            "id": "gate-Work",
+            "sourceRevision": "fixture:0",
+            "title": "Case-distinct identity"
+          },
+          "revision": 2
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "f6a455d54ffcc596f0c49b1acdbb1ad4bcedbba1d5a14b7a0e934379c0029671",
+        "id": "gate:write",
+        "outcome": {
+          "commandId": "gate:write",
+          "eventIds": [
+            "event:gate:write"
+          ],
+          "result": {
+            "baselineId": null,
+            "id": "gate-work",
+            "sourceRevision": "fixture:0",
+            "title": "Storage gate"
+          },
+          "revision": 1
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "fafe3cb299af740a3b32940f5275234f37b9def04b8123b30ec022c3a7555958",
+        "id": "run-52f17bc9:command-1",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-1",
+          "eventIds": [
+            "event:run-52f17bc9:command-1"
+          ],
+          "result": {
+            "id": "run-52f17bc9:assumption",
+            "revision": 1
+          },
+          "revision": 3
+        }
+      },
+      {
+        "authority": "operator",
+        "hash": "7c9be77b58bfae273d04701f751a60a03072056a836a9ec9203b3267391eb178",
+        "id": "run-52f17bc9:command-10",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-10",
+          "eventIds": [
+            "event:run-52f17bc9:command-10"
+          ],
+          "result": {
+            "approvedBy": "operator",
+            "evidence": "fixture operator review",
+            "id": "run-52f17bc9:baseline-A-1",
+            "rationale": "Operator approves the supported specification and task plan",
+            "refs": [
+              {
+                "id": "run-52f17bc9:requirement",
+                "revision": 1
+              },
+              {
+                "id": "run-52f17bc9:assumption",
+                "revision": 1
+              },
+              {
+                "id": "run-52f17bc9:decision",
+                "revision": 1
+              }
+            ],
+            "tasks": [
+              {
+                "blockedBy": [],
+                "id": "run-52f17bc9:task-A",
+                "parentId": null,
+                "refs": [
+                  {
+                    "id": "run-52f17bc9:decision",
+                    "revision": 1
+                  }
+                ],
+                "revision": 1,
+                "title": "task-A",
+                "workId": "run-52f17bc9:A"
+              }
+            ],
+            "workId": "run-52f17bc9:A"
+          },
+          "revision": 12
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "827a4c09cc418e2febb17a9336c840c6fea41e2ad3fde2adf84e29bc3deaf513",
+        "id": "run-52f17bc9:command-11",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-11",
+          "eventIds": [
+            "event:run-52f17bc9:command-11"
+          ],
+          "result": {
+            "baselineId": null,
+            "blockedBy": [],
+            "detail": "Intent recorded before dispatch",
+            "id": "run-52f17bc9:allocation-A",
+            "kind": "allocate",
+            "receiptId": null,
+            "sourceRevision": "fixture:source-1",
+            "state": "pending",
+            "taskId": null,
+            "verificationId": null,
+            "workId": "run-52f17bc9:A"
+          },
+          "revision": 13
+        }
+      },
+      {
+        "authority": "adapter",
+        "hash": "4ec9c2d25c987cec65efa9f467b328c5262011a9be901bebca4e819db4b8fe87",
+        "id": "run-52f17bc9:command-12",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-12",
+          "eventIds": [
+            "event:run-52f17bc9:command-12"
+          ],
+          "result": {
+            "baselineId": null,
+            "blockedBy": [],
+            "detail": "Controlled Producer allocation confirmation",
+            "id": "run-52f17bc9:allocation-A",
+            "kind": "allocate",
+            "receiptId": "fixture-receipt:run-52f17bc9:allocation-A",
+            "sourceRevision": "fixture:source-1",
+            "state": "confirmed",
+            "taskId": null,
+            "verificationId": null,
+            "workId": "run-52f17bc9:A"
+          },
+          "revision": 14
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "a9e4f4d1f77e9744ef6c38f3c41580abb8b9fd8c162cb3bb87c43c4386564652",
+        "id": "run-52f17bc9:command-13",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-13",
+          "eventIds": [
+            "event:run-52f17bc9:command-13"
+          ],
+          "result": {
+            "allocationId": "run-52f17bc9:allocation-A",
+            "baselineId": "run-52f17bc9:baseline-A-1",
+            "id": "run-52f17bc9:attempt-A",
+            "sessionId": "run-52f17bc9:session-A",
+            "sourceRevision": "fixture:source-1",
+            "status": "running",
+            "taskId": "run-52f17bc9:task-A",
+            "workId": "run-52f17bc9:A"
+          },
+          "revision": 15
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "f91cb2a48fe939619b1ef91f5a0c8391f0369583d7e6ca68a772f8242f05d72c",
+        "id": "run-52f17bc9:command-14",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-14",
+          "eventIds": [
+            "event:run-52f17bc9:command-14"
+          ],
+          "result": {
+            "baselineId": null,
+            "id": "run-52f17bc9:B",
+            "sourceRevision": "fixture:source-1",
+            "title": "Body of work B"
+          },
+          "revision": 16
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "392fe6a66cb0d0bc8fc7099d0b6712290925e323c0fce41f7e2ac0e983ef8a3b",
+        "id": "run-52f17bc9:command-15",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-15",
+          "eventIds": [
+            "event:run-52f17bc9:command-15"
+          ],
+          "result": {
+            "id": "run-52f17bc9:session-B",
+            "workId": "run-52f17bc9:B"
+          },
+          "revision": 17
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "97511756090d7fc18988546d689e8b02717571042d56935e16399e3cd242988a",
+        "id": "run-52f17bc9:command-16",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-16",
+          "eventIds": [
+            "event:run-52f17bc9:command-16"
+          ],
+          "result": {
+            "active": true,
+            "id": "[\"run-52f17bc9:B\",\"run-52f17bc9:assumption\",1]",
+            "ref": {
+              "id": "run-52f17bc9:assumption",
+              "revision": 1
+            },
+            "workId": "run-52f17bc9:B"
+          },
+          "revision": 18
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "0ee36cc34088cacd5bbc2278ef42f3e1f5745476e804d9c32dfe22be0951075e",
+        "id": "run-52f17bc9:command-17",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-17",
+          "eventIds": [
+            "event:run-52f17bc9:command-17"
+          ],
+          "result": {
+            "active": true,
+            "id": "[\"run-52f17bc9:B\",\"run-52f17bc9:requirement\",1]",
+            "ref": {
+              "id": "run-52f17bc9:requirement",
+              "revision": 1
+            },
+            "workId": "run-52f17bc9:B"
+          },
+          "revision": 19
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "9dca19b2044c3ceef1e798f7db5880c4a49dd93134f97339255e69a1542c4fc0",
+        "id": "run-52f17bc9:command-18",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-18",
+          "eventIds": [
+            "event:run-52f17bc9:command-18"
+          ],
+          "result": {
+            "active": true,
+            "id": "[\"run-52f17bc9:B\",\"run-52f17bc9:decision\",1]",
+            "ref": {
+              "id": "run-52f17bc9:decision",
+              "revision": 1
+            },
+            "workId": "run-52f17bc9:B"
+          },
+          "revision": 20
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "069d862526f2affc7c6a9e697c11d1cbc5a375e7714ec135994bf1becbd065b7",
+        "id": "run-52f17bc9:command-19",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-19",
+          "eventIds": [
+            "event:run-52f17bc9:command-19"
+          ],
+          "result": {
+            "blockedBy": [],
+            "id": "run-52f17bc9:task-B",
+            "parentId": null,
+            "refs": [
+              {
+                "id": "run-52f17bc9:decision",
+                "revision": 1
+              }
+            ],
+            "revision": 1,
+            "title": "task-B",
+            "workId": "run-52f17bc9:B"
+          },
+          "revision": 21
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "5544769640f71957cd18028e604a67a97fc8019eb145659a467f875956e04724",
+        "id": "run-52f17bc9:command-2",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-2",
+          "eventIds": [
+            "event:run-52f17bc9:command-2"
+          ],
+          "result": {
+            "id": "run-52f17bc9:requirement",
+            "revision": 1
+          },
+          "revision": 4
+        }
+      },
+      {
+        "authority": "operator",
+        "hash": "353e3633e4649b21ace96806e6f251ba28c83c52d904b829e414f0fb7987df35",
+        "id": "run-52f17bc9:command-20",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-20",
+          "eventIds": [
+            "event:run-52f17bc9:command-20"
+          ],
+          "result": {
+            "approvedBy": "operator",
+            "evidence": "fixture operator review",
+            "id": "run-52f17bc9:baseline-B-1",
+            "rationale": "Operator approves the supported specification and task plan",
+            "refs": [
+              {
+                "id": "run-52f17bc9:requirement",
+                "revision": 1
+              },
+              {
+                "id": "run-52f17bc9:assumption",
+                "revision": 1
+              },
+              {
+                "id": "run-52f17bc9:decision",
+                "revision": 1
+              }
+            ],
+            "tasks": [
+              {
+                "blockedBy": [],
+                "id": "run-52f17bc9:task-B",
+                "parentId": null,
+                "refs": [
+                  {
+                    "id": "run-52f17bc9:decision",
+                    "revision": 1
+                  }
+                ],
+                "revision": 1,
+                "title": "task-B",
+                "workId": "run-52f17bc9:B"
+              }
+            ],
+            "workId": "run-52f17bc9:B"
+          },
+          "revision": 22
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "a3a9d033eca756b8ebaa7d6d3bc5226d7c1cc78178cdc8b1f659790206378231",
+        "id": "run-52f17bc9:command-21",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-21",
+          "eventIds": [
+            "event:run-52f17bc9:command-21"
+          ],
+          "result": {
+            "baselineId": null,
+            "blockedBy": [],
+            "detail": "Intent recorded before dispatch",
+            "id": "run-52f17bc9:allocation-B",
+            "kind": "allocate",
+            "receiptId": null,
+            "sourceRevision": "fixture:source-1",
+            "state": "pending",
+            "taskId": null,
+            "verificationId": null,
+            "workId": "run-52f17bc9:B"
+          },
+          "revision": 23
+        }
+      },
+      {
+        "authority": "adapter",
+        "hash": "2e7df199de34b9874e9f2fe4783c9e11589f8afae344cde40a9adc1adbd72464",
+        "id": "run-52f17bc9:command-22",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-22",
+          "eventIds": [
+            "event:run-52f17bc9:command-22"
+          ],
+          "result": {
+            "baselineId": null,
+            "blockedBy": [],
+            "detail": "Controlled Producer allocation confirmation",
+            "id": "run-52f17bc9:allocation-B",
+            "kind": "allocate",
+            "receiptId": "fixture-receipt:run-52f17bc9:allocation-B",
+            "sourceRevision": "fixture:source-1",
+            "state": "confirmed",
+            "taskId": null,
+            "verificationId": null,
+            "workId": "run-52f17bc9:B"
+          },
+          "revision": 24
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "0b38d409086a348db0577a9ad930724d4616ebd7b603875f6f7c1eb596260b7e",
+        "id": "run-52f17bc9:command-23",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-23",
+          "eventIds": [
+            "event:run-52f17bc9:command-23"
+          ],
+          "result": {
+            "allocationId": "run-52f17bc9:allocation-B",
+            "baselineId": "run-52f17bc9:baseline-B-1",
+            "id": "run-52f17bc9:attempt-B",
+            "sessionId": "run-52f17bc9:session-B",
+            "sourceRevision": "fixture:source-1",
+            "status": "running",
+            "taskId": "run-52f17bc9:task-B",
+            "workId": "run-52f17bc9:B"
+          },
+          "revision": 25
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "c42fa775a7e46b1f503786c909715a6719b54188b5d423da27e56248f12acb96",
+        "id": "run-52f17bc9:command-24",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-24",
+          "eventIds": [
+            "event:run-52f17bc9:command-24"
+          ],
+          "result": {
+            "baselineId": null,
+            "id": "run-52f17bc9:unrelated",
+            "sourceRevision": "fixture:source-1",
+            "title": "Body of work unrelated"
+          },
+          "revision": 26
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "05ebe7a04897734b42839d5a8e21db7adbc74baa8498acb84cdf020814a34121",
+        "id": "run-52f17bc9:command-25",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-25",
+          "eventIds": [
+            "event:run-52f17bc9:command-25"
+          ],
+          "result": {
+            "id": "run-52f17bc9:session-unrelated",
+            "workId": "run-52f17bc9:unrelated"
+          },
+          "revision": 27
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "e7e4188669790c34cff587c5a6b405617665303569e9fa307134a59c65024931",
+        "id": "run-52f17bc9:command-26",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-26",
+          "eventIds": [
+            "event:run-52f17bc9:command-26"
+          ],
+          "result": {
+            "blockedBy": [],
+            "id": "run-52f17bc9:task-unrelated",
+            "parentId": null,
+            "refs": [],
+            "revision": 1,
+            "title": "task-unrelated",
+            "workId": "run-52f17bc9:unrelated"
+          },
+          "revision": 28
+        }
+      },
+      {
+        "authority": "operator",
+        "hash": "442ffc494275655895ea6f22c139b15055dbe1c91a2ff4f7ee1d109685f8c172",
+        "id": "run-52f17bc9:command-27",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-27",
+          "eventIds": [
+            "event:run-52f17bc9:command-27"
+          ],
+          "result": {
+            "approvedBy": "operator",
+            "evidence": "fixture operator review",
+            "id": "run-52f17bc9:baseline-unrelated-1",
+            "rationale": "Operator approves the supported specification and task plan",
+            "refs": [],
+            "tasks": [
+              {
+                "blockedBy": [],
+                "id": "run-52f17bc9:task-unrelated",
+                "parentId": null,
+                "refs": [],
+                "revision": 1,
+                "title": "task-unrelated",
+                "workId": "run-52f17bc9:unrelated"
+              }
+            ],
+            "workId": "run-52f17bc9:unrelated"
+          },
+          "revision": 29
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "ebad200e90ab769c5032825dc0b0be86f6652e85ef3ef9c60739cc11c9541db3",
+        "id": "run-52f17bc9:command-28",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-28",
+          "eventIds": [
+            "event:run-52f17bc9:command-28"
+          ],
+          "result": {
+            "baselineId": null,
+            "blockedBy": [],
+            "detail": "Intent recorded before dispatch",
+            "id": "run-52f17bc9:allocation-unrelated",
+            "kind": "allocate",
+            "receiptId": null,
+            "sourceRevision": "fixture:source-1",
+            "state": "pending",
+            "taskId": null,
+            "verificationId": null,
+            "workId": "run-52f17bc9:unrelated"
+          },
+          "revision": 30
+        }
+      },
+      {
+        "authority": "adapter",
+        "hash": "917cee7b302ae8535f50869ce2d5590897b1003d1db196227fd6299b0ed62647",
+        "id": "run-52f17bc9:command-29",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-29",
+          "eventIds": [
+            "event:run-52f17bc9:command-29"
+          ],
+          "result": {
+            "baselineId": null,
+            "blockedBy": [],
+            "detail": "Controlled Producer allocation confirmation",
+            "id": "run-52f17bc9:allocation-unrelated",
+            "kind": "allocate",
+            "receiptId": "fixture-receipt:run-52f17bc9:allocation-unrelated",
+            "sourceRevision": "fixture:source-1",
+            "state": "confirmed",
+            "taskId": null,
+            "verificationId": null,
+            "workId": "run-52f17bc9:unrelated"
+          },
+          "revision": 31
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "7f3f5a697265a42f44c05b30d762ce012db9cacc55b1ec1969d2aac22ecdf2c9",
+        "id": "run-52f17bc9:command-3",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-3",
+          "eventIds": [
+            "event:run-52f17bc9:command-3"
+          ],
+          "result": {
+            "id": "run-52f17bc9:decision",
+            "revision": 1
+          },
+          "revision": 5
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "28cc87bceb5fa07fd011aa1b955e3229969c0792c56c1d4e6bdd336317e6abc1",
+        "id": "run-52f17bc9:command-30",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-30",
+          "eventIds": [
+            "event:run-52f17bc9:command-30"
+          ],
+          "result": {
+            "allocationId": "run-52f17bc9:allocation-unrelated",
+            "baselineId": "run-52f17bc9:baseline-unrelated-1",
+            "id": "run-52f17bc9:attempt-unrelated",
+            "sessionId": "run-52f17bc9:session-unrelated",
+            "sourceRevision": "fixture:source-1",
+            "status": "running",
+            "taskId": "run-52f17bc9:task-unrelated",
+            "workId": "run-52f17bc9:unrelated"
+          },
+          "revision": 32
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "fb41ebebbf63168ed7d17a23cf350fec8adf52447e39c07f051ff207cd32fdf8",
+        "id": "run-52f17bc9:command-34",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-34",
+          "eventIds": [
+            "event:run-52f17bc9:command-34"
+          ],
+          "result": {
+            "holds": [
+              {
+                "clearedBy": null,
+                "id": "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:assumption\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+                "invalidationId": "run-52f17bc9:invalidation-1",
+                "taskIds": [
+                  "run-52f17bc9:task-A"
+                ],
+                "useId": "[\"run-52f17bc9:A\",\"run-52f17bc9:assumption\",1]",
+                "workId": "run-52f17bc9:A"
+              },
+              {
+                "clearedBy": null,
+                "id": "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:decision\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+                "invalidationId": "run-52f17bc9:invalidation-1",
+                "taskIds": [
+                  "run-52f17bc9:task-A"
+                ],
+                "useId": "[\"run-52f17bc9:A\",\"run-52f17bc9:decision\",1]",
+                "workId": "run-52f17bc9:A"
+              },
+              {
+                "clearedBy": null,
+                "id": "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:requirement\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+                "invalidationId": "run-52f17bc9:invalidation-1",
+                "taskIds": [
+                  "run-52f17bc9:task-A"
+                ],
+                "useId": "[\"run-52f17bc9:A\",\"run-52f17bc9:requirement\",1]",
+                "workId": "run-52f17bc9:A"
+              },
+              {
+                "clearedBy": null,
+                "id": "[\"[\\\"run-52f17bc9:B\\\",\\\"run-52f17bc9:assumption\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+                "invalidationId": "run-52f17bc9:invalidation-1",
+                "taskIds": [
+                  "run-52f17bc9:task-B"
+                ],
+                "useId": "[\"run-52f17bc9:B\",\"run-52f17bc9:assumption\",1]",
+                "workId": "run-52f17bc9:B"
+              },
+              {
+                "clearedBy": null,
+                "id": "[\"[\\\"run-52f17bc9:B\\\",\\\"run-52f17bc9:decision\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+                "invalidationId": "run-52f17bc9:invalidation-1",
+                "taskIds": [
+                  "run-52f17bc9:task-B"
+                ],
+                "useId": "[\"run-52f17bc9:B\",\"run-52f17bc9:decision\",1]",
+                "workId": "run-52f17bc9:B"
+              },
+              {
+                "clearedBy": null,
+                "id": "[\"[\\\"run-52f17bc9:B\\\",\\\"run-52f17bc9:requirement\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+                "invalidationId": "run-52f17bc9:invalidation-1",
+                "taskIds": [
+                  "run-52f17bc9:task-B"
+                ],
+                "useId": "[\"run-52f17bc9:B\",\"run-52f17bc9:requirement\",1]",
+                "workId": "run-52f17bc9:B"
+              }
+            ],
+            "invalidation": {
+              "evidence": "controlled counterexample",
+              "id": "run-52f17bc9:invalidation-1",
+              "rationale": "The earlier assumption was disproven",
+              "ref": {
+                "id": "run-52f17bc9:assumption",
+                "revision": 1
+              }
+            }
+          },
+          "revision": 33
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "f87ba0aab277a50b578f712e14169dc1bd6bd1dca1b7562e14adf8171e7a6669",
+        "id": "run-52f17bc9:command-38",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-38",
+          "eventIds": [
+            "event:run-52f17bc9:command-38"
+          ],
+          "result": {
+            "id": "run-52f17bc9:session-A-returned",
+            "workId": "run-52f17bc9:A"
+          },
+          "revision": 34
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "4bd6704246a9960217c1add34ce0872e6aef69b16189b4b599402057066339ac",
+        "id": "run-52f17bc9:command-4",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-4",
+          "eventIds": [
+            "event:run-52f17bc9:command-4"
+          ],
+          "result": {
+            "baselineId": null,
+            "id": "run-52f17bc9:A",
+            "sourceRevision": "fixture:source-1",
+            "title": "Body of work A"
+          },
+          "revision": 6
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "d583eba4bc736665135749469c400d8a4fcd9a534b04eae10f0b2fd13d5d8e07",
+        "id": "run-52f17bc9:command-42",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-42",
+          "eventIds": [
+            "event:run-52f17bc9:command-42"
+          ],
+          "result": {
+            "baselineId": null,
+            "id": "run-52f17bc9:late",
+            "sourceRevision": "fixture:source-1",
+            "title": "Later body of work"
+          },
+          "revision": 35
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "59c4d6a0de664525d5852ebd928b65b8320db77475eb5cee4f0836eac84ba561",
+        "id": "run-52f17bc9:command-43",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-43",
+          "eventIds": [
+            "event:run-52f17bc9:command-43"
+          ],
+          "result": {
+            "id": "run-52f17bc9:session-late",
+            "workId": "run-52f17bc9:late"
+          },
+          "revision": 36
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "e463164633a2b767f362a55e02b88305a6d42e070f2420eb6f0b398ade4a14ea",
+        "id": "run-52f17bc9:command-44",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-44",
+          "eventIds": [
+            "event:run-52f17bc9:command-44"
+          ],
+          "result": {
+            "active": true,
+            "id": "[\"run-52f17bc9:late\",\"run-52f17bc9:decision\",1]",
+            "ref": {
+              "id": "run-52f17bc9:decision",
+              "revision": 1
+            },
+            "workId": "run-52f17bc9:late"
+          },
+          "revision": 37
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "2763b4e5ad1bd5bf0ef6b824209578ca63667b76f8bdc67eda482e2feb1caef4",
+        "id": "run-52f17bc9:command-45",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-45",
+          "eventIds": [
+            "event:run-52f17bc9:command-45"
+          ],
+          "result": {
+            "blockedBy": [],
+            "id": "run-52f17bc9:task-late",
+            "parentId": null,
+            "refs": [
+              {
+                "id": "run-52f17bc9:decision",
+                "revision": 1
+              }
+            ],
+            "revision": 1,
+            "title": "task-late",
+            "workId": "run-52f17bc9:late"
+          },
+          "revision": 38
+        }
+      },
+      {
+        "authority": "operator",
+        "hash": "41519f6eac284f2ffc4048eac0cc58eae6b3f31dbebcaff789e333d2bd7d4eb5",
+        "id": "run-52f17bc9:command-46",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-46",
+          "eventIds": [
+            "event:run-52f17bc9:command-46"
+          ],
+          "result": {
+            "approvedBy": "operator",
+            "evidence": "fixture operator review",
+            "id": "run-52f17bc9:baseline-late-1",
+            "rationale": "Operator approves the supported specification and task plan",
+            "refs": [
+              {
+                "id": "run-52f17bc9:decision",
+                "revision": 1
+              },
+              {
+                "id": "run-52f17bc9:requirement",
+                "revision": 1
+              },
+              {
+                "id": "run-52f17bc9:assumption",
+                "revision": 1
+              }
+            ],
+            "tasks": [
+              {
+                "blockedBy": [],
+                "id": "run-52f17bc9:task-late",
+                "parentId": null,
+                "refs": [
+                  {
+                    "id": "run-52f17bc9:decision",
+                    "revision": 1
+                  }
+                ],
+                "revision": 1,
+                "title": "task-late",
+                "workId": "run-52f17bc9:late"
+              }
+            ],
+            "workId": "run-52f17bc9:late"
+          },
+          "revision": 39
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "0376430e8a213a895409734f66fc7fc932469b8f2876e5d049dffa051d85e5cf",
+        "id": "run-52f17bc9:command-47",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-47",
+          "eventIds": [
+            "event:run-52f17bc9:command-47"
+          ],
+          "result": {
+            "baselineId": null,
+            "blockedBy": [],
+            "detail": "Intent recorded before dispatch",
+            "id": "run-52f17bc9:allocation-late",
+            "kind": "allocate",
+            "receiptId": null,
+            "sourceRevision": "fixture:source-1",
+            "state": "pending",
+            "taskId": null,
+            "verificationId": null,
+            "workId": "run-52f17bc9:late"
+          },
+          "revision": 40
+        }
+      },
+      {
+        "authority": "adapter",
+        "hash": "3021575b9626edf89d8d90abe58393712eea5328ffa24f307887510db602887a",
+        "id": "run-52f17bc9:command-48",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-48",
+          "eventIds": [
+            "event:run-52f17bc9:command-48"
+          ],
+          "result": {
+            "baselineId": null,
+            "blockedBy": [],
+            "detail": "Controlled Producer allocation confirmation",
+            "id": "run-52f17bc9:allocation-late",
+            "kind": "allocate",
+            "receiptId": "fixture-receipt:run-52f17bc9:allocation-late",
+            "sourceRevision": "fixture:source-1",
+            "state": "confirmed",
+            "taskId": null,
+            "verificationId": null,
+            "workId": "run-52f17bc9:late"
+          },
+          "revision": 41
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "877fd45e1787fe74654fdf423c8449a62b1d96d987666a8421b784aedf94224f",
+        "id": "run-52f17bc9:command-5",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-5",
+          "eventIds": [
+            "event:run-52f17bc9:command-5"
+          ],
+          "result": {
+            "id": "run-52f17bc9:session-A",
+            "workId": "run-52f17bc9:A"
+          },
+          "revision": 7
+        }
+      },
+      {
+        "authority": "adapter",
+        "hash": "982991c1c9120c02b5341e012fbd192964a5844c767a55f09f6d10a28cd0d752",
+        "id": "run-52f17bc9:command-51",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-51",
+          "eventIds": [
+            "event:run-52f17bc9:command-51"
+          ],
+          "result": {
+            "allocationId": "run-52f17bc9:allocation-A",
+            "baselineId": "run-52f17bc9:baseline-A-1",
+            "id": "run-52f17bc9:attempt-A",
+            "sessionId": "run-52f17bc9:session-A",
+            "sourceRevision": "fixture:source-1",
+            "status": "paused",
+            "taskId": "run-52f17bc9:task-A",
+            "workId": "run-52f17bc9:A"
+          },
+          "revision": 42
+        }
+      },
+      {
+        "authority": "adapter",
+        "hash": "20022389f96e11b196eeb0865fec7f22db705d6f150488bf55b0203dd743ec51",
+        "id": "run-52f17bc9:command-52",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-52",
+          "eventIds": [
+            "event:run-52f17bc9:command-52"
+          ],
+          "result": {
+            "allocationId": "run-52f17bc9:allocation-B",
+            "baselineId": "run-52f17bc9:baseline-B-1",
+            "id": "run-52f17bc9:attempt-B",
+            "sessionId": "run-52f17bc9:session-B",
+            "sourceRevision": "fixture:source-1",
+            "status": "paused",
+            "taskId": "run-52f17bc9:task-B",
+            "workId": "run-52f17bc9:B"
+          },
+          "revision": 43
+        }
+      },
+      {
+        "authority": "operator",
+        "hash": "623120418fd29705307e66c6dc394fa31eabc628e67e0ec01776d410439108b2",
+        "id": "run-52f17bc9:command-55",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-55",
+          "eventIds": [
+            "event:run-52f17bc9:command-55"
+          ],
+          "result": {
+            "baselineId": null,
+            "id": "run-52f17bc9:A",
+            "sourceRevision": "fixture:source-1",
+            "title": "Body of work A"
+          },
+          "revision": 44
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "14b03b0efb59f79e630db198f0a3c09047883d84756bd6e6956698c755e5394d",
+        "id": "run-52f17bc9:command-56",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-56",
+          "eventIds": [
+            "event:run-52f17bc9:command-56"
+          ],
+          "result": {
+            "id": "run-52f17bc9:assumption",
+            "revision": 2
+          },
+          "revision": 45
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "b6ced61783565c2dbac6a9ab19d8279da4be1f277a40998ccea48f851b8b521f",
+        "id": "run-52f17bc9:command-57",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-57",
+          "eventIds": [
+            "event:run-52f17bc9:command-57"
+          ],
+          "result": {
+            "id": "run-52f17bc9:requirement",
+            "revision": 2
+          },
+          "revision": 46
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "f94e39507e0c6fbea7db889af0cae3e8604888133559fbd0df924e84196f0947",
+        "id": "run-52f17bc9:command-58",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-58",
+          "eventIds": [
+            "event:run-52f17bc9:command-58"
+          ],
+          "result": {
+            "id": "run-52f17bc9:decision",
+            "revision": 2
+          },
+          "revision": 47
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "514b7b3d0b6bc2319132d24e3a7acb28209aa06bd1c0fac9aaf7348d5a54eb77",
+        "id": "run-52f17bc9:command-59",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-59",
+          "eventIds": [
+            "event:run-52f17bc9:command-59"
+          ],
+          "result": {
+            "active": true,
+            "id": "[\"run-52f17bc9:A\",\"run-52f17bc9:assumption\",2]",
+            "ref": {
+              "id": "run-52f17bc9:assumption",
+              "revision": 2
+            },
+            "workId": "run-52f17bc9:A"
+          },
+          "revision": 48
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "9f3cbb2f7f3dd4b6addeab7932eec813e519d40777173a7411059310c2f66c40",
+        "id": "run-52f17bc9:command-6",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-6",
+          "eventIds": [
+            "event:run-52f17bc9:command-6"
+          ],
+          "result": {
+            "active": true,
+            "id": "[\"run-52f17bc9:A\",\"run-52f17bc9:assumption\",1]",
+            "ref": {
+              "id": "run-52f17bc9:assumption",
+              "revision": 1
+            },
+            "workId": "run-52f17bc9:A"
+          },
+          "revision": 8
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "715801f7023f3191efd0e547d12c7404b6888f05986cacdd272f962e201c642c",
+        "id": "run-52f17bc9:command-60",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-60",
+          "eventIds": [
+            "event:run-52f17bc9:command-60"
+          ],
+          "result": {
+            "active": true,
+            "id": "[\"run-52f17bc9:A\",\"run-52f17bc9:requirement\",2]",
+            "ref": {
+              "id": "run-52f17bc9:requirement",
+              "revision": 2
+            },
+            "workId": "run-52f17bc9:A"
+          },
+          "revision": 49
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "e107d27d7c6222c74fe83f35c9cd0c99ba4c3b975707424286509e3c86a761c3",
+        "id": "run-52f17bc9:command-61",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-61",
+          "eventIds": [
+            "event:run-52f17bc9:command-61"
+          ],
+          "result": {
+            "active": true,
+            "id": "[\"run-52f17bc9:A\",\"run-52f17bc9:decision\",2]",
+            "ref": {
+              "id": "run-52f17bc9:decision",
+              "revision": 2
+            },
+            "workId": "run-52f17bc9:A"
+          },
+          "revision": 50
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "9a01d20d8eab5cdd53c571f4cbc67cd07bc9e94c1490bf89a7611b115a698654",
+        "id": "run-52f17bc9:command-62",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-62",
+          "eventIds": [
+            "event:run-52f17bc9:command-62"
+          ],
+          "result": {
+            "blockedBy": [],
+            "id": "run-52f17bc9:task-A",
+            "parentId": null,
+            "refs": [
+              {
+                "id": "run-52f17bc9:decision",
+                "revision": 2
+              }
+            ],
+            "revision": 2,
+            "title": "task-A",
+            "workId": "run-52f17bc9:A"
+          },
+          "revision": 51
+        }
+      },
+      {
+        "authority": "operator",
+        "hash": "d8563304a67a175c29399f74a26a2f2d2d80b0c44d063d8a1853592b89bc319b",
+        "id": "run-52f17bc9:command-63",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-63",
+          "eventIds": [
+            "event:run-52f17bc9:command-63"
+          ],
+          "result": {
+            "approvedBy": "operator",
+            "evidence": "fixture operator review",
+            "id": "run-52f17bc9:baseline-A-2",
+            "rationale": "Operator approves the supported specification and task plan",
+            "refs": [
+              {
+                "id": "run-52f17bc9:requirement",
+                "revision": 2
+              },
+              {
+                "id": "run-52f17bc9:assumption",
+                "revision": 2
+              },
+              {
+                "id": "run-52f17bc9:decision",
+                "revision": 2
+              }
+            ],
+            "tasks": [
+              {
+                "blockedBy": [],
+                "id": "run-52f17bc9:task-A",
+                "parentId": null,
+                "refs": [
+                  {
+                    "id": "run-52f17bc9:decision",
+                    "revision": 2
+                  }
+                ],
+                "revision": 2,
+                "title": "task-A",
+                "workId": "run-52f17bc9:A"
+              }
+            ],
+            "workId": "run-52f17bc9:A"
+          },
+          "revision": 52
+        }
+      },
+      {
+        "authority": "operator",
+        "hash": "03a8ed662b844b9613ebacf5579aa0f38bcbd4dd6284fed3ff08d8e44874639f",
+        "id": "run-52f17bc9:command-64",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-64",
+          "eventIds": [
+            "event:run-52f17bc9:command-64"
+          ],
+          "result": {
+            "actor": "operator",
+            "baselineId": "run-52f17bc9:baseline-A-2",
+            "evidence": "explicit controlled operator decision",
+            "holdIds": [
+              "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:assumption\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+              "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:decision\\\",1]\",\"run-52f17bc9:invalidation-1\",33]",
+              "[\"[\\\"run-52f17bc9:A\\\",\\\"run-52f17bc9:requirement\\\",1]\",\"run-52f17bc9:invalidation-1\",33]"
+            ],
+            "id": "run-52f17bc9:operator-reassessment",
+            "rationale": "Operator accepts revised baseline and replacement evidence",
+            "workId": "run-52f17bc9:A"
+          },
+          "revision": 53
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "587950a5a2a08fb12204468da79d0384d28a87d3101bc984c3a91a4e618a3265",
+        "id": "run-52f17bc9:command-65",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-65",
+          "eventIds": [
+            "event:run-52f17bc9:command-65"
+          ],
+          "result": {
+            "allocationId": "run-52f17bc9:allocation-A",
+            "baselineId": "run-52f17bc9:baseline-A-2",
+            "id": "run-52f17bc9:attempt-A",
+            "sessionId": "run-52f17bc9:session-A",
+            "sourceRevision": "fixture:source-1",
+            "status": "running",
+            "taskId": "run-52f17bc9:task-A",
+            "workId": "run-52f17bc9:A"
+          },
+          "revision": 54
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "5b87700445bb48a5c9dab8f69448477d98871394f68cb1abc8bd87449ae916da",
+        "id": "run-52f17bc9:command-66",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-66",
+          "eventIds": [
+            "event:run-52f17bc9:command-66"
+          ],
+          "result": {
+            "attemptId": "run-52f17bc9:attempt-A",
+            "baselineId": "run-52f17bc9:baseline-A-2",
+            "command": "fixture-check --all",
+            "exitCode": 1,
+            "id": "run-52f17bc9:failed-verification",
+            "output": "controlled verifier failed",
+            "sourceRevision": "fixture:source-1"
+          },
+          "revision": 55
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "d4bf361194d0a15c94e2c206c0b58f851714713ebb270be5ecf1126604ef6ac8",
+        "id": "run-52f17bc9:command-68",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-68",
+          "eventIds": [
+            "event:run-52f17bc9:command-68"
+          ],
+          "result": {
+            "attemptId": "run-52f17bc9:attempt-A",
+            "baselineId": "run-52f17bc9:baseline-A-2",
+            "command": "fixture-check --all",
+            "exitCode": 0,
+            "id": "run-52f17bc9:verification-A",
+            "output": "controlled verifier passed",
+            "sourceRevision": "fixture:source-1"
+          },
+          "revision": 56
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "68f8c0b37e60f6ff7329ea8bd5ef6f4262b298cd3c9c8b102f7b52188a259f19",
+        "id": "run-52f17bc9:command-7",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-7",
+          "eventIds": [
+            "event:run-52f17bc9:command-7"
+          ],
+          "result": {
+            "active": true,
+            "id": "[\"run-52f17bc9:A\",\"run-52f17bc9:requirement\",1]",
+            "ref": {
+              "id": "run-52f17bc9:requirement",
+              "revision": 1
+            },
+            "workId": "run-52f17bc9:A"
+          },
+          "revision": 9
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "48363604e11cb23fde6037e24038b3f53eb77ce174335aa84eb814305f4621d2",
+        "id": "run-52f17bc9:command-70",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-70",
+          "eventIds": [
+            "event:run-52f17bc9:command-70"
+          ],
+          "result": {
+            "baselineId": "run-52f17bc9:baseline-A-2",
+            "blockedBy": [],
+            "detail": "Intent recorded before dispatch",
+            "id": "run-52f17bc9:publication-A",
+            "kind": "publish",
+            "receiptId": null,
+            "sourceRevision": "fixture:source-1",
+            "state": "pending",
+            "taskId": "run-52f17bc9:task-A",
+            "verificationId": "run-52f17bc9:verification-A",
+            "workId": "run-52f17bc9:A"
+          },
+          "revision": 57
+        }
+      },
+      {
+        "authority": "adapter",
+        "hash": "d49fc1497ae0520df78a50f8a78aa8df376b8c2bd48c2d8d01a82bb6c7963331",
+        "id": "run-52f17bc9:command-71",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-71",
+          "eventIds": [
+            "event:run-52f17bc9:command-71"
+          ],
+          "result": {
+            "baselineId": "run-52f17bc9:baseline-A-2",
+            "blockedBy": [],
+            "detail": "Controlled external effect occurred but its response was lost",
+            "id": "run-52f17bc9:publication-A",
+            "kind": "publish",
+            "receiptId": null,
+            "sourceRevision": "fixture:source-1",
+            "state": "uncertain",
+            "taskId": "run-52f17bc9:task-A",
+            "verificationId": "run-52f17bc9:verification-A",
+            "workId": "run-52f17bc9:A"
+          },
+          "revision": 58
+        }
+      },
+      {
+        "authority": "adapter",
+        "hash": "089549c76e73b6d1aea924ef5be6f4e2947c086e1ed89974b868e0910d35d8b9",
+        "id": "run-52f17bc9:command-72",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-72",
+          "eventIds": [
+            "event:run-52f17bc9:command-72"
+          ],
+          "result": {
+            "baselineId": "run-52f17bc9:baseline-A-2",
+            "blockedBy": [],
+            "detail": "Controlled Publisher receipt reconciled by stable effect ID",
+            "id": "run-52f17bc9:publication-A",
+            "kind": "publish",
+            "receiptId": "fixture-receipt:run-52f17bc9:publication-A",
+            "sourceRevision": "fixture:source-1",
+            "state": "confirmed",
+            "taskId": "run-52f17bc9:task-A",
+            "verificationId": "run-52f17bc9:verification-A",
+            "workId": "run-52f17bc9:A"
+          },
+          "revision": 59
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "1dbe4ec5894378c624e11d063cd814c2b1a33abc9523528971ac7e50d0b66249",
+        "id": "run-52f17bc9:command-73",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-73",
+          "eventIds": [
+            "event:run-52f17bc9:command-73"
+          ],
+          "result": {
+            "baselineId": null,
+            "blockedBy": [],
+            "detail": "Intent recorded before dispatch",
+            "id": "run-52f17bc9:failed-allocation",
+            "kind": "allocate",
+            "receiptId": null,
+            "sourceRevision": "fixture:source-1",
+            "state": "pending",
+            "taskId": null,
+            "verificationId": null,
+            "workId": "run-52f17bc9:A"
+          },
+          "revision": 60
+        }
+      },
+      {
+        "authority": "adapter",
+        "hash": "94b7a24a155c89b09d2b22d8e8bea3ebbc125dd35d4b2ad18354f0935859c840",
+        "id": "run-52f17bc9:command-74",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-74",
+          "eventIds": [
+            "event:run-52f17bc9:command-74"
+          ],
+          "result": {
+            "baselineId": null,
+            "blockedBy": [],
+            "detail": "Controlled allocation rejected",
+            "id": "run-52f17bc9:failed-allocation",
+            "kind": "allocate",
+            "receiptId": null,
+            "sourceRevision": "fixture:source-1",
+            "state": "failed",
+            "taskId": null,
+            "verificationId": null,
+            "workId": "run-52f17bc9:A"
+          },
+          "revision": 61
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "ff397e698ac204f673c87ce8570788c8fe981d65387f8abb53bf50968369528e",
+        "id": "run-52f17bc9:command-76",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-76",
+          "eventIds": [
+            "event:run-52f17bc9:command-76"
+          ],
+          "result": {
+            "baselineId": "run-52f17bc9:baseline-A-2",
+            "blockedBy": [
+              "run-52f17bc9:publication-A"
+            ],
+            "detail": "Intent recorded before dispatch",
+            "id": "run-52f17bc9:pending-publication",
+            "kind": "publish",
+            "receiptId": null,
+            "sourceRevision": "fixture:source-1",
+            "state": "pending",
+            "taskId": "run-52f17bc9:task-A",
+            "verificationId": "run-52f17bc9:verification-A",
+            "workId": "run-52f17bc9:A"
+          },
+          "revision": 62
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "c54eb7cb929f89cef362cb132905461c402e0161cf4d5fda71a2c43060fa08d8",
+        "id": "run-52f17bc9:command-77",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-77",
+          "eventIds": [
+            "event:run-52f17bc9:command-77"
+          ],
+          "result": {
+            "baselineId": "run-52f17bc9:baseline-A-2",
+            "id": "run-52f17bc9:A",
+            "sourceRevision": "fixture:source-2",
+            "title": "Body of work A"
+          },
+          "revision": 63
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "a33d1b68af2943962d5f43c1a9beae154f625725add804eb97cb3b1946031bd0",
+        "id": "run-52f17bc9:command-79",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-79",
+          "eventIds": [
+            "event:run-52f17bc9:command-79"
+          ],
+          "result": {
+            "baselineId": "run-52f17bc9:baseline-A-2",
+            "id": "run-52f17bc9:A",
+            "sourceRevision": "fixture:source-1",
+            "title": "Body of work A"
+          },
+          "revision": 64
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "c9143200bd005fc0b50d9de9000959170205974722a919ce2973eb2b85d25272",
+        "id": "run-52f17bc9:command-8",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-8",
+          "eventIds": [
+            "event:run-52f17bc9:command-8"
+          ],
+          "result": {
+            "active": true,
+            "id": "[\"run-52f17bc9:A\",\"run-52f17bc9:decision\",1]",
+            "ref": {
+              "id": "run-52f17bc9:decision",
+              "revision": 1
+            },
+            "workId": "run-52f17bc9:A"
+          },
+          "revision": 10
+        }
+      },
+      {
+        "authority": "operator",
+        "hash": "0a8d91ea540a3c7e223ed74f560bb8d15cc8f3b4dea0798f775e543e4be8c1c3",
+        "id": "run-52f17bc9:command-80",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-80",
+          "eventIds": [
+            "event:run-52f17bc9:command-80"
+          ],
+          "result": {
+            "approvedBy": "operator",
+            "evidence": "fixture operator review",
+            "id": "run-52f17bc9:baseline-A-3",
+            "rationale": "Operator approves the supported specification and task plan",
+            "refs": [
+              {
+                "id": "run-52f17bc9:requirement",
+                "revision": 2
+              },
+              {
+                "id": "run-52f17bc9:assumption",
+                "revision": 2
+              },
+              {
+                "id": "run-52f17bc9:decision",
+                "revision": 2
+              }
+            ],
+            "tasks": [
+              {
+                "blockedBy": [],
+                "id": "run-52f17bc9:task-A",
+                "parentId": null,
+                "refs": [
+                  {
+                    "id": "run-52f17bc9:decision",
+                    "revision": 2
+                  }
+                ],
+                "revision": 2,
+                "title": "task-A",
+                "workId": "run-52f17bc9:A"
+              }
+            ],
+            "workId": "run-52f17bc9:A"
+          },
+          "revision": 65
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "703e9d97a1f0d79d5a7d16e225b187aa5e6e6d64cf6214e93114a5eb48f24c71",
+        "id": "run-52f17bc9:command-81",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-81",
+          "eventIds": [
+            "event:run-52f17bc9:command-81"
+          ],
+          "result": {
+            "allocationId": "run-52f17bc9:allocation-A",
+            "baselineId": "run-52f17bc9:baseline-A-3",
+            "id": "run-52f17bc9:attempt-A-new",
+            "sessionId": "run-52f17bc9:session-A",
+            "sourceRevision": "fixture:source-1",
+            "status": "running",
+            "taskId": "run-52f17bc9:task-A",
+            "workId": "run-52f17bc9:A"
+          },
+          "revision": 66
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "3f0c724394aaff3c37209e34319a2fec1b0656baa8094af3fdb7d4d772938322",
+        "id": "run-52f17bc9:command-83",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-83",
+          "eventIds": [
+            "event:run-52f17bc9:command-83"
+          ],
+          "result": {
+            "attemptId": "run-52f17bc9:attempt-A-new",
+            "baselineId": "run-52f17bc9:baseline-A-3",
+            "command": "fixture-check --all",
+            "exitCode": 0,
+            "id": "run-52f17bc9:verification-A-new",
+            "output": "controlled verifier passed",
+            "sourceRevision": "fixture:source-1"
+          },
+          "revision": 67
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "a512895a1d63b93ff20bcfeaee60f31169cd462d322af5beacbc65469edcfeab",
+        "id": "run-52f17bc9:command-84",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-84",
+          "eventIds": [
+            "event:run-52f17bc9:command-84"
+          ],
+          "result": {
+            "baselineId": "run-52f17bc9:baseline-A-3",
+            "blockedBy": [
+              "run-52f17bc9:publication-A"
+            ],
+            "detail": "Intent recorded before dispatch",
+            "id": "run-52f17bc9:publication-A-new",
+            "kind": "publish",
+            "receiptId": null,
+            "sourceRevision": "fixture:source-1",
+            "state": "pending",
+            "taskId": "run-52f17bc9:task-A",
+            "verificationId": "run-52f17bc9:verification-A-new",
+            "workId": "run-52f17bc9:A"
+          },
+          "revision": 68
+        }
+      },
+      {
+        "authority": "adapter",
+        "hash": "cd4ccb82aae6c38307f7bd600f46e3cf6c430ec54b3efcedf9174613544bdf10",
+        "id": "run-52f17bc9:command-85",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-85",
+          "eventIds": [
+            "event:run-52f17bc9:command-85"
+          ],
+          "result": {
+            "baselineId": "run-52f17bc9:baseline-A-3",
+            "blockedBy": [
+              "run-52f17bc9:publication-A"
+            ],
+            "detail": "Confirmed controlled delivery against replacement baseline",
+            "id": "run-52f17bc9:publication-A-new",
+            "kind": "publish",
+            "receiptId": "fixture-receipt:run-52f17bc9:publication-A-new",
+            "sourceRevision": "fixture:source-1",
+            "state": "confirmed",
+            "taskId": "run-52f17bc9:task-A",
+            "verificationId": "run-52f17bc9:verification-A-new",
+            "workId": "run-52f17bc9:A"
+          },
+          "revision": 69
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "85cfd2460ae85d74b721b291edbed88449acec265a75dd4fa86774862c75d19b",
+        "id": "run-52f17bc9:command-9",
+        "outcome": {
+          "commandId": "run-52f17bc9:command-9",
+          "eventIds": [
+            "event:run-52f17bc9:command-9"
+          ],
+          "result": {
+            "blockedBy": [],
+            "id": "run-52f17bc9:task-A",
+            "parentId": null,
+            "refs": [
+              {
+                "id": "run-52f17bc9:decision",
+                "revision": 1
+              }
+            ],
+            "revision": 1,
+            "title": "task-A",
+            "workId": "run-52f17bc9:A"
+          },
+          "revision": 11
+        }
+      },
+      {
+        "authority": "agent",
+        "hash": "6221401d3f75fa6ff802fbf40d6349adb6b8ab8212a696d153374a85a7ee9915",
+        "id": "run-52f17bc9:idempotent",
+        "outcome": {
+          "commandId": "run-52f17bc9:idempotent",
+          "eventIds": [
+            "event:run-52f17bc9:idempotent"
+          ],
+          "result": {
+            "id": "run-52f17bc9:repeat-session",
+            "workId": "run-52f17bc9:A"
+          },
+          "revision": 70
+        }
+      }
+    ]
+  },
+  "doltHistory": [
+    {
+      "commit_hash": "08eqarfkf88r7tepoa90i18utjv4u6v3",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:39.213Z"
+    },
+    {
+      "commit_hash": "5vfkesvkl68ohficatesh78f42lv4fiu",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:39.206Z"
+    },
+    {
+      "commit_hash": "eis35rnk2hbjno0b6v7fgd1d03kdssep",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:39.197Z"
+    },
+    {
+      "commit_hash": "q3p5knkf1hdnqdjqnuvtj0kvujc1ajnc",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:39.187Z"
+    },
+    {
+      "commit_hash": "jgaoli978qaufgo8quei5ca79qfodc8d",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:39.174Z"
+    },
+    {
+      "commit_hash": "kattviriis16e1jh5uavm48ivof37t43",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:39.163Z"
+    },
+    {
+      "commit_hash": "58f9fvode22i20rh4m04hr3r7son3h0o",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:39.154Z"
+    },
+    {
+      "commit_hash": "iegla5qeqfhik7363a48hstk6l3g70la",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:39.135Z"
+    },
+    {
+      "commit_hash": "b6k4ascoatntllprmjjri4fkdk0krss4",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:39.127Z"
+    },
+    {
+      "commit_hash": "h9ta7ael4uovmf8vrv89lv8ahcau2urq",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:39.113Z"
+    },
+    {
+      "commit_hash": "6c4jqcts31fmn0m02pkci3aavif80cdb",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:39.104Z"
+    },
+    {
+      "commit_hash": "h47kkjns8cs0eelgnqg0sm3504fk4ull",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:39.095Z"
+    },
+    {
+      "commit_hash": "moje7sm883j6fe2f07cbhi5s4u33lshs",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:39.084Z"
+    },
+    {
+      "commit_hash": "6akqhvhcpn3nhcn513bt8ssmhdmuon8h",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:39.073Z"
+    },
+    {
+      "commit_hash": "oqal98rhjvgg00ltgvt4o6e8ac7tpco7",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:39.057Z"
+    },
+    {
+      "commit_hash": "q9lqlc6hs9nindv9bis7lc7seg2rv895",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:39.043Z"
+    },
+    {
+      "commit_hash": "mhvvhg1avfr6d5diadihof8q6qfbbvdg",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:39.033Z"
+    },
+    {
+      "commit_hash": "d9j1e45pame83bgcql8kfiqlfot1uauj",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:39.024Z"
+    },
+    {
+      "commit_hash": "1cd394vo0kf3bjliu3rrpaptoltv4ogb",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:39.015Z"
+    },
+    {
+      "commit_hash": "hb6mdg0vpcgk8iel54mte3iromdvu8d2",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:39.007Z"
+    },
+    {
+      "commit_hash": "5mem50pjevehunhn0glei7s92bembh03",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.999Z"
+    },
+    {
+      "commit_hash": "ijkmcnuauiodmehuffnhm688r2mdrbmh",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.992Z"
+    },
+    {
+      "commit_hash": "luo4meqnn2u9kgndj52ffkl2pddgafos",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.985Z"
+    },
+    {
+      "commit_hash": "lf9psbpcu3fska35cmivjftncem66tb6",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.976Z"
+    },
+    {
+      "commit_hash": "unh37k0l3v79rsplqi4d2f4vi5c0suum",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.969Z"
+    },
+    {
+      "commit_hash": "hqcbd2qbvj4bs2rpd67fh4o1h99m4tkf",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.963Z"
+    },
+    {
+      "commit_hash": "pbi48tmrokp77jh7u458l1frn5grimhm",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.954Z"
+    },
+    {
+      "commit_hash": "j22jev3mrrvnj3nok2ojh3at8oj16sgk",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.938Z"
+    },
+    {
+      "commit_hash": "u8mc743j14sjfjalq3cbcqaemo49gemq",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.931Z"
+    },
+    {
+      "commit_hash": "2o3vmcmsm118v3lrlumg17pim0a4vuq1",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.914Z"
+    },
+    {
+      "commit_hash": "9t6r6e2fha61s75fsevc179g0dkb76uk",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.906Z"
+    },
+    {
+      "commit_hash": "h06lsr614uhtac9jn5ne64fkc901kj0e",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.898Z"
+    },
+    {
+      "commit_hash": "1c7kr2u8l2ts5ijkpfgq1lrb58cv0mif",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.891Z"
+    },
+    {
+      "commit_hash": "5h64g123tkcc573s3sjn8v5uicofdvot",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.883Z"
+    },
+    {
+      "commit_hash": "k6r2d9pfqt648sc9u9qsq203c0b3di83",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.874Z"
+    },
+    {
+      "commit_hash": "f02v35arumuibn6s63en6acrqin2nkdr",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.868Z"
+    },
+    {
+      "commit_hash": "ksc1jbiilm84v7gqk70k5kenogv93pt6",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.848Z"
+    },
+    {
+      "commit_hash": "6ujlk0gg05e652or5iqbsljj13j5cg39",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.810Z"
+    },
+    {
+      "commit_hash": "1hn6qbiiu6acfh1dtn8bvs0k79sut4ps",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.786Z"
+    },
+    {
+      "commit_hash": "7jhkld5f7pmt483efsm09bjln1a2se8n",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.780Z"
+    },
+    {
+      "commit_hash": "rghhnlc3q7hhjj6keqn1hk4vhbd1qu1n",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.772Z"
+    },
+    {
+      "commit_hash": "dvdu4nn9jrfud32qkpgfaqbbrm7ldjv8",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.764Z"
+    },
+    {
+      "commit_hash": "hdidr1b12nvdp8uhsif8krn192gptfk1",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.756Z"
+    },
+    {
+      "commit_hash": "1j6hteea0kp2ilrkif167pqoumvtp1fq",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.749Z"
+    },
+    {
+      "commit_hash": "s2t8i36e3oc3hmfdp5onh8a0luc1ij5i",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.744Z"
+    },
+    {
+      "commit_hash": "thi0t8lmvu6c3fu0aka6bj7acv9hjknu",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.737Z"
+    },
+    {
+      "commit_hash": "urlv3lq0ud07s7ea78pnao30agjsrv5k",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.729Z"
+    },
+    {
+      "commit_hash": "qc72cn6jg07h53bnoj05t8g3ndgbl8hq",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.720Z"
+    },
+    {
+      "commit_hash": "67gb4lg2s82rnbhcntq039qas1gfgksi",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.712Z"
+    },
+    {
+      "commit_hash": "dbeu9h0l7tvonata7o8coa9smdp22lqn",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.704Z"
+    },
+    {
+      "commit_hash": "8ju69um6suio5mpdrsp095hnmnu2rbd6",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.696Z"
+    },
+    {
+      "commit_hash": "3p8mfb4tfc6gvrq0p8mgkc8r0s0bihmt",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.689Z"
+    },
+    {
+      "commit_hash": "rdn07gk0t9729q1a2a2h6tkvopulm75k",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.681Z"
+    },
+    {
+      "commit_hash": "rncdbts6m8iral0v4eoqjgcggjktl7ts",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.673Z"
+    },
+    {
+      "commit_hash": "3rlih3bo8slkgtn9auk1o6sbjgsf2pmh",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.666Z"
+    },
+    {
+      "commit_hash": "smq9pl0dppcogshv0oqhn8cecv64bn4h",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.658Z"
+    },
+    {
+      "commit_hash": "rundhtbdu959ber54gp8sfdakq14j2ds",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.650Z"
+    },
+    {
+      "commit_hash": "rkgff4k6nr4qus1d7bjsrl74ia5r2v5e",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.642Z"
+    },
+    {
+      "commit_hash": "6bblnsnu6v5rprdfkaj8gtbb3i4ick8m",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.636Z"
+    },
+    {
+      "commit_hash": "t47i7oj11kdnqun83r0ijaoo2cmfdrav",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.629Z"
+    },
+    {
+      "commit_hash": "fnla24ntehj48amhcaojp232g3lnhgcf",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.623Z"
+    },
+    {
+      "commit_hash": "2kurvm8i0b4fnrpdjg8191fn4gm1agh2",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.617Z"
+    },
+    {
+      "commit_hash": "8u22o71gcahogco8mbr8sp2vks34j1se",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.610Z"
+    },
+    {
+      "commit_hash": "vgb50ktrf5d2ppjemsstn57ch9ktpt8h",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.602Z"
+    },
+    {
+      "commit_hash": "e4jt2fsf7i022ske8qd0ni9hf3sfdg0r",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.594Z"
+    },
+    {
+      "commit_hash": "pl8nboiajlbmhj0coavq5523kdrk662o",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.588Z"
+    },
+    {
+      "commit_hash": "8b585gqbl2l4plr2c0vn89egcbfibcqa",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.578Z"
+    },
+    {
+      "commit_hash": "k1cc8frdv08ek6ecao0s5dta6011qa9m",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.568Z"
+    },
+    {
+      "commit_hash": "dv04f209a3csbihusr0u39j3o7pincg6",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.185Z"
+    },
+    {
+      "commit_hash": "diftpjd7tolk8ig9forcrqop7m0u3u78",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.172Z"
+    },
+    {
+      "commit_hash": "gr7knbj881vaa2bdccdtnfh4jv8v8bha",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.155Z"
+    },
+    {
+      "commit_hash": "50uibhlq0eu7b9m5n0mqrstb9gorgmdj",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.150Z"
+    },
+    {
+      "commit_hash": "u6ba0eoc7e2uk0isbik4ictj4hlu3sft",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.146Z"
+    },
+    {
+      "commit_hash": "2iofa74d2hv5uijm9g3of8vu5g51l9bj",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.143Z"
+    },
+    {
+      "commit_hash": "mmpleqe1gof9e2mi0le48qnt03oo8abs",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.139Z"
+    },
+    {
+      "commit_hash": "na0g8pk4or3qg396s5rjv88v8sor0ktg",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.136Z"
+    },
+    {
+      "commit_hash": "m1c34gvcoit9rd58slatqjfol7nd1tp5",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.132Z"
+    },
+    {
+      "commit_hash": "jp3gsih739frogd0jjd6c9vrlfs7naph",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.127Z"
+    },
+    {
+      "commit_hash": "9r5f5bia0hf7jhe42japtucf1iradush",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.123Z"
+    },
+    {
+      "commit_hash": "1735d81cgvh9ahhlrg3lr2n23rhf91b8",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.119Z"
+    },
+    {
+      "commit_hash": "1pc8jmjjhi1i7gcurc5vh6dneg5ghckc",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.115Z"
+    },
+    {
+      "commit_hash": "pae7nmvn6m4oecve58edo249gmoesg69",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.111Z"
+    },
+    {
+      "commit_hash": "jbnphcaln0v4vgsd5f9g9dtpn0t552t6",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.108Z"
+    },
+    {
+      "commit_hash": "03p1hrstr7ncvs5l7fo80dsi0qhfp46k",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.104Z"
+    },
+    {
+      "commit_hash": "j649nk6bvgu9she0hmul6vdbmgj1obq3",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.100Z"
+    },
+    {
+      "commit_hash": "malmqfthgi434g1pq0grkaepbmdkbe6b",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.093Z"
+    },
+    {
+      "commit_hash": "t8pnavl4dhg4gvmeqf0jdu529296fdd0",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.089Z"
+    },
+    {
+      "commit_hash": "r7vq3ip4d3v4rethu809ja9f4bf1l5pt",
+      "message": "Initialize data repository",
+      "date": "2026-11-23T18:19:37.993Z"
+    }
+  ]
+}

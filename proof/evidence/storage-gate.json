@@ -1,0 +1,130 @@
+{
+  "passed": true,
+  "settings": "dolt_transaction_commit=1",
+  "rejectedBeforeCommit": true,
+  "recoveredLostResponse": true,
+  "caseSensitiveIdentities": true,
+  "idempotentReplay": {
+    "commandId": "gate:write",
+    "eventIds": [
+      "event:gate:write"
+    ],
+    "result": {
+      "baselineId": null,
+      "id": "gate-work",
+      "sourceRevision": "fixture:0",
+      "title": "Storage gate"
+    },
+    "revision": 1
+  },
+  "semanticEventCountAtReplay": 1,
+  "receiptHistory": [
+    {
+      "to_commit": "diftpjd7tolk8ig9forcrqop7m0u3u78",
+      "diff_type": "added",
+      "to_id": "gate:write"
+    }
+  ],
+  "commits": [
+    {
+      "commit_hash": "dv04f209a3csbihusr0u39j3o7pincg6",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.185Z"
+    },
+    {
+      "commit_hash": "diftpjd7tolk8ig9forcrqop7m0u3u78",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.172Z"
+    },
+    {
+      "commit_hash": "gr7knbj881vaa2bdccdtnfh4jv8v8bha",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.155Z"
+    },
+    {
+      "commit_hash": "50uibhlq0eu7b9m5n0mqrstb9gorgmdj",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.150Z"
+    },
+    {
+      "commit_hash": "u6ba0eoc7e2uk0isbik4ictj4hlu3sft",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.146Z"
+    },
+    {
+      "commit_hash": "2iofa74d2hv5uijm9g3of8vu5g51l9bj",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.143Z"
+    },
+    {
+      "commit_hash": "mmpleqe1gof9e2mi0le48qnt03oo8abs",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.139Z"
+    },
+    {
+      "commit_hash": "na0g8pk4or3qg396s5rjv88v8sor0ktg",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.136Z"
+    },
+    {
+      "commit_hash": "m1c34gvcoit9rd58slatqjfol7nd1tp5",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.132Z"
+    },
+    {
+      "commit_hash": "jp3gsih739frogd0jjd6c9vrlfs7naph",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.127Z"
+    },
+    {
+      "commit_hash": "9r5f5bia0hf7jhe42japtucf1iradush",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.123Z"
+    },
+    {
+      "commit_hash": "1735d81cgvh9ahhlrg3lr2n23rhf91b8",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.119Z"
+    },
+    {
+      "commit_hash": "1pc8jmjjhi1i7gcurc5vh6dneg5ghckc",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.115Z"
+    },
+    {
+      "commit_hash": "pae7nmvn6m4oecve58edo249gmoesg69",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.111Z"
+    },
+    {
+      "commit_hash": "jbnphcaln0v4vgsd5f9g9dtpn0t552t6",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.108Z"
+    },
+    {
+      "commit_hash": "03p1hrstr7ncvs5l7fo80dsi0qhfp46k",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.104Z"
+    },
+    {
+      "commit_hash": "j649nk6bvgu9she0hmul6vdbmgj1obq3",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.100Z"
+    },
+    {
+      "commit_hash": "malmqfthgi434g1pq0grkaepbmdkbe6b",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.093Z"
+    },
+    {
+      "commit_hash": "t8pnavl4dhg4gvmeqf0jdu529296fdd0",
+      "message": "Transaction commit",
+      "date": "2026-11-23T18:19:38.089Z"
+    },
+    {
+      "commit_hash": "r7vq3ip4d3v4rethu809ja9f4bf1l5pt",
+      "message": "Initialize data repository",
+      "date": "2026-11-23T18:19:37.993Z"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+bun test v1.4.5 (a7733435c)
+
+scenarios/domain.test.ts:
+(pass) canonical references and lifecycle boundaries > transitive baseline pins include dependencies attached only through a root [0.74ms]
+(pass) canonical references and lifecycle boundaries > a previously cleared invalidated revision gets a new hold when attached again [0.31ms]
+(pass) canonical references and lifecycle boundaries > approving a baseline cannot hide a task's superseded attachment [0.13ms]
+(pass) canonical references and lifecycle boundaries > task ordering cycles and containment cycles are rejected independently [0.10ms]
+(pass) canonical references and lifecycle boundaries > a reassessment cannot clear another work item's hold [0.12ms]
+(pass) canonical references and lifecycle boundaries > reassessment of an earlier invalidation leaves a later hold in force [0.32ms]
+
+ 6 pass
+ 0 fail
+ 13 expect() calls
+Ran 6 tests across 1 file. [4.00ms]

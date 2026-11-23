@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "stages": 4,
+  "domainTests": 6,
+  "lifecycleGroups": 15,
+  "requirements": 10,
+  "acceptedLifecycleCommands": 68,
+  "serverManifestAbsent": true,
+  "proofServerPidsConfirmedAbsent": [
+    52188,
+    62559,
+    71254
+  ],
+  "localDocumentLinks": "valid"
+}

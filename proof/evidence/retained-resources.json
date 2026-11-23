@@ -1,0 +1,31 @@
+{
+  "retained": [
+    ".runtime/data-4c3cb6d0-fad2-40e1-8281-e4410370419b",
+    ".runtime/effects-run-52f17bc9.jsonl",
+    ".runtime/server-4c3cb6d0-fad2-40e1-8281-e4410370419b.log",
+    ".runtime/server-4c3cb6d0-fad2-40e1-8281-e4410370419b.yaml"
+  ],
+  "reason": "latest stopped synthetic database and fixture ledger for inspection; verified binary and dependencies support reruns",
+  "removed": [
+    ".runtime/server-d7628a5e-9b10-4d3c-acbe-b451fc55a9e4.yaml",
+    ".runtime/data-d90a4961-414c-4921-a16f-39b70f859703",
+    ".runtime/server-0c8f306a-7669-4abe-b047-be292f63343c.log",
+    ".runtime/server-0c8f306a-7669-4abe-b047-be292f63343c.yaml",
+    ".runtime/effects-run-6d46dffe.jsonl",
+    ".runtime/server-9fa31bf5-16e8-45ac-ba21-62f9e0ac8345.yaml",
+    ".runtime/data-98bc7e5a-bb51-43d4-a22b-52c5730abcd7",
+    ".runtime/effects-run-c1f02c2d.jsonl",
+    ".runtime/server-d7628a5e-9b10-4d3c-acbe-b451fc55a9e4.log",
+    ".runtime/data-d7628a5e-9b10-4d3c-acbe-b451fc55a9e4",
+    ".runtime/data-0c8f306a-7669-4abe-b047-be292f63343c",
+    ".runtime/server-98bc7e5a-bb51-43d4-a22b-52c5730abcd7.log",
+    ".runtime/server-d90a4961-414c-4921-a16f-39b70f859703.yaml",
+    ".runtime/data-9fa31bf5-16e8-45ac-ba21-62f9e0ac8345",
+    ".runtime/server-d90a4961-414c-4921-a16f-39b70f859703.log",
+    ".runtime/server-98bc7e5a-bb51-43d4-a22b-52c5730abcd7.yaml",
+    ".runtime/server-9fa31bf5-16e8-45ac-ba21-62f9e0ac8345.log",
+    ".tools/dolt-darwin-arm64.tar.gz",
+    "/tmp/dolt-proof-release-2.7.6.json",
+    "/tmp/wp-0c8f306a-7669-4abe-b047-be292f63343c.sock"
+  ]
+}

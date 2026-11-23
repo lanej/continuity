@@ -1,0 +1,139 @@
+{
+  "R1": {
+    "checks": [
+      "Socrates records, baselines, plans and distinct allocation/attempt identities",
+      "Operator clearance is scoped; revised records retain canonical identity and history",
+      "Generated views preserve canonical IDs, pinned revisions and historical invalidation"
+    ],
+    "artifacts": [
+      "acceptance.json",
+      "command-trace.json",
+      "state-and-history.json"
+    ],
+    "status": "passed"
+  },
+  "R2": {
+    "checks": [
+      "Socrates records, baselines, plans and distinct allocation/attempt identities",
+      "Uncertain publication reconciles without duplicate dispatch",
+      "Pending, failed, uncertain, and confirmed effects remain distinct",
+      "Current evidence permits delivery while unrelated holds remain"
+    ],
+    "artifacts": [
+      "acceptance.json",
+      "command-trace.json",
+      "state-and-history.json"
+    ],
+    "status": "passed"
+  },
+  "R3": {
+    "checks": [],
+    "artifacts": [
+      "../assessment.md",
+      "run-assessment.md",
+      "run-status.json"
+    ],
+    "status": "documented comparison; latest run outcome is separate"
+  },
+  "R4": {
+    "checks": [
+      "Canonical lookup and reuse create references rather than copies",
+      "Process restart recovers work and holds; agent/stale/baseless clearance fails"
+    ],
+    "artifacts": [
+      "acceptance.json",
+      "command-trace.json",
+      "state-and-history.json"
+    ],
+    "status": "passed"
+  },
+  "R5": {
+    "checks": [
+      "Shared transitive invalidation requests pauses and isolates unrelated work",
+      "Process restart recovers work and holds; agent/stale/baseless clearance fails",
+      "Later transitive attachment inherits a hold atomically",
+      "Requested pause and confirmed pause are distinct",
+      "Operator clearance is scoped; revised records retain canonical identity and history",
+      "Current evidence permits delivery while unrelated holds remain",
+      "Command replay, payload conflicts, stale revisions, and authority spoofing"
+    ],
+    "artifacts": [
+      "acceptance.json",
+      "command-trace.json",
+      "state-and-history.json"
+    ],
+    "status": "passed"
+  },
+  "R6": {
+    "checks": [
+      "Generated views preserve canonical IDs, pinned revisions and historical invalidation"
+    ],
+    "artifacts": [
+      "acceptance.json",
+      "command-trace.json",
+      "state-and-history.json"
+    ],
+    "status": "passed"
+  },
+  "R7": {
+    "checks": [
+      "Socrates records, baselines, plans and distinct allocation/attempt identities",
+      "Requested pause and confirmed pause are distinct",
+      "Verification remains applicable after recording and publication intent",
+      "Uncertain publication reconciles without duplicate dispatch",
+      "Pending, failed, uncertain, and confirmed effects remain distinct",
+      "Source/baseline changes stale evidence and block new dispatch",
+      "Current evidence permits delivery while unrelated holds remain"
+    ],
+    "artifacts": [
+      "acceptance.json",
+      "command-trace.json",
+      "state-and-history.json"
+    ],
+    "status": "passed"
+  },
+  "R8": {
+    "checks": [
+      "Process restart recovers work and holds; agent/stale/baseless clearance fails",
+      "Operator clearance is scoped; revised records retain canonical identity and history",
+      "Verification remains applicable after recording and publication intent",
+      "Uncertain publication reconciles without duplicate dispatch",
+      "Source/baseline changes stale evidence and block new dispatch",
+      "Command replay, payload conflicts, stale revisions, and authority spoofing",
+      "All accepted proof commands have attributable Dolt history"
+    ],
+    "artifacts": [
+      "acceptance.json",
+      "command-trace.json",
+      "state-and-history.json"
+    ],
+    "status": "passed"
+  },
+  "R9": {
+    "checks": [
+      "All accepted proof commands have attributable Dolt history"
+    ],
+    "artifacts": [
+      "acceptance.json",
+      "command-trace.json",
+      "state-and-history.json"
+    ],
+    "status": "passed"
+  },
+  "R10": {
+    "checks": [
+      "Canonical lookup and reuse create references rather than copies",
+      "Shared transitive invalidation requests pauses and isolates unrelated work",
+      "Later transitive attachment inherits a hold atomically",
+      "Operator clearance is scoped; revised records retain canonical identity and history",
+      "Current evidence permits delivery while unrelated holds remain",
+      "Generated views preserve canonical IDs, pinned revisions and historical invalidation"
+    ],
+    "artifacts": [
+      "acceptance.json",
+      "command-trace.json",
+      "state-and-history.json"
+    ],
+    "status": "passed"
+  }
+}

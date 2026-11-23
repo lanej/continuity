@@ -1,0 +1,37 @@
+### server-0c8f306a-7669-4abe-b047-be292f63343c.log
+Starting server with Config HP="127.0.0.1:57527"|T="28800000"|R="false"|L="warning"|S="/tmp/wp-0c8f306a-7669-4abe-b047-be292f63343c.sock"
+time="2026-11-23T10:04:50-08:00" level=warning msg="secure_file_priv is set to \"\", which is insecure."
+time="2026-11-23T10:04:50-08:00" level=warning msg="Any user with GRANT FILE privileges will be able to read any file which the sql-server process can read."
+time="2026-11-23T10:04:50-08:00" level=warning msg="Please consider restarting the server with secure_file_priv set to a safe (or non-existent) directory."
+
+### server-4c3cb6d0-fad2-40e1-8281-e4410370419b.log
+Starting server with Config HP="127.0.0.1:58864"|T="28800000"|R="false"|L="warning"|S="/tmp/wp-4c3cb6d0-fad2-40e1-8281-e4410370419b.sock"
+time="2026-11-23T10:19:37-08:00" level=warning msg="secure_file_priv is set to \"\", which is insecure."
+time="2026-11-23T10:19:37-08:00" level=warning msg="Any user with GRANT FILE privileges will be able to read any file which the sql-server process can read."
+time="2026-11-23T10:19:37-08:00" level=warning msg="Please consider restarting the server with secure_file_priv set to a safe (or non-existent) directory."
+time="2026-11-23T10:19:37-08:00" level=error msg="unable to process ComInitDB: database not found: work_proof" database=work_proof
+time="2026-11-23T10:19:37-08:00" level=error msg="failed to set the database client 1 (127.0.0.1:58868): database not found: work_proof (errno 1049) (sqlstate HY000)"
+time="2026-11-23T10:19:39-08:00" level=error msg="Error reading packet from client 2 (127.0.0.1:58869): read tcp 127.0.0.1:58864->127.0.0.1:58869: use of closed network connection\nio.ReadFull(header size) failed"
+
+### server-98bc7e5a-bb51-43d4-a22b-52c5730abcd7.log
+Starting server with Config HP="127.0.0.1:57448"|T="28800000"|R="false"|L="unknown"|S="/Users/joshlane/Documents/Codex/2026-11-23/it-s-becoming-obvious-to-me/proof/.runtime/mysql-98bc7e5a-bb51-43d4-a22b-52c5730abcd7.sock"
+loglevel is invalid: warn
+
+
+### server-9fa31bf5-16e8-45ac-ba21-62f9e0ac8345.log
+Starting server with Config HP="127.0.0.1:57486"|T="28800000"|R="false"|L="warning"|S="/Users/joshlane/Documents/Codex/2026-11-23/it-s-becoming-obvious-to-me/proof/.runtime/mysql-9fa31bf5-16e8-45ac-ba21-62f9e0ac8345.sock"
+listen unix /Users/joshlane/Documents/Codex/2026-11-23/it-s-becoming-obvious-to-me/proof/.runtime/mysql-9fa31bf5-16e8-45ac-ba21-62f9e0ac8345.sock: bind: invalid argument
+
+### server-d7628a5e-9b10-4d3c-acbe-b451fc55a9e4.log
+Starting server with Config HP="127.0.0.1:58642"|T="28800000"|R="false"|L="warning"|S="/tmp/wp-d7628a5e-9b10-4d3c-acbe-b451fc55a9e4.sock"
+time="2026-11-23T10:15:33-08:00" level=warning msg="secure_file_priv is set to \"\", which is insecure."
+time="2026-11-23T10:15:33-08:00" level=warning msg="Any user with GRANT FILE privileges will be able to read any file which the sql-server process can read."
+time="2026-11-23T10:15:33-08:00" level=warning msg="Please consider restarting the server with secure_file_priv set to a safe (or non-existent) directory."
+time="2026-11-23T10:15:34-08:00" level=error msg="Error reading packet from client 1 (127.0.0.1:58647): read tcp 127.0.0.1:58642->127.0.0.1:58647: use of closed network connection\nio.ReadFull(header size) failed"
+
+### server-d90a4961-414c-4921-a16f-39b70f859703.log
+Starting server with Config HP="127.0.0.1:58400"|T="28800000"|R="false"|L="warning"|S="/tmp/wp-d90a4961-414c-4921-a16f-39b70f859703.sock"
+time="2026-11-23T10:09:12-08:00" level=warning msg="secure_file_priv is set to \"\", which is insecure."
+time="2026-11-23T10:09:12-08:00" level=warning msg="Any user with GRANT FILE privileges will be able to read any file which the sql-server process can read."
+time="2026-11-23T10:09:12-08:00" level=warning msg="Please consider restarting the server with secure_file_priv set to a safe (or non-existent) directory."
+time="2026-11-23T10:15:24-08:00" level=error msg="Error reading packet from client 1 (127.0.0.1:58405): read tcp 127.0.0.1:58400->127.0.0.1:58405: use of closed network connection\nio.ReadFull(header size) failed"
