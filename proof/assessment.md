@@ -28,7 +28,7 @@ The inspected [Studio README](https://github.com/lanej/studio/blob/327fae2ecb1db
 
 Upstream [Beads documentation](https://github.com/gastownhall/beads/blob/main/README.md) also advertises dependency graphs, hierarchy, readiness, audit trails, knowledge links, and Dolt storage. This proof's advantage is common authority and policies across canonical knowledge and the full lifecycle, not a claim that Beads lacks graphs or persistent memory. The comparison is architectural inspection, not a head-to-head runtime benchmark of the pinned Beads service.
 
-Producer and Publisher remain effect boundaries in the proposed architecture. The proof preserves distinct work, session, allocation, attempt, and receipt identities. The user's chosen boundary remains: Publisher knows publish dependencies and does not own the work graph. No existing Octo issue-orchestration capability was changed or treated as the authority for this proof.
+The original integration context was [Studio](https://github.com/lanej/studio), Producer ([Worktree Manager](https://github.com/lanej/worktree-manager)), and Publisher ([Octo Manager](https://github.com/lanej/octo-manager)). They are possible future integration targets; none consumes Continuity today. In that proposed architecture, Producer and Publisher would remain effect boundaries, with Publisher knowing publish dependencies rather than owning the work graph. The proof itself uses controlled fixtures and preserves distinct work, session, allocation, attempt, and receipt identities. No existing Octo issue-orchestration capability was changed or treated as its authority.
 
 ## Limits and next step
 

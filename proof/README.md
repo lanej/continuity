@@ -1,6 +1,6 @@
 # Continuity: Dolt work-model proof
 
-An isolated, runnable proof of a shared work model for Studio, Producer (Worktree Manager), and Publisher (Octo Manager). It uses real Dolt and controlled adapters with synthetic data. Existing Beads data and live tool integrations are untouched.
+An isolated, runnable proof of a durable reasoning and work model. It uses real Dolt, synthetic records, and controlled allocation/publication adapters to test canonical references, assumption invalidation, operator reassessment, and lifecycle evidence. It has no live application integrations. The [project overview](../README.md) explains its purpose and architecture.
 
 ## Run
 
