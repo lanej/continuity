@@ -2,6 +2,7 @@ import { open, readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { runtime } from "../scripts/runtime.ts";
 import { Store } from "./store.ts";
+import { isRecord, hasErrorCode } from "./input.ts";
 import { requireCondition, verificationApplicable } from "./model.ts";
 export type FixtureReceipt = {
   effectId: string;
@@ -11,6 +12,29 @@ export type FixtureReceipt = {
   target: string;
   fixture: true;
 };
+function parseReceipt(line: string): FixtureReceipt {
+  const value: unknown = JSON.parse(line);
+  requireCondition(
+    isRecord(value) &&
+      typeof value.effectId === "string" &&
+      (value.kind === "allocate" || value.kind === "publish") &&
+      (value.state === "confirmed" || value.state === "failed") &&
+      typeof value.receiptId === "string" &&
+      typeof value.target === "string" &&
+      value.fixture === true,
+    "invalid_receipt",
+    "Invalid controlled adapter ledger entry",
+  );
+  return {
+    effectId: value.effectId,
+    kind: value.kind,
+    state: value.state,
+    receiptId: value.receiptId,
+    target: value.target,
+    fixture: value.fixture,
+  };
+}
+
 export class ControlledAdapters {
   readonly ledger: string;
   constructor(
@@ -21,12 +45,9 @@ export class ControlledAdapters {
   }
   async trace(): Promise<FixtureReceipt[]> {
     try {
-      return (await readFile(this.ledger, "utf8"))
-        .split("\n")
-        .filter(Boolean)
-        .map((line) => JSON.parse(line) as FixtureReceipt);
+      return (await readFile(this.ledger, "utf8")).split("\n").filter(Boolean).map(parseReceipt);
     } catch (error) {
-      if ((error as NodeJS.ErrnoException).code === "ENOENT") return [];
+      if (hasErrorCode(error, "ENOENT")) return [];
       throw error;
     }
   }
@@ -46,7 +67,7 @@ export class ControlledAdapters {
       "Only a pending intent may dispatch a new effect",
     );
     if (effect.kind === "publish") {
-      const verification = effect.verificationId ? state.verifications[effect.verificationId] : undefined;
+      const verification = effect.verificationId === null ? undefined : state.verifications[effect.verificationId];
       requireCondition(
         verification && verificationApplicable(state, verification),
         "stale_verification",

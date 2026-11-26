@@ -1,0 +1,46 @@
+name: Continuity proof
+
+on:
+  pull_request:
+    paths:
+      - .github/workflows/proof.yml
+      - proof/**
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/proof.yml
+      - proof/**
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  proof:
+    runs-on: macos-15
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: proof
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version-file: proof/package.json
+      - run: bun install --frozen-lockfile --ignore-scripts
+      - run: bun run check
+      - name: Run the isolated Dolt proof
+        id: acceptance
+        run: bun run acceptance
+      - uses: actions/upload-artifact@v4
+        if: ${{ always() && (steps.acceptance.outcome == 'success' || steps.acceptance.outcome == 'failure') }}
+        with:
+          name: continuity-proof
+          include-hidden-files: true
+          path: |
+            proof/evidence/run-status.json
+            proof/evidence/acceptance.json
+            proof/evidence/run-assessment.md
+            proof/evidence/stage-*.log
+            proof/.runtime/*.log

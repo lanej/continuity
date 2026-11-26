@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { mkdir, readFile, writeFile, unlink, open } from "node:fs/promises";
 import { resolve } from "node:path";
 import { createServer } from "node:net";
+import { hasErrorCode, isRecord } from "../src/input.ts";
 export const root = resolve(import.meta.dir, "..");
 export const runtime = resolve(root, ".runtime");
 export const tools = resolve(root, ".tools");
@@ -16,10 +17,10 @@ type Manifest = {
   database: string;
   data: string;
 };
-async function run(args: string[], cwd = root) {
+async function run(args: [string, ...string[]], cwd = root) {
   const p = Bun.spawn(args, { cwd, stdout: "pipe", stderr: "pipe" });
   const [out, err, code] = await Promise.all([new Response(p.stdout).text(), new Response(p.stderr).text(), p.exited]);
-  if (code) throw new Error(`${args[0]} failed (${code}): ${err}`);
+  if (code !== 0) throw new Error(`${args[0]} failed (${code}): ${err}`);
   return out.trim();
 }
 export async function setup() {
@@ -30,13 +31,15 @@ export async function setup() {
   await mkdir(runtime, { recursive: true });
   const archive = resolve(tools, "dolt-darwin-arm64.tar.gz");
   const verificationPath = resolve(tools, "verified.json");
-  const provenance = (await Bun.file(verificationPath).exists())
-    ? (JSON.parse(await readFile(verificationPath, "utf8")) as {
-        checksum: string;
-        binarySha256?: string;
-      })
+  const provenance: unknown = (await Bun.file(verificationPath).exists())
+    ? JSON.parse(await readFile(verificationPath, "utf8"))
     : null;
-  if (!(await Bun.file(binary).exists()) || !provenance?.binarySha256) {
+  if (
+    !(await Bun.file(binary).exists()) ||
+    !isRecord(provenance) ||
+    typeof provenance.binarySha256 !== "string" ||
+    provenance.binarySha256 === ""
+  ) {
     if (!(await Bun.file(archive).exists())) {
       const response = await fetch(source);
       if (!response.ok) throw new Error(`Dolt download: ${response.status}`);
@@ -63,11 +66,8 @@ export async function setup() {
       ),
     );
   }
-  const verified = JSON.parse(await readFile(verificationPath, "utf8")) as {
-    checksum: string;
-    binarySha256: string;
-  };
-  if (verified.checksum !== checksum) throw new Error("Missing verified provenance");
+  const verified: unknown = JSON.parse(await readFile(verificationPath, "utf8"));
+  if (!isRecord(verified) || verified.checksum !== checksum) throw new Error("Missing verified provenance");
   if (
     verified.binarySha256 !==
     createHash("sha256")
@@ -98,7 +98,24 @@ export async function setup() {
   );
 }
 export async function manifest(): Promise<Manifest> {
-  return JSON.parse(await readFile(manifestPath, "utf8")) as Manifest;
+  const entry: unknown = JSON.parse(await readFile(manifestPath, "utf8"));
+  if (
+    !isRecord(entry) ||
+    typeof entry.pid !== "number" ||
+    !Number.isSafeInteger(entry.pid) ||
+    entry.pid <= 0 ||
+    typeof entry.token !== "string" ||
+    !/^[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}$/.test(entry.token) ||
+    typeof entry.port !== "number" ||
+    !Number.isSafeInteger(entry.port) ||
+    entry.port <= 0 ||
+    entry.port > 65535 ||
+    entry.database !== "work_proof" ||
+    entry.data !== resolve(runtime, "data-" + entry.token)
+  ) {
+    throw new Error("Invalid proof server manifest");
+  }
+  return { pid: entry.pid, token: entry.token, port: entry.port, database: entry.database, data: entry.data };
 }
 export async function start() {
   await setup();
@@ -109,8 +126,13 @@ export async function start() {
     s.on("error", reject);
     s.listen(0, "127.0.0.1", () => {
       const a = s.address();
-      if (!a || typeof a === "string") return reject(new Error("No port"));
-      s.close(() => accept(a.port));
+      if (a === null || typeof a === "string") {
+        reject(new Error("No port"));
+        return;
+      }
+      s.close(() => {
+        accept(a.port);
+      });
     });
   });
   const token = crypto.randomUUID();
@@ -150,8 +172,8 @@ export async function start() {
     console.log(JSON.stringify(entry));
     await p.exited;
     if (await Bun.file(manifestPath).exists())
-      await unlink(manifestPath).catch((error) => {
-        if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error;
+      await unlink(manifestPath).catch((error: unknown) => {
+        if (!hasErrorCode(error, "ENOENT")) throw error;
       });
   } catch (error) {
     p.kill("SIGTERM");
@@ -174,9 +196,9 @@ export async function stop() {
     try {
       process.kill(entry.pid, 0);
     } catch (e) {
-      if ((e as NodeJS.ErrnoException).code === "ESRCH") {
-        await unlink(manifestPath).catch((error) => {
-          if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error;
+      if (hasErrorCode(e, "ESRCH")) {
+        await unlink(manifestPath).catch((error: unknown) => {
+          if (!hasErrorCode(error, "ENOENT")) throw error;
         });
         return;
       }

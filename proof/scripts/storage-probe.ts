@@ -36,8 +36,7 @@ try {
   assert.ok(caseState.commands["gate:write"]);
   assert.ok(caseState.commands["gate:Write"]);
   const history = await store.history();
-  const evidence =
-    await store.sql`SELECT to_commit, diff_type, to_id FROM dolt_diff_commands WHERE to_id = 'gate:write' AND diff_type = 'added'`;
+  const evidence = (await store.commandHistory()).filter((entry) => entry.to_id === command.id);
   assert.equal(evidence.length, 1, "One introducing Dolt commit for command receipt");
   await writeFile(
     resolve(root, "evidence/storage-gate.json"),

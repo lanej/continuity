@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { open, unlink, readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { manifest, runtime } from "../scripts/runtime.ts";
+import { isRecord } from "./input.ts";
 import {
   applyCommand,
   emptyState,
@@ -22,10 +23,6 @@ function canonical(value: unknown): string {
       .join(",")}}`;
   return JSON.stringify(value);
 }
-type Row = {
-  id: string;
-  payload: unknown;
-};
 function decoded(value: unknown): unknown {
   return typeof value === "string" ? JSON.parse(value) : value;
 }
@@ -49,20 +46,43 @@ export class Store {
       .map((s) => s.trim())
       .filter(Boolean))
       await this.sql.unsafe(statement);
-    const rows = await this.sql`SELECT revision FROM store_revision WHERE id = 1`;
+    const rows = await this.sql<unknown[]>`SELECT revision FROM store_revision WHERE id = 1`;
     if (rows.length === 0) await this.sql`INSERT INTO store_revision (id, revision) VALUES (1, 0)`;
-    const setting = await this.sql`SELECT @@dolt_transaction_commit AS enabled`;
-    requireCondition(Number(setting[0]?.enabled) === 1, "history_disabled", "Dolt transaction commits must be enabled");
+    const [setting] = await this.sql<unknown[]>`SELECT @@dolt_transaction_commit AS enabled`;
+    requireCondition(
+      isRecord(setting) && (setting.enabled === 1 || setting.enabled === "1"),
+      "history_disabled",
+      "Dolt transaction commits must be enabled",
+    );
   }
   private async load(connection: Bun.SQL): Promise<State> {
     const state = emptyState();
-    const revision = await connection`SELECT revision FROM store_revision WHERE id = 1`;
-    state.revision = Number(revision[0]?.revision);
-    requireCondition(Number.isSafeInteger(state.revision), "corrupt_store", "Missing store revision");
+    const [row] = await connection<unknown[]>`SELECT revision FROM store_revision WHERE id = 1`;
+    requireCondition(
+      isRecord(row) &&
+        (typeof row.revision === "number" || (typeof row.revision === "string" && /^\d+$/.test(row.revision))),
+      "corrupt_store",
+      "Missing store revision",
+    );
+    state.revision = Number(row.revision);
+    requireCondition(
+      Number.isSafeInteger(state.revision) && state.revision >= 0,
+      "corrupt_store",
+      "Invalid store revision",
+    );
     for (const table of tables) {
-      const rows = (await connection.unsafe(`SELECT id, payload FROM \`${table}\``)) as Row[];
-      const target = state[table] as Record<string, unknown>;
-      for (const row of rows) target[row.id] = decoded(row.payload);
+      const rows = await connection.unsafe<unknown[]>(`SELECT id, payload FROM \`${table}\``);
+      const target: Record<string, unknown> = state[table];
+      for (const row of rows) {
+        requireCondition(isRecord(row) && typeof row.id === "string", "corrupt_store", "Missing record identity");
+        const payload = decoded(row.payload);
+        requireCondition(
+          isRecord(payload) && payload.id === row.id,
+          "corrupt_store",
+          "Stored identity does not match SQL row",
+        );
+        Object.defineProperty(target, row.id, { value: payload, enumerable: true, writable: true, configurable: true });
+      }
     }
     return state;
   }
@@ -120,8 +140,8 @@ export class Store {
         state.commands[command.id] = { id: command.id, hash, authority, outcome };
         await tx`UPDATE store_revision SET revision = ${state.revision} WHERE id = 1 AND revision = ${before.revision}`;
         for (const table of tables) {
-          const after = state[table] as Record<string, unknown>,
-            prior = before[table] as Record<string, unknown>;
+          const after: Record<string, unknown> = state[table],
+            prior: Record<string, unknown> = before[table];
           for (const [id, row] of Object.entries(after))
             if (canonical(row) !== canonical(prior[id])) {
               await tx.unsafe(
@@ -143,7 +163,24 @@ export class Store {
     }
   }
   async history() {
-    return this.sql`SELECT commit_hash, message, date FROM dolt_log`;
+    return this.sql<unknown[]>`SELECT commit_hash, message, date FROM dolt_log`;
+  }
+
+  async commandHistory() {
+    const rows = await this.sql<unknown[]>`
+      SELECT to_commit, diff_type, to_id FROM dolt_diff_commands WHERE diff_type = 'added'
+    `;
+    return rows.map((row) => {
+      requireCondition(
+        isRecord(row) &&
+          typeof row.to_commit === "string" &&
+          row.diff_type === "added" &&
+          typeof row.to_id === "string",
+        "corrupt_store",
+        "Invalid Dolt command history row",
+      );
+      return { to_commit: row.to_commit, diff_type: row.diff_type, to_id: row.to_id };
+    });
   }
   async close() {
     await this.sql.close();

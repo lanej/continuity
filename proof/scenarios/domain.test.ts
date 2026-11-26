@@ -1,5 +1,14 @@
 import { describe, expect, test } from "bun:test";
-import { applyCommand, emptyState, closure, refKey, type Authority, type Ref } from "../src/model.ts";
+import assert from "node:assert/strict";
+import {
+  applyCommand,
+  emptyState,
+  closure,
+  parseKnowledgeQuery,
+  refKey,
+  type Authority,
+  type Ref,
+} from "../src/model.ts";
 function fixture() {
   const s = emptyState();
   let n = 0;
@@ -30,6 +39,13 @@ function fixture() {
 }
 const a: Ref = { id: "a", revision: 1 };
 describe("canonical references and lifecycle boundaries", () => {
+  test("lookup rejects malformed JSON shapes before evaluating search fields", () => {
+    expect(parseKnowledgeQuery({ text: "", scope: "test" })).toEqual({ text: "", scope: "test" });
+    expect(parseKnowledgeQuery({})).toEqual({});
+    expect(() => parseKnowledgeQuery([])).toThrow(expect.objectContaining({ code: "invalid_input" }));
+    expect(() => parseKnowledgeQuery({ text: 15 })).toThrow(expect.objectContaining({ code: "invalid_input" }));
+  });
+
   test("transitive baseline pins include dependencies attached only through a root", () => {
     const { s, mutate } = fixture();
     mutate("knowledge.create", {
@@ -78,7 +94,9 @@ describe("canonical references and lifecycle boundaries", () => {
     const active = Object.values(s.holds).filter((h) => h.clearedBy === null);
     expect(active).toHaveLength(1);
     expect(active[0]?.id).not.toBe(original[0]);
-    expect(s.holds[original[0]!]!.clearedBy).toBe("review");
+    const originalId = original[0];
+    assert.ok(originalId !== undefined);
+    expect(s.holds[originalId]?.clearedBy).toBe("review");
   });
   test("approving a baseline cannot hide a task's superseded attachment", () => {
     const { s, mutate } = fixture();

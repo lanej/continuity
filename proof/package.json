@@ -2,7 +2,9 @@
   "name": "@lanej/continuity-proof",
   "private": true,
   "type": "module",
-  "engines": { "bun": "1.4.5" },
+  "engines": {
+    "bun": "1.4.5"
+  },
   "packageManager": "bun@1.4.5",
   "scripts": {
     "setup": "bun scripts/runtime.ts setup",
@@ -11,8 +13,18 @@
     "proof": "bun scenarios/acceptance.ts",
     "acceptance": "bun scripts/prove.ts",
     "test": "bun test",
-    "typecheck": "tsc --noEmit",
-    "cli": "bun src/cli.ts"
+    "typecheck": "bun --bun tsc --noEmit",
+    "cli": "bun src/cli.ts",
+    "format": "bun --bun prettier --write \"{src,scripts,scenarios}/**/*.ts\"",
+    "format:check": "bun --bun prettier --check \"{src,scripts,scenarios}/**/*.ts\"",
+    "lint": "bun --bun eslint src scripts scenarios --max-warnings 0",
+    "check": "bun run format:check && bun run lint && bun run typecheck && bun run test"
   },
-  "devDependencies": { "bun-types": "1.4.5", "typescript": "5.9.3" }
+  "devDependencies": {
+    "bun-types": "1.4.5",
+    "eslint": "10.15.0",
+    "prettier": "3.6.2",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.73.0"
+  }
 }

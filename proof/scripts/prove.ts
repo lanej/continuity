@@ -78,11 +78,12 @@ try {
   if (server.exitCode === null && !ownsServer) {
     server.kill("SIGTERM");
   }
-  if (ownsServer && server.exitCode === null && failure?.includes("Cleanup:")) {
+  if (ownsServer && server.exitCode === null && failure?.includes("Cleanup:") === true) {
     // Preserve ownership evidence; do not use a timeout to kill an unconfirmed child.
     console.error("Server retained: inspect the saved manifest and task-owned log");
     server.unref();
   } else await server.exited;
+  const stopped = !(await Bun.file(manifestPath).exists());
   await writeFile(
     resolve(root, "evidence/run-status.json"),
     JSON.stringify(
@@ -91,7 +92,7 @@ try {
         failure,
         stages,
         ownsServer,
-        stopped: !(await Bun.file(manifestPath).exists()),
+        stopped,
         recordedAt: new Date().toISOString(),
       },
       null,
@@ -100,8 +101,8 @@ try {
   );
   await writeFile(
     resolve(root, "evidence/run-assessment.md"),
-    failure
+    failure !== null
       ? `# Latest run assessment\n\nStatus: failed or incomplete.\n\n${failure}\n\nInspect run-status.json, stage logs and retained task-owned runtime logs. Unrun stages establish nothing. Reproduce with \`bun run acceptance\` after inspecting any retained server ownership metadata. This failure supersedes earlier passing evidence for the latest run.\n`
-      : `# Latest run assessment\n\nStatus: passed.\n\nAll four stages exited successfully: real-Dolt storage gate, domain regression tests, strict TypeScript checking, and controlled full-lifecycle acceptance. Server shutdown completed: ${!(await Bun.file(manifestPath).exists())}. See run-status.json, acceptance.json and their stage logs for exact evidence.\n\nThe model and tested Dolt path support proceeding to a separately scoped integration slice. Live integration, production readiness and migration remain unproven. See ../assessment.md for the domain/storage comparison and recommendation.\n`,
+      : `# Latest run assessment\n\nStatus: passed.\n\nAll four stages exited successfully: real-Dolt storage gate, domain regression tests, strict TypeScript checking, and controlled full-lifecycle acceptance. Server shutdown completed: ${String(stopped)}. See run-status.json, acceptance.json and their stage logs for exact evidence.\n\nThe model and tested Dolt path support proceeding to a separately scoped integration slice. Live integration, production readiness and migration remain unproven. See ../assessment.md for the domain/storage comparison and recommendation.\n`,
   );
 }

@@ -1,3 +1,5 @@
+import { isRecord } from "./input.ts";
+
 export type Ref = {
   id: string;
   revision: number;
@@ -177,7 +179,24 @@ export const tables = [
 ] as const;
 export type Table = (typeof tables)[number];
 export function emptyState(): State {
-  return Object.assign({ revision: 0 }, Object.fromEntries(tables.map((t) => [t, {}]))) as State;
+  return {
+    revision: 0,
+    works: {},
+    knowledge: {},
+    revisions: {},
+    uses: {},
+    sessions: {},
+    tasks: {},
+    baselines: {},
+    attempts: {},
+    invalidations: {},
+    holds: {},
+    reassessments: {},
+    verifications: {},
+    effects: {},
+    events: {},
+    commands: {},
+  };
 }
 export class DomainError extends Error {
   constructor(
@@ -189,15 +208,11 @@ export class DomainError extends Error {
   }
 }
 export function requireCondition(condition: unknown, code: string, message: string): asserts condition {
-  if (!condition) throw new DomainError(code, message);
+  if (!Boolean(condition)) throw new DomainError(code, message);
 }
 function object(value: unknown): Record<string, unknown> {
-  requireCondition(
-    value !== null && typeof value === "object" && !Array.isArray(value),
-    "invalid_input",
-    "Expected an object",
-  );
-  return value as Record<string, unknown>;
+  requireCondition(isRecord(value), "invalid_input", "Expected an object");
+  return value;
 }
 function text(p: Record<string, unknown>, key: string): string {
   const v = p[key];
@@ -226,13 +241,15 @@ function references(value: unknown): Ref[] {
   return refs;
 }
 function strings(value: unknown): string[] {
+  requireCondition(Array.isArray(value), "invalid_input", "Expected string IDs");
+  const values: unknown[] = value;
   requireCondition(
-    Array.isArray(value) && value.every((x) => typeof x === "string" && x.length > 0),
+    values.every((item): item is string => typeof item === "string" && item.length > 0),
     "invalid_input",
     "Expected string IDs",
   );
-  requireCondition(new Set(value).size === value.length, "duplicate_reference", "Duplicate IDs");
-  return value as string[];
+  requireCondition(new Set(values).size === values.length, "duplicate_reference", "Duplicate IDs");
+  return values;
 }
 function get<T>(values: Record<string, T>, id: string): T {
   const value = values[id];
@@ -254,8 +271,7 @@ export function revisionOf(s: State, ref: Ref): Revision {
 export function closure(s: State, roots: Ref[]): Ref[] {
   const seen = new Map<string, Ref>();
   const queue = [...roots];
-  while (queue.length) {
-    const r = queue.pop()!;
+  for (let r = queue.pop(); r; r = queue.pop()) {
     if (seen.has(refKey(r))) continue;
     const record = revisionOf(s, r);
     seen.set(refKey(r), r);
@@ -369,28 +385,35 @@ function refreshHolds(s: State) {
     }
   }
   for (const attempt of Object.values(s.attempts)) {
-    if (attempt.status === "running" && applicableHolds(s, get(s.tasks, attempt.taskId)).length)
+    if (attempt.status === "running" && applicableHolds(s, get(s.tasks, attempt.taskId)).length > 0)
       attempt.status = "pause-requested";
   }
 }
-export function findKnowledge(
-  s: State,
-  query: {
-    id?: string;
-    kind?: string;
-    scope?: string;
-    text?: string;
-  },
-): Knowledge[] {
+type KnowledgeQuery = { id?: string; kind?: string; scope?: string; text?: string };
+
+export function parseKnowledgeQuery(input: unknown): KnowledgeQuery {
+  const fields = object(input);
+  const query: KnowledgeQuery = {};
+  for (const field of ["id", "kind", "scope", "text"] as const) {
+    const value = fields[field];
+    if (value === undefined) continue;
+    requireCondition(typeof value === "string", "invalid_input", "Expected string " + field);
+    query[field] = value;
+  }
+  return query;
+}
+
+export function findKnowledge(s: State, query: KnowledgeQuery): Knowledge[] {
+  const { id = "", kind = "", scope = "", text = "" } = query;
   return Object.values(s.knowledge).filter(
     (k) =>
-      (!query.id || k.id === query.id) &&
-      (!query.kind || k.kind === query.kind) &&
-      (!query.scope || k.scope === query.scope) &&
-      (!query.text ||
+      (id === "" || k.id === id) &&
+      (kind === "" || k.kind === kind) &&
+      (scope === "" || k.scope === scope) &&
+      (text === "" ||
         `${k.key} ${k.title} ${revisionOf(s, { id: k.id, revision: k.current }).text}`
           .toLowerCase()
-          .includes(query.text.toLowerCase())),
+          .includes(text.toLowerCase())),
   );
 }
 export function parseCommand(input: unknown): Command {
@@ -413,10 +436,12 @@ export function parseCommand(input: unknown): Command {
 export function applyCommand(s: State, command: Command, authority: Authority): unknown {
   const p = command.payload;
   const id = () => text(p, "id");
-  const operator = () =>
+  const operator = () => {
     requireCondition(authority === "operator", "operator_required", "Explicit operator decision required");
-  const adapter = () =>
+  };
+  const adapter = () => {
     requireCondition(authority === "adapter", "adapter_required", "Trusted adapter observation required");
+  };
   let result: unknown;
   switch (command.operation) {
     case "work.create": {
@@ -440,7 +465,7 @@ export function applyCommand(s: State, command: Command, authority: Authority): 
     case "knowledge.create": {
       const kind = text(p, "kind");
       requireCondition(
-        ["requirement", "assumption", "decision"].includes(kind),
+        kind === "requirement" || kind === "assumption" || kind === "decision",
         "invalid_input",
         "Unknown knowledge kind",
       );
@@ -453,9 +478,9 @@ export function applyCommand(s: State, command: Command, authority: Authority): 
       );
       const reliesOn = references(p.reliesOn ?? []);
       reliesOn.forEach((r) => revisionOf(s, r));
-      const derivedFrom = p.derivedFrom ? reference(p.derivedFrom) : null;
+      const derivedFrom = p.derivedFrom == null ? null : reference(p.derivedFrom);
       if (derivedFrom) revisionOf(s, derivedFrom);
-      const row: Knowledge = { id: id(), kind: kind as KnowledgeKind, scope, key, title: text(p, "title"), current: 1 };
+      const row: Knowledge = { id: id(), kind, scope, key, title: text(p, "title"), current: 1 };
       insert(s.knowledge, row);
       const revision: Revision = {
         id: refKey({ id: row.id, revision: 1 }),
@@ -497,7 +522,11 @@ export function applyCommand(s: State, command: Command, authority: Authority): 
       get(s.works, workId);
       revisionOf(s, ref);
       const useId = JSON.stringify([workId, ref.id, ref.revision]);
-      requireCondition(!s.uses[useId]?.active, "duplicate_attachment", "This canonical revision is already attached");
+      requireCondition(
+        s.uses[useId]?.active !== true,
+        "duplicate_attachment",
+        "This canonical revision is already attached",
+      );
       for (const use of activeUses(s, workId)) if (use.ref.id === ref.id) use.active = false;
       s.uses[useId] = { id: useId, workId, ref, active: true };
       refreshHolds(s);
@@ -525,8 +554,8 @@ export function applyCommand(s: State, command: Command, authority: Authority): 
           "Task blocker must be another task in this work",
         );
       });
-      const parentId = p.parentId === undefined || p.parentId === null ? null : text(p, "parentId");
-      if (parentId)
+      const parentId = p.parentId == null ? null : text(p, "parentId");
+      if (parentId !== null)
         requireCondition(
           get(s.tasks, parentId).workId === workId && parentId !== id(),
           "invalid_dependency",
@@ -545,7 +574,7 @@ export function applyCommand(s: State, command: Command, authority: Authority): 
       const visit = (at: string, path: Set<string>, field: "blockedBy" | "parentId") => {
         requireCondition(!path.has(at), "cycle", "Task graph cannot contain a cycle");
         const t = get(s.tasks, at);
-        const next = field === "blockedBy" ? t.blockedBy : t.parentId ? [t.parentId] : [];
+        const next = field === "blockedBy" ? t.blockedBy : t.parentId === null ? [] : [t.parentId];
         for (const n of next) visit(n, new Set([...path, at]), field);
       };
       visit(row.id, new Set(), "blockedBy");
@@ -648,20 +677,24 @@ export function applyCommand(s: State, command: Command, authority: Authority): 
       adapter();
       const effect = get(s.effects, id());
       const status = text(p, "state");
-      requireCondition(["uncertain", "failed", "confirmed"].includes(status), "invalid_input", "Invalid observation");
+      requireCondition(
+        status === "uncertain" || status === "failed" || status === "confirmed",
+        "invalid_input",
+        "Invalid observation",
+      );
       requireCondition(
         effect.state !== "confirmed" && effect.state !== "failed",
         "terminal_effect",
         "A terminal effect cannot be rewritten",
       );
       const receiptId = status === "confirmed" ? text(p, "receiptId") : null;
-      if (receiptId)
+      if (receiptId !== null)
         requireCondition(
           !Object.values(s.effects).some((e) => e.receiptId === receiptId),
           "duplicate_receipt",
           "Receipt already belongs to an effect",
         );
-      effect.state = status as Effect["state"];
+      effect.state = status;
       effect.receiptId = receiptId;
       effect.detail = text(p, "detail");
       result = effect;
@@ -816,7 +849,7 @@ export function renderWork(
   decisions: string;
 } {
   const work = get(s.works, workId);
-  const baseline = work.baselineId ? get(s.baselines, work.baselineId) : null;
+  const baseline = work.baselineId === null ? null : get(s.baselines, work.baselineId);
   const refs =
     baseline?.refs ??
     closure(
@@ -850,7 +883,7 @@ export function renderWork(
       .filter((x) => x.k.kind !== "requirement")
       .map(
         ({ k, v, r }) =>
-          `\n## ${k.kind}: ${k.title} [${r.id}@${r.revision}]\n\n${v.text}\n\nRationale: ${v.rationale}\n\nEvidence: ${v.evidence}\n\nStatus: ${invalidFor(s, [r]).length ? "invalidated or affected by invalidation" : "no recorded invalidation"}\n\nRelies on: ${v.reliesOn.map((r) => `${r.id}@${r.revision}`).join(", ") || "none"}\n`,
+          `\n## ${k.kind}: ${k.title} [${r.id}@${r.revision}]\n\n${v.text}\n\nRationale: ${v.rationale}\n\nEvidence: ${v.evidence}\n\nStatus: ${invalidFor(s, [r]).length > 0 ? "invalidated or affected by invalidation" : "no recorded invalidation"}\n\nRelies on: ${v.reliesOn.length === 0 ? "none" : v.reliesOn.map((r) => `${r.id}@${r.revision}`).join(", ")}\n`,
       )
       .join("");
   return { specification, decisions };

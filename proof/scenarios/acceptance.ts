@@ -25,6 +25,11 @@ const trace: unknown[] = [];
 const runId = `run-${crypto.randomUUID().slice(0, 8)}`;
 const key = (name: string) => `${runId}:${name}`;
 const output = resolve(root, "evidence");
+
+function present<T>(value: T | undefined): T {
+  if (value === undefined) throw new Error("Expected persisted scenario record");
+  return value;
+}
 let sequence = 0;
 let store: Store;
 let adapters: ControlledAdapters;
@@ -214,7 +219,7 @@ async function scenario() {
     child.exited,
   ]);
   assert.equal(childCode, 0, childError);
-  const recovered = JSON.parse(childText) as State;
+  const recovered: unknown = JSON.parse(childText);
   assert.deepEqual(recovered, state);
   store = await Store.connect();
   adapters = new ControlledAdapters(store, runId);
@@ -222,7 +227,7 @@ async function scenario() {
   await reject("operator_required", "hold.reassess", {
     id: key("agent-clear"),
     workId: key("A"),
-    holdIds: openHolds(recovered, "A"),
+    holdIds: openHolds(state, "A"),
     rationale: "agent proposes evidence",
     evidence: "fixture",
   });
@@ -232,7 +237,7 @@ async function scenario() {
     {
       id: key("stale-clear"),
       workId: key("A"),
-      holdIds: openHolds(recovered, "A"),
+      holdIds: openHolds(state, "A"),
       rationale: "stale",
       evidence: "fixture",
     },
@@ -245,7 +250,7 @@ async function scenario() {
     {
       id: key("bad-basis-clear"),
       workId: key("A"),
-      holdIds: openHolds(recovered, "A"),
+      holdIds: openHolds(state, "A"),
       rationale: "No revised basis",
       evidence: "fixture",
     },
@@ -357,7 +362,7 @@ async function scenario() {
     verificationId: key("verification-A"),
   });
   state = await store.snapshot();
-  assert.ok(verificationApplicable(state, state.verifications[key("verification-A")]!));
+  assert.ok(verificationApplicable(state, present(state.verifications[key("verification-A")])));
   await send("effect.request", {
     id: key("publication-A"),
     kind: "publish",
@@ -365,7 +370,7 @@ async function scenario() {
     verificationId: key("verification-A"),
   });
   state = await store.snapshot();
-  assert.ok(verificationApplicable(state, state.verifications[key("verification-A")]!));
+  assert.ok(verificationApplicable(state, present(state.verifications[key("verification-A")])));
   assert.equal(state.effects[key("publication-A")]?.state, "pending");
   check("Verification remains applicable after recording and publication intent", ["R7", "R8"]);
   const missing = await adapters.dispatch(key("publication-A"), "lose-response");
@@ -418,10 +423,8 @@ async function scenario() {
     blockedBy: [key("publication-A")],
   });
   await send("source.update", { workId: key("A"), sourceRevision: "fixture:source-2" });
-  assert.equal(
-    verificationApplicable(await store.snapshot(), (await store.snapshot()).verifications[key("verification-A")]!),
-    false,
-  );
+  state = await store.snapshot();
+  assert.equal(verificationApplicable(state, present(state.verifications[key("verification-A")])), false);
   await reject("stale_verification", "effect.request", {
     id: key("stale-publication"),
     kind: "publish",
@@ -437,7 +440,7 @@ async function scenario() {
   await send("source.update", { workId: key("A"), sourceRevision: "fixture:source-1" });
   await baseline("A", "baseline-A-3");
   state = await store.snapshot();
-  assert.equal(verificationApplicable(state, state.verifications[key("verification-A")]!), false);
+  assert.equal(verificationApplicable(state, present(state.verifications[key("verification-A")])), false);
   check("Source/baseline changes stale evidence and block new dispatch", ["R7", "R8"]);
   // Current verification is reacquired before delivering against the new baseline/source pair.
   await start("A", "task-A", "attempt-A-new");
@@ -515,25 +518,24 @@ async function scenario() {
   assert.equal(await readFile(resolve(output, "views/specification.md"), "utf8"), view.specification);
   assert.ok(view.decisions.includes(`${key("assumption")}@2`));
   const oldView = renderWork(
-    { ...state, works: { ...state.works, [key("A")]: { ...state.works[key("A")]!, baselineId: key("baseline-A-1") } } },
+    {
+      ...state,
+      works: { ...state.works, [key("A")]: { ...present(state.works[key("A")]), baselineId: key("baseline-A-1") } },
+    },
     key("A"),
   );
   assert.ok(oldView.decisions.includes("invalidated"));
   check("Generated views preserve canonical IDs, pinned revisions and historical invalidation", ["R1", "R6", "R10"]);
   await writeFile(resolve(output, "state-and-history.json"), JSON.stringify(await exportTables(store), null, 2));
   await writeFile(resolve(output, "adapter-trace.json"), JSON.stringify(await adapters.trace(), null, 2));
-  const history = await store.sql`SELECT to_commit, diff_type, to_id FROM dolt_diff_commands WHERE diff_type = 'added'`;
+  const history = await store.commandHistory();
   const ownCommands = Object.keys(state.commands).filter((id) => id.startsWith(runId));
   for (const id of ownCommands)
-    assert.equal(
-      history.filter((r: { to_id: string }) => r.to_id === id).length,
-      1,
-      `One introducing Dolt commit for ${id}`,
-    );
+    assert.equal(history.filter((r) => r.to_id === id).length, 1, `One introducing Dolt commit for ${id}`);
   await writeFile(
     resolve(output, "command-history.json"),
     JSON.stringify(
-      history.filter((r: { to_id: string }) => r.to_id.startsWith(runId)),
+      history.filter((r) => r.to_id.startsWith(runId)),
       null,
       2,
     ),
@@ -547,7 +549,7 @@ try {
   await store.migrate();
   await scenario();
 } catch (error) {
-  failure = error instanceof Error ? `${error.stack}` : String(error);
+  failure = error instanceof Error ? (error.stack ?? String(error)) : String(error);
   console.error(failure);
   process.exitCode = 1;
 } finally {
@@ -597,5 +599,5 @@ try {
     ]),
   );
   await writeFile(resolve(output, "requirement-evidence.json"), JSON.stringify(map, null, 2));
-  console.log(`${failure ? "FAILED" : "PASSED"}: ${checks.length} checks; ${output}/acceptance.json`);
+  console.log(`${failure === null ? "PASSED" : "FAILED"}: ${checks.length} checks; ${output}/acceptance.json`);
 }
