@@ -1,6 +1,6 @@
 import { resolve } from "node:path";
-import { writeFile } from "node:fs/promises";
-import { root, runtime, stop } from "./runtime.ts";
+import { mkdir, writeFile } from "node:fs/promises";
+import { root, runtime, setup, stop } from "./runtime.ts";
 const stages: {
   name: string;
   exitCode: number;
@@ -23,14 +23,18 @@ async function run(name: string, args: string[]) {
 const manifestPath = resolve(runtime, "server.json");
 if (await Bun.file(manifestPath).exists())
   throw new Error("Another proof server has ownership metadata; stop/inspect it first");
-const server = Bun.spawn([process.execPath, "scripts/runtime.ts", "start"], {
-  cwd: root,
-  stdout: "inherit",
-  stderr: "inherit",
-});
+await mkdir(resolve(root, "evidence"), { recursive: true });
+let server: ReturnType<typeof Bun.spawn> | null = null;
 let ownsServer = false;
 let failure: string | null = null;
 try {
+  // Provision the release before starting the server ownership deadline.
+  await setup();
+  server = Bun.spawn([process.execPath, "scripts/runtime.ts", "start"], {
+    cwd: root,
+    stdout: "inherit",
+    stderr: "inherit",
+  });
   for (let n = 0; n < 100; n++) {
     if (server.exitCode !== null) throw new Error("Proof server failed to start");
     if (await Bun.file(manifestPath).exists()) {
@@ -75,14 +79,14 @@ try {
       process.exitCode = 1;
     }
   }
-  if (server.exitCode === null && !ownsServer) {
+  if (server?.exitCode === null && !ownsServer) {
     server.kill("SIGTERM");
   }
-  if (ownsServer && server.exitCode === null && failure?.includes("Cleanup:") === true) {
+  if (ownsServer && server?.exitCode === null && failure?.includes("Cleanup:") === true) {
     // Preserve ownership evidence; do not use a timeout to kill an unconfirmed child.
     console.error("Server retained: inspect the saved manifest and task-owned log");
     server.unref();
-  } else await server.exited;
+  } else if (server) await server.exited;
   const stopped = !(await Bun.file(manifestPath).exists());
   await writeFile(
     resolve(root, "evidence/run-status.json"),

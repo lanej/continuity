@@ -30,6 +30,10 @@ jobs:
           bun-version-file: proof/package.json
       - run: bun install --frozen-lockfile --ignore-scripts
       - run: bun run check
+      - name: Separate tracked historical evidence
+        run: |
+          historical_dir="$(mktemp -d "$RUNNER_TEMP/continuity-history.XXXXXX")"
+          mv evidence "$historical_dir/"
       - name: Run the isolated Dolt proof
         id: acceptance
         run: bun run acceptance
@@ -40,6 +44,7 @@ jobs:
           include-hidden-files: true
           path: |
             proof/evidence/run-status.json
+            proof/evidence/runtime.json
             proof/evidence/acceptance.json
             proof/evidence/run-assessment.md
             proof/evidence/stage-*.log
