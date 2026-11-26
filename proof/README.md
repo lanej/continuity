@@ -9,10 +9,13 @@ Requires macOS ARM64 and Bun 1.4.5. The setup downloads the official Dolt 2.7.6 
 ```sh
 cd proof
 bun install --frozen-lockfile --ignore-scripts
+bun run check
 bun run acceptance
 ```
 
-`acceptance` owns the server from startup through shutdown and creates a fresh database for each run. It runs the storage gate, domain tests, TypeScript checking, and full lifecycle scenario. It stops on a failed stage, saves the available evidence, and attempts cleanup of its own server. A pre-existing server manifest causes it to refuse startup rather than take over another run. Loopback access and downloads may require the host's sandbox approval.
+`check` runs 120-column formatting verification, typed ESLint, strict TypeScript, and the unit tests without a Dolt server. Use `bun run format` to apply formatting. CI runs the checks and the full proof on macOS ARM64. It starts with an empty evidence directory so the artifact contains only results from that run.
+
+`acceptance` verifies the pinned Dolt release before starting the server. It owns the server through shutdown and creates a fresh database for each run. It runs the storage gate, domain tests, TypeScript checking, and full lifecycle scenario. It stops on a failed stage, saves the available evidence, and attempts cleanup of its own server. A pre-existing server manifest causes it to refuse startup rather than take over another run. Loopback access and downloads may require the host's sandbox approval.
 
 Evidence is retained in [evidence/](evidence/). `run-status.json` identifies each stage, its exit code, and its log. `acceptance.json` records named lifecycle checks; `requirement-evidence.json` maps them to the specification. Generated document views are under `evidence/views/`. The assessment is [assessment.md](assessment.md).
 
